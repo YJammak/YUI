@@ -10,6 +10,7 @@
     <RootNamespace>YUI</RootNamespace>
     <AssemblyName>YUI</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -34,6 +35,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,17 +46,42 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YProperties\YButtonProperties.cs" />
+    <Compile Include="YProperties\YCheckProperties.cs" />
+    <Compile Include="YProperties\YEnums.cs" />
     <Compile Include="YProperties\YAttachProperty.cs" />
-    <Compile Include="YProperties\YBackground.cs" />
+    <Compile Include="YProperties\YBorder.cs" />
+    <Compile Include="YProperties\YHeaderProperties.cs" />
+    <Compile Include="YProperties\YIcon.cs" />
+    <Compile Include="YProperties\YItemProperties.cs" />
+    <Compile Include="YProperties\YMenuProperties.cs" />
+    <Compile Include="YProperties\YMouseProperties.cs" />
+    <Compile Include="YProperties\YTextProperties.cs" />
     <Compile Include="YUtil\YSingleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="YControls\" />
     <Folder Include="YConverters\" />
-    <Folder Include="YStyles\" />
+    <Folder Include="YTemes\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YStyles\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YStyles\YButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YStyles\YIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YStyles\YTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

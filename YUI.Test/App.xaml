@@ -1,0 +1,17 @@
+﻿<Application x:Class="YUI.Test.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:YUI.Test"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YButton.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YTextBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="Button" BasedOn="{StaticResource YButtonDefaultStyle}"></Style>
+            <Style TargetType="TextBox" BasedOn="{StaticResource YTextBoxDefaultStyle}"></Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

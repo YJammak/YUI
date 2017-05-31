@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!--文本前景色-->
+    <SolidColorBrush x:Key="YTextForeground" Color="#555555"/>
+    
+    <SolidColorBrush x:Key="YButtonForeground" Color="#DDDDDD"/>
+    <SolidColorBrush x:Key="YButtonMouseOverForeground" Color="#DDDDDD"/>
+    <SolidColorBrush x:Key="YButtonPressedForeground" Color="#DDDDDD"/>
+    <SolidColorBrush x:Key="YButtonBackground" Color="#00AA77"/>
+    <SolidColorBrush x:Key="YButtonMouseOverBackground" Color="#01BA77"/>
+    <SolidColorBrush x:Key="YButtonPressedBackground" Color="#047049"/>
+
+    <SolidColorBrush x:Key="YLinkForeground" Color="#0816BB"/>
+
+    <SolidColorBrush x:Key="YTextSelectionBrush" Color="DodgerBlue"/>
+
+    <SolidColorBrush x:Key="YTextBoxBackground" Color="White"/>
+
+    <SolidColorBrush x:Key="YControlBorderBrush" Color="#AAAAAA"/>
+    <SolidColorBrush x:Key="YFocusBorderBrush" Color="DodgerBlue"/>
+    <SolidColorBrush x:Key="YMouseOverBorderBrush" Color="DodgerBlue"/>
+
+    <FontFamily x:Key="YFontFamily" >微软雅黑</FontFamily>
+    <sys:Double x:Key="YFontSize">12</sys:Double>
+    <sys:Double x:Key="YDisableOpacity">0.5</sys:Double>
+    <sys:Double x:Key="YReadonlyOpacity">0.88</sys:Double>
+    <sys:Double x:Key="YWatermarkOpacity">0.4</sys:Double>
+    <sys:String x:Key="YDateFormat">yyyy年MM月dd日</sys:String>
+    <sys:String x:Key="YDateTimeFormat">yyyy-MM-dd HH:mm:ss</sys:String>
+</ResourceDictionary>

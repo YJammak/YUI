@@ -1,0 +1,72 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:YUI.YProperties">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--TextBox默认样式-->
+    <Style TargetType="{x:Type TextBox}" x:Key="YTextBoxDefaultStyle">
+        <Setter Property="ContextMenu" Value="{DynamicResource TextBoxContextMenu}" />
+        <Setter Property="SelectionBrush" Value="{StaticResource YTextSelectionBrush}" />
+        <Setter Property="FontFamily" Value="{StaticResource YFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource YFontSize}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="MinHeight" Value="26" />
+        <Setter Property="Background" Value="{StaticResource YTextBoxBackground}" />
+        <Setter Property="Foreground" Value="{StaticResource YTextForeground}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderBrush" Value="{StaticResource YControlBorderBrush}" />
+        <Setter Property="local:YAttachProperty.YFocusBorderBrush" Value="{StaticResource YFocusBorderBrush}" />
+        <Setter Property="local:YAttachProperty.YMouseOverBorderBrush" Value="{StaticResource YMouseOverBorderBrush}" />
+        <Setter Property="local:YAttachProperty.YCornerRadius" Value="3"/>
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid x:Name="PART_Root">
+                        <Border x:Name="Bg" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                CornerRadius="{TemplateBinding local:YAttachProperty.YCornerRadius}"
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding Background}" ClipToBounds="True">
+                            <Grid x:Name="PART_InnerGrid">
+                            <!--内容区域-->
+                            <ScrollViewer x:Name="PART_ContentHost" BorderThickness="0" IsTabStop="False" Margin="2"
+                                          VerticalAlignment="Stretch" Background="{x:Null}" />
+                            <!--水印-->
+                            <TextBlock x:Name="Message"  Padding="{TemplateBinding Padding}" Visibility="Collapsed"
+                                       Text="{TemplateBinding local:YAttachProperty.YWatermark}"
+                                       Foreground="{TemplateBinding Foreground}" IsHitTestVisible="False" 
+                                       Opacity="{StaticResource YWatermarkOpacity}"
+                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="5,2,5,2" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!--显示水印-->
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="">
+                            <Setter TargetName="Message" Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YMouseOverBorderBrush),RelativeSource={RelativeSource Self}}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter  Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YFocusBorderBrush),RelativeSource={RelativeSource Self}}"/>
+                        </Trigger>
+                        <!--不可用-->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="PART_Root" Property="Opacity" Value="{StaticResource YDisableOpacity}" />
+                        </Trigger>
+                        <!--只读时，禁用PART_AttachContent-->
+                        <Trigger Property="IsReadOnly" Value="True">
+                            <Setter TargetName="Bg" Property="Opacity" Value="{StaticResource YReadonlyOpacity}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
