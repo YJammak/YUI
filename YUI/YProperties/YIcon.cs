@@ -164,31 +164,114 @@ namespace YUI.YProperties
         }
         #endregion
 
-        #region YIconForeground YButton图标颜色
+        #region YIconForegroundProperty YIcon颜色
 
         /// <summary>
-        /// YButton的Icon位置附加属性
+        /// YIcon颜色
         /// </summary>
         public static readonly DependencyProperty YIconForegroundProperty = DependencyProperty.RegisterAttached(
             "YIconForeground", typeof(Brush), typeof(YAttachProperty), new FrameworkPropertyMetadata(Brushes.White));
         /// <summary>
-        /// 获取YButton图标颜色
+        /// 获取YIcon颜色
         /// </summary>
         /// <param name="d"></param>
         /// <returns></returns>
-        [AttachedPropertyBrowsableForType(typeof(Button))]
         public static Brush GetYIconForeground(DependencyObject d)
         {
             return (Brush)d.GetValue(YIconForegroundProperty);
         }
         /// <summary>
-        /// 设置YButton图标颜色
+        /// 设置YIcon颜色
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="value"></param>
         public static void SetYIconForeground(DependencyObject obj, Brush value)
         {
             obj.SetValue(YIconForegroundProperty, value);
+        }
+
+        #endregion
+
+        #region YIconMouseOverForegroundProperty YIcon鼠标悬停颜色
+
+        /// <summary>
+        /// YIcon鼠标悬停颜色
+        /// </summary>
+        public static readonly DependencyProperty YIconMouseOverForegroundProperty = DependencyProperty.RegisterAttached(
+            "YIconMouseOverForeground", typeof(Brush), typeof(YAttachProperty), new FrameworkPropertyMetadata(Brushes.White));
+        /// <summary>
+        /// 获取YIcon鼠标悬停颜色
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public static Brush GetYIconMouseOverForeground(DependencyObject d)
+        {
+            return (Brush)d.GetValue(YIconMouseOverForegroundProperty);
+        }
+        /// <summary>
+        /// 设置YIcon鼠标悬停颜色
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
+        public static void SetYIconMouseOverForeground(DependencyObject obj, Brush value)
+        {
+            obj.SetValue(YIconMouseOverForegroundProperty, value);
+        }
+
+        #endregion
+
+        #region YIconPressedForegroundProperty YIcon鼠标按下颜色
+
+        /// <summary>
+        /// YIcon鼠标按下颜色
+        /// </summary>
+        public static readonly DependencyProperty YIconPressedForegroundProperty = DependencyProperty.RegisterAttached(
+            "YIconPressedForeground", typeof(Brush), typeof(YAttachProperty), new FrameworkPropertyMetadata(Brushes.White));
+        /// <summary>
+        /// 获取YIcon鼠标按下颜色
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public static Brush GetYIconPressedForeground(DependencyObject d)
+        {
+            return (Brush)d.GetValue(YIconPressedForegroundProperty);
+        }
+        /// <summary>
+        /// 设置YIcon鼠标按下颜色
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
+        public static void SetYIconPressedForeground(DependencyObject obj, Brush value)
+        {
+            obj.SetValue(YIconPressedForegroundProperty, value);
+        }
+
+        #endregion
+
+        #region YIconCheckedForegroundProperty YIcon选中颜色
+
+        /// <summary>
+        /// YIcon选中颜色附加属性
+        /// </summary>
+        public static readonly DependencyProperty YIconCheckedForegroundProperty = DependencyProperty.RegisterAttached(
+            "YIconCheckedForeground", typeof(Brush), typeof(YAttachProperty), new FrameworkPropertyMetadata(Brushes.White));
+        /// <summary>
+        /// 获取YIcon选中颜色
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public static Brush GetYIconCheckedForeground(DependencyObject d)
+        {
+            return (Brush)d.GetValue(YIconCheckedForegroundProperty);
+        }
+        /// <summary>
+        /// 设置YIcon选中颜色
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
+        public static void SetYIconCheckedForeground(DependencyObject obj, Brush value)
+        {
+            obj.SetValue(YIconCheckedForegroundProperty, value);
         }
 
         #endregion

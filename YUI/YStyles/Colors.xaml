@@ -14,13 +14,21 @@
     <SolidColorBrush x:Key="YLinkForeground" Color="#0816BB"/>
 
     <SolidColorBrush x:Key="YTextSelectionBrush" Color="DodgerBlue"/>
-
     <SolidColorBrush x:Key="YTextBoxBackground" Color="White"/>
 
     <SolidColorBrush x:Key="YControlBorderBrush" Color="#AAAAAA"/>
     <SolidColorBrush x:Key="YFocusBorderBrush" Color="DodgerBlue"/>
     <SolidColorBrush x:Key="YMouseOverBorderBrush" Color="DodgerBlue"/>
+    
+    <SolidColorBrush x:Key="YCheckedForeground" Color="DodgerBlue"/>
+    <SolidColorBrush x:Key="YCheckedMouseoverForeground" Color="DodgerBlue"/>
 
+    <SolidColorBrush x:Key="YComboBoxArrowForeground" Color="#888888"/>
+    <SolidColorBrush x:Key="YComboBoxArrowMouseOverForeground" Color="#666666"/>
+    <SolidColorBrush x:Key="YComboBoxArrowPressedForeground" Color="#555555"/>
+    <SolidColorBrush x:Key="YComboBoxArrowCheckedForeground" Color="#555555"/>
+    <SolidColorBrush x:Key="YComboBoxBackground" Color="White"/>
+    
     <FontFamily x:Key="YFontFamily" >微软雅黑</FontFamily>
     <sys:Double x:Key="YFontSize">12</sys:Double>
     <sys:Double x:Key="YDisableOpacity">0.5</sys:Double>

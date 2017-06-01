@@ -8,10 +8,18 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YButton.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YTextBox.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YToggleButton.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YCheckBox.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YRadioButton.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YComboBox.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <Style TargetType="Button" BasedOn="{StaticResource YButtonDefaultStyle}"></Style>
             <Style TargetType="TextBox" BasedOn="{StaticResource YTextBoxDefaultStyle}"></Style>
+            <Style TargetType="ToggleButton" BasedOn="{StaticResource YToggleButtonDefaultStyle}"></Style>
+            <Style TargetType="CheckBox" BasedOn="{StaticResource YCheckBoxDefaultStyle}"></Style>
+            <Style TargetType="RadioButton" BasedOn="{StaticResource YRadioButtonDefaultStyle}"></Style>
+            <Style TargetType="ComboBox" BasedOn="{StaticResource YComboBoxDefaultStyle}"></Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

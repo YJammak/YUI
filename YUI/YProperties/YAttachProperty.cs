@@ -102,6 +102,36 @@ namespace YUI.YProperties
 
         #endregion
 
+        #region YForegroundProperty 前景色
+        /// <summary>
+        /// 前景色附加属性
+        /// </summary>
+        public static readonly DependencyProperty YForegroundProperty = DependencyProperty.RegisterAttached(
+            "YForeground", typeof(Brush), typeof(YAttachProperty), new FrameworkPropertyMetadata(Brushes.Transparent,
+                FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.Inherits));
+
+        /// <summary>
+        /// 设置前景色附加属性
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="value"></param>
+        public static void SetYForeground(DependencyObject element, Brush value)
+        {
+            element.SetValue(YForegroundProperty, value);
+        }
+
+        /// <summary>
+        /// 获取前景色附加属性
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        public static Brush GetYForeground(DependencyObject element)
+        {
+            return (Brush)element.GetValue(YForegroundProperty);
+        }
+
+        #endregion
+
         #region YFocusForeground 获得焦点前景颜色
 
         /// <summary>
