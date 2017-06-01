@@ -72,6 +72,7 @@
     <Compile Include="YUtil\YSingleton.cs" />
     <Compile Include="YUtil\YSystemHelper.cs" />
     <Compile Include="YUtil\YWindowHelper.cs" />
+    <Compile Include="YUtil\YXmlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="YControls\" />
