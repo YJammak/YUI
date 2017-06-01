@@ -1,9 +1,11 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace YUI.YProperties
 {
+    /// <summary>
+    /// 附加属性类
+    /// </summary>
     public static partial class YAttachProperty
     {
         #region YIconFontFamilyProperty 字体图标字体

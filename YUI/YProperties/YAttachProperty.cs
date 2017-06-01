@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 
 namespace YUI.YProperties
 {
@@ -295,63 +289,6 @@ namespace YUI.YProperties
         }
         #endregion
 
-        #region YAllowsAnimationProperty 允许动画
-        /// <summary>
-        /// 允许动画附加属性
-        /// </summary>
-        public static readonly DependencyProperty YAllowsAnimationProperty = DependencyProperty.RegisterAttached("YAllowsAnimation"
-            , typeof(bool), typeof(YAttachProperty), new FrameworkPropertyMetadata(false, YAllowsAnimationChanged));
-        /// <summary>
-        /// 获取允许动画
-        /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
-        public static bool GetYAllowsAnimation(DependencyObject d)
-        {
-            return (bool)d.GetValue(YAllowsAnimationProperty);
-        }
-        /// <summary>
-        /// 设置允许动画
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <param name="value"></param>
-        public static void SetYAllowsAnimation(DependencyObject obj, bool value)
-        {
-            obj.SetValue(YAllowsAnimationProperty, value);
-        }
-
-        /// <summary>
-        /// 动画刻度
-        /// </summary>
-        private static DoubleAnimation RotateAnimation = new DoubleAnimation(0, new Duration(TimeSpan.FromMilliseconds(200)));
-
-        /// <summary>
-        /// 绑定动画事件
-        /// </summary>
-        private static void YAllowsAnimationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            //var uc = d as FrameworkElement;
-            //if (uc == null || uc is Button) return;
-            //if (uc.RenderTransformOrigin == new Point(0, 0))
-            //{
-            //    uc.RenderTransformOrigin = new Point(0.5, 0.5);
-            //    RotateTransform trans = new RotateTransform(0);
-            //    uc.RenderTransform = trans;
-            //}
-            //var value = (bool)e.NewValue;
-            //if (value)
-            //{
-            //    RotateAnimation.To = 180;
-            //    uc.RenderTransform.BeginAnimation(RotateTransform.AngleProperty, RotateAnimation);
-            //}
-            //else
-            //{
-            //    RotateAnimation.To = 0;
-            //    uc.RenderTransform.BeginAnimation(RotateTransform.AngleProperty, RotateAnimation);
-            //}
-        }
-        #endregion
-
         #region YLabelProperty TextBox的头部Label
         /// <summary>
         /// TextBox的头部Label附加属性
@@ -604,14 +541,27 @@ namespace YUI.YProperties
 
         #region YContentStyleProperty
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static readonly DependencyProperty YContentStyleProperty = DependencyProperty.RegisterAttached(
             "YContentStyle", typeof(Style), typeof(YAttachProperty), new FrameworkPropertyMetadata(null));
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public static Style GetYContentStyle(DependencyObject d)
         {
             return (Style)d.GetValue(YContentStyleProperty);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
         public static void SetYContentStyle(DependencyObject obj, Style value)
         {
             obj.SetValue(YContentStyleProperty, value);
@@ -659,7 +609,7 @@ namespace YUI.YProperties
         /// </summary>
         /// <param name="d"></param>
         /// <returns></returns>
-        [AttachedPropertyBrowsableForType(typeof(System.Windows.Controls.DataGrid))]
+        [AttachedPropertyBrowsableForType(typeof(DataGrid))]
         public static Brush GetYGridTopRightBorderBrush(DependencyObject d)
         {
             return (Brush)d.GetValue(YGridTopRightBorderBrushProperty);
@@ -669,7 +619,7 @@ namespace YUI.YProperties
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="value"></param>
-        [AttachedPropertyBrowsableForType(typeof(System.Windows.Controls.DataGrid))]
+        [AttachedPropertyBrowsableForType(typeof(DataGrid))]
         public static void SetYGridTopRightBorderBrush(DependencyObject obj, Brush value)
         {
             obj.SetValue(YGridTopRightBorderBrushProperty, value);

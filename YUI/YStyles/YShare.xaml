@@ -27,7 +27,6 @@
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  
                                 Opacity="0.3"/>
                         <TextBlock Grid.Column="1" x:Name="iccon" 
-                                   local:YAttachProperty.YAllowsAnimation="{TemplateBinding IsChecked}"
                                    Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"
                                    RenderTransformOrigin="0.5,0.5"
                                    TextAlignment="Center"

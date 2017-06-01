@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\YUI.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,7 +30,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\YUI.xml</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -47,7 +50,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YConverters\YBooleanReverseConverter.cs" />
+    <Compile Include="YConverters\YBooleanToVisibilityConverter.cs" />
+    <Compile Include="YConverters\YBooleanToVisibilityReverseConverter.cs" />
     <Compile Include="YConverters\YConverters.cs" />
+    <Compile Include="YConverters\YObjectToVisibilityConverter.cs" />
+    <Compile Include="YConverters\YStringToVisibilitiyConverter.cs" />
     <Compile Include="YProperties\YButtonProperties.cs" />
     <Compile Include="YProperties\YCheckProperties.cs" />
     <Compile Include="YProperties\YEnums.cs" />
@@ -59,14 +66,26 @@
     <Compile Include="YProperties\YMenuProperties.cs" />
     <Compile Include="YProperties\YMouseProperties.cs" />
     <Compile Include="YProperties\YTextProperties.cs" />
+    <Compile Include="YUtil\YControlHelper.cs" />
+    <Compile Include="YUtil\YDataGridHelper.cs" />
+    <Compile Include="YUtil\YPopUpHelper.cs" />
     <Compile Include="YUtil\YSingleton.cs" />
+    <Compile Include="YUtil\YSystemHelper.cs" />
+    <Compile Include="YUtil\YWindowHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="YControls\" />
-    <Folder Include="YTemes\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YConverters\YConverters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YStyles\YTemplates\YButtonTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,11 +117,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="YStyles\YTemplates\YCheckBoxTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="YStyles\YTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="YStyles\YToggleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YThemes\DefaultThemes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

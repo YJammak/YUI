@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
 namespace YUI.YProperties
 {
@@ -43,22 +38,22 @@ namespace YUI.YProperties
         /// 裁剪文本附加属性
         /// </summary>
         public static readonly DependencyProperty YTextAlignmentProperty = DependencyProperty.RegisterAttached(
-            "YTextAlignment", typeof(System.Windows.HorizontalAlignment), typeof(YAttachProperty), new FrameworkPropertyMetadata(System.Windows.HorizontalAlignment.Center));
+            "YTextAlignment", typeof(HorizontalAlignment), typeof(YAttachProperty), new FrameworkPropertyMetadata(HorizontalAlignment.Center));
         /// <summary>
         /// 获取裁剪文本
         /// </summary>
         /// <param name="d"></param>
         /// <returns></returns>
-        public static System.Windows.HorizontalAlignment GetYTextAlignment(DependencyObject d)
+        public static HorizontalAlignment GetYTextAlignment(DependencyObject d)
         {
-            return (System.Windows.HorizontalAlignment)d.GetValue(YTextAlignmentProperty);
+            return (HorizontalAlignment)d.GetValue(YTextAlignmentProperty);
         }
         /// <summary>
         /// 设置裁剪文本
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="value"></param>
-        public static void SetYTextAlignment(DependencyObject obj, System.Windows.HorizontalAlignment value)
+        public static void SetYTextAlignment(DependencyObject obj, HorizontalAlignment value)
         {
             obj.SetValue(YTextAlignmentProperty, value);
         }

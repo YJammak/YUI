@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using YUI.YUtil;
+﻿using YUI.YUtil;
 
 namespace YUI.YConverters
 {
 
     /// <summary>
-    /// 
+    /// 转换类
     /// </summary>
     public sealed class YConverters
     {
@@ -17,5 +12,29 @@ namespace YUI.YConverters
         /// bool反转
         /// </summary>
         public static YBooleanReverseConverter YBooleanReverseConverter => YSingleton<YBooleanReverseConverter>.GetInstance();
+
+        /// <summary>
+        /// bool转显示
+        /// </summary>
+        public static YBooleanToVisibilityConverter YBooleanToVisibilityConverter =>
+            YSingleton<YBooleanToVisibilityConverter>.GetInstance();
+
+        /// <summary>
+        /// bool转显示反向
+        /// </summary>
+        public static YBooleanToVisibilityReverseConverter YBooleanToVisibilityReverseConverter =>
+            YSingleton<YBooleanToVisibilityReverseConverter>.GetInstance();
+
+        /// <summary>
+        /// 字符串转显示（为空或nulll隐藏）
+        /// </summary>
+        public static YStringToVisibilitiyConverter YStringToVisibilitiyConverter =>
+            YSingleton<YStringToVisibilitiyConverter>.GetInstance();
+
+        /// <summary>
+        /// 对象转显示（为null隐藏）
+        /// </summary>
+        public static YObjectToVisibilityConverter YObjectToVisibilityConverter =>
+            YSingleton<YObjectToVisibilityConverter>.GetInstance();
     }
 }

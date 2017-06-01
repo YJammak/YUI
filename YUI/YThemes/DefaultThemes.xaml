@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YConverters/YConverters.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YShare.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YIcon.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YButton.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YCheckBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YComboBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YRadioButton.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YTextBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YToggleButton.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="Button" BasedOn="{StaticResource YButtonDefaultStyle}"/>
+    <Style TargetType="TextBox" BasedOn="{StaticResource YTextBoxDefaultStyle}"/>
+    <Style TargetType="ToggleButton" BasedOn="{StaticResource YToggleButtonDefaultStyle}"/>
+    <Style TargetType="CheckBox" BasedOn="{StaticResource YCheckBoxDefaultStyle}"/>
+    <Style TargetType="RadioButton" BasedOn="{StaticResource YRadioButtonDefaultStyle}"/>
+    <Style TargetType="ComboBox" BasedOn="{StaticResource YComboBoxDefaultStyle}"/>
+</ResourceDictionary>
