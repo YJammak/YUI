@@ -68,6 +68,7 @@
     <Compile Include="YProperties\YTextProperties.cs" />
     <Compile Include="YUtil\YControlHelper.cs" />
     <Compile Include="YUtil\YDataGridHelper.cs" />
+    <Compile Include="YUtil\YJsonHelper.cs" />
     <Compile Include="YUtil\YPopUpHelper.cs" />
     <Compile Include="YUtil\YSingleton.cs" />
     <Compile Include="YUtil\YSystemHelper.cs" />
