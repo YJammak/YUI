@@ -57,7 +57,7 @@ namespace YUI.YUtil
         /// <typeparam name="T"></typeparam>
         /// <param name="xml"></param>
         /// <returns></returns>
-        public static T DeserializeXmlToObject<T>(string xml) where T : class
+        public static T DeserializeToObject<T>(string xml) where T : class
         {
             object result;
             using (var reader = new StringReader(xml))

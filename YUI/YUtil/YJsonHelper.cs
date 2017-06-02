@@ -56,7 +56,7 @@ namespace YUI.YUtil
         /// <param name="json">json字符串(eg.{"ID":"112","Name":"石子儿"})</param>
         /// <param name="dateTimeFormat">时间格式</param>
         /// <returns>对象实体</returns>
-        public static T DeserializeJsonToObject<T>(string json, string dateTimeFormat = "yyyy-MM-dd HH:mm:ss") where T : class
+        public static T DeserializeToObject<T>(string json, string dateTimeFormat = "yyyy-MM-dd HH:mm:ss") where T : class
         {
             return DeserializeObjectMethodInfo.MakeGenericMethod(typeof(T))
                 .Invoke(null, new object[] {json, GetIsoDateTimeConverterArray(dateTimeFormat)}) as T;
@@ -69,7 +69,7 @@ namespace YUI.YUtil
         /// <param name="json">json数组字符串(eg.[{"ID":"112","Name":"石子儿"}])</param>
         /// <param name="dateTimeFormat">时间格式</param>
         /// <returns>对象实体集合</returns>
-        public static List<T> DeserializeJsonToList<T>(string json, string dateTimeFormat = "yyyy-MM-dd HH:mm:ss") where T : class
+        public static List<T> DeserializeToList<T>(string json, string dateTimeFormat = "yyyy-MM-dd HH:mm:ss") where T : class
         {
             return DeserializeObjectMethodInfo.MakeGenericMethod(typeof(List<T>)).Invoke(null, new object[] { json, GetIsoDateTimeConverterArray(dateTimeFormat) }) as List<T>;
         }
