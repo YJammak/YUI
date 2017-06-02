@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YUI.Test"
         xmlns:yui="clr-namespace:YUI.YProperties;assembly=YUI"
+        xmlns:yctr="clr-namespace:YUI.YControls;assembly=YUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
@@ -24,5 +25,6 @@
             <TextBlock>Item4</TextBlock>
             <TextBlock>Item5</TextBlock>
         </ComboBox>
+        <yctr:YProgressRing Width="50" Height="50" Margin="5"></yctr:YProgressRing>
     </StackPanel>
 </Window>

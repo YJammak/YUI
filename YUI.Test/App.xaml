@@ -2,11 +2,12 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:YUI.Test"
+             xmlns:yui="clr-namespace:YUI.YProperties;assembly=YUI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/YUI;component/YThemes/DefaultThemes.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/YUI;component/YThemes/YDefaultThemes.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
