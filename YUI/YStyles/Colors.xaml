@@ -3,7 +3,9 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <!--文本前景色-->
     <SolidColorBrush x:Key="YTextForeground" Color="#555555"/>
-    
+
+    <SolidColorBrush x:Key="YControlBackground" Color="White"/>
+
     <SolidColorBrush x:Key="YButtonForeground" Color="#DDDDDD"/>
     <SolidColorBrush x:Key="YButtonMouseOverForeground" Color="#DDDDDD"/>
     <SolidColorBrush x:Key="YButtonPressedForeground" Color="#DDDDDD"/>
@@ -28,9 +30,27 @@
     <SolidColorBrush x:Key="YComboBoxArrowPressedForeground" Color="#555555"/>
     <SolidColorBrush x:Key="YComboBoxArrowCheckedForeground" Color="#555555"/>
     <SolidColorBrush x:Key="YComboBoxBackground" Color="White"/>
-    
+
+    <SolidColorBrush x:Key="YMenuForeground" Color="#555555"/>
+    <SolidColorBrush x:Key="YMenuBackground" Color="#DDDDDD"/>
+    <SolidColorBrush x:Key="YMenuMouseOverBackground" Color="DodgerBlue"/>
+    <SolidColorBrush x:Key="YMenuMouseOverForeground" Color="#DDDDDD"/>
+    <SolidColorBrush x:Key="YMenuPressedBackground" Color="#555555"/>
+    <SolidColorBrush x:Key="YMenuPressedForeground" Color="DarkBlue"/>
+
+    <SolidColorBrush x:Key="YItemSelectedBackground" Color="DodgerBlue"/>
+    <SolidColorBrush x:Key="YItemSelectedForeground" Color="#555555"/>
+    <SolidColorBrush x:Key="YItemMouseOverBackground" Color="#C0C0C0"/>
+    <SolidColorBrush x:Key="YItemMouseOverForeground" Color="#555555"/>
+    <SolidColorBrush x:Key="YItemHighlighteBackground" Color="LightSkyBlue"/>
+    <SolidColorBrush x:Key="YItemHighlighteForeground" Color="#555555"/>
+
+    <!--边框-->
+    <DropShadowEffect x:Key="YDropShadow" Color="Black" ShadowDepth="0" Opacity="0.5" />
+
     <FontFamily x:Key="YFontFamily" >微软雅黑</FontFamily>
     <sys:Double x:Key="YFontSize">12</sys:Double>
+    <sys:Double x:Key="YHeaderFontSize">14</sys:Double>
     <sys:Double x:Key="YDisableOpacity">0.5</sys:Double>
     <sys:Double x:Key="YReadonlyOpacity">0.88</sys:Double>
     <sys:Double x:Key="YWatermarkOpacity">0.4</sys:Double>
