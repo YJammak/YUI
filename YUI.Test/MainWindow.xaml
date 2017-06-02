@@ -6,11 +6,27 @@
         xmlns:local="clr-namespace:YUI.Test"
         xmlns:yui="clr-namespace:YUI.YProperties;assembly=YUI"
         xmlns:yctr="clr-namespace:YUI.YControls;assembly=YUI"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        mc:Ignorable="d" SizeToContent="WidthAndHeight"
+        Title="MainWindow">
     <StackPanel>
         <Button Width="80" Height="27" VerticalAlignment="Center" HorizontalAlignment="Center" Content="你好"/>
-        <TextBox Margin="10" yui:YAttachProperty.YWatermark="你好"></TextBox>
+        <TextBox Margin="10" yui:YAttachProperty.YWatermark="你好">
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Test1">
+                        <MenuItem Header="T1"></MenuItem>
+                        <MenuItem Header="T1" IsEnabled="False"></MenuItem>
+                        <MenuItem Header="T1"></MenuItem>
+                        <MenuItem Header="T1"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="T2"></MenuItem>
+                    <MenuItem Header="T3"></MenuItem>
+                    <Separator/>
+                    <MenuItem Header="T4"></MenuItem>
+                    <MenuItem Header="T5"></MenuItem>
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
         <ToggleButton>你好</ToggleButton>
         <CheckBox>测试CheckBox</CheckBox>
         <StackPanel Orientation="Horizontal">
@@ -27,5 +43,7 @@
         </ComboBox>
         <yctr:YProgressRing Width="50" Height="50" Margin="5"></yctr:YProgressRing>
         <ProgressBar Value="0.4" Margin="10 3" Height="16" yui:YAttachProperty.YCornerRadius="8"></ProgressBar>
+        <Calendar/>
+        <DatePicker/>
     </StackPanel>
 </Window>
