@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:YUI.YProperties">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <!--ProgressBar Style-->
+    <Style TargetType="ProgressBar" x:Key="YProgressBarDefaultStyle">
+        <Setter Property="Background" Value="{StaticResource YControlBorderBrush}" />
+        <Setter Property="Maximum" Value="1" />
+        <Setter Property="Value" Value="0" />
+        <Setter Property="Height" Value="10" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Foreground" Value="{StaticResource YFocusBorderBrush}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="local:YAttachProperty.YCornerRadius" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid x:Name="Root" >
+                        <Border x:Name="PART_Track" Background="{TemplateBinding Background}" 
+                                CornerRadius="{TemplateBinding local:YAttachProperty.YCornerRadius}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        <Border  x:Name="PART_Indicator" HorizontalAlignment="Left" Background="{TemplateBinding Foreground}" 
+                                CornerRadius="{TemplateBinding local:YAttachProperty.YCornerRadius}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter Property="LayoutTransform" TargetName="Root" >
+                                <Setter.Value>
+                                    <RotateTransform Angle="-90" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
