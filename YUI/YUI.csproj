@@ -59,6 +59,7 @@
     <Compile Include="YConverters\YConverters.cs" />
     <Compile Include="YConverters\YObjectToVisibilityConverter.cs" />
     <Compile Include="YConverters\YStringToVisibilitiyConverter.cs" />
+    <Compile Include="YConverters\YTreeViewItemLeftMarginMultiplierConverter.cs" />
     <Compile Include="YProperties\YButtonProperties.cs" />
     <Compile Include="YProperties\YCheckProperties.cs" />
     <Compile Include="YProperties\YEnums.cs" />
@@ -166,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="YStyles\YToggleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YStyles\YTreeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

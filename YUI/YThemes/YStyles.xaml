@@ -20,5 +20,6 @@
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YPasswordBox.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YScrollViewer.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YListBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YTreeView.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
