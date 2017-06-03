@@ -10,7 +10,7 @@ namespace YUI.YUtil
     /// <summary>
     /// Popup辅助类
     /// </summary>
-    public static class YPopUpHelper
+    public static class YPopUpToolTipHelper
     {
         /// <summary>
         /// 在指定控件上弹出信息
@@ -18,9 +18,9 @@ namespace YUI.YUtil
         /// <param name="control">控件</param>
         /// <param name="message">信息</param>
         /// <param name="duration">持续时间(ms)</param>
-        public static void ShowPopUpOnControl(this FrameworkElement control, string message, double duration)
+        public static void PopupToolTip(this FrameworkElement control, string message, double duration = 3000)
         {
-            ShowPopUpOnControl(control, message, duration, new FontFamily("微软雅黑"));
+            PopupToolTip(control, message, duration, new FontFamily("微软雅黑"));
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace YUI.YUtil
         /// <param name="fontFamily"></param>
         /// <param name="fontSize">字体大小</param>
         /// <param name="foreground">字体颜色</param>
-        public static void ShowPopUpOnControl(this FrameworkElement control, string message, double duration,
+        public static void PopupToolTip(this FrameworkElement control, string message, double duration,
             FontFamily fontFamily, double fontSize = 12, Brush foreground = null)
         {
             if (control == null)
@@ -49,7 +49,7 @@ namespace YUI.YUtil
                 HorizontalAlignment = HorizontalAlignment.Left
             };
 
-            ShowPopUpOnControl(control, popText, duration);
+            PopupToolTip(control, popText, duration);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace YUI.YUtil
         /// <param name="control">控件</param>
         /// <param name="content">内容</param>
         /// <param name="duration">持续时间(ms)</param>
-        public static void ShowPopUpOnControl(this FrameworkElement control, FrameworkElement content, double duration)
+        public static void PopupToolTip(this FrameworkElement control, FrameworkElement content, double duration)
         {
             if (control == null)
                 return;

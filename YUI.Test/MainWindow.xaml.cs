@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using YUI.YUtil;
 
 namespace YUI.Test
 {
@@ -42,6 +43,11 @@ namespace YUI.Test
             Data.Add(new DataGridTest {ID = "4", Name = "asdgas", Phone = "1234125412", Address = "asdgbhiuas"});
             Data.Add(new DataGridTest {ID = "5", Name = "dsg", Phone = "1234125412", Address = "asdgbhiuas"});
             Data.Add(new DataGridTest {ID = "6", Name = "asdg", Phone = "1234125412", Address = "asdgbhiuas"});
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            textBox.PopupToolTip("这是弹出信息");
         }
     }
 }
