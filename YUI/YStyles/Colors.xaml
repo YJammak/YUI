@@ -47,7 +47,13 @@
     
     <SolidColorBrush x:Key="YDataGridHeaderBorderBrush" Color="#DDDDDD"/>
     <SolidColorBrush x:Key="YDataGridLinesBrush" Color="#E8E8E8"/>
-    
+
+    <SolidColorBrush x:Key="YScrollBarForeround" Color="#22000000"></SolidColorBrush>
+    <SolidColorBrush x:Key="YScrollBarBackground" Color="#11000000"></SolidColorBrush>
+    <SolidColorBrush x:Key="YScrollBarMouseOverForeground" Color="#55000000"></SolidColorBrush>
+    <SolidColorBrush x:Key="YScrollBarMouseOverBackground" Color="#11000000"></SolidColorBrush>
+    <SolidColorBrush x:Key="YScrollBarPressedForeground" Color="#55000000"></SolidColorBrush>
+    <SolidColorBrush x:Key="YScrollBarPressedBackground" Color="#11000000"></SolidColorBrush>
 
     <!--边框-->
     <DropShadowEffect x:Key="YDropShadow" Color="Black" ShadowDepth="0" Opacity="0.5" />
@@ -60,4 +66,5 @@
     <sys:Double x:Key="YWatermarkOpacity">0.4</sys:Double>
     <sys:String x:Key="YDateFormat">yyyy年MM月dd日</sys:String>
     <sys:String x:Key="YDateTimeFormat">yyyy-MM-dd HH:mm:ss</sys:String>
+    <sys:Double x:Key="YScrollBarSize">12</sys:Double>
 </ResourceDictionary>

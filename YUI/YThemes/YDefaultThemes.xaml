@@ -13,6 +13,8 @@
     <Style TargetType="ComboBox" BasedOn="{StaticResource YComboBoxDefaultStyle}"/>
     <Style TargetType="ProgressBar" BasedOn="{StaticResource YProgressBarDefaultStyle}"/>
     <Style TargetType="PasswordBox" BasedOn="{StaticResource YPasswordBoxDefaultStyle}"/>
+    <Style TargetType="ScrollViewer" BasedOn="{StaticResource YScrollViewerDefaultStyle}"/>
+    <Style TargetType="ScrollBar" BasedOn="{StaticResource YScrollBarDefaultStyle}"/>
 
     <Style x:Key="SeparatorStyle" TargetType="Separator" BasedOn="{StaticResource YHorizontalSeparatorStyle}">
         <Setter Property="Margin" Value="8 1 2 1"/>
