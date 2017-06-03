@@ -13,8 +13,8 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Width" Value="auto"/>
         <Setter Property="Height" Value="auto"/>
-        <Setter Property="local:YAttachProperty.YIconSize" Value="12" />
-        <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#SF2015"/>
+        <Setter Property="local:YAttachProperty.YIconSize" Value="16" />
+        <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#FontAwesome"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RepeatButton}">
@@ -96,7 +96,7 @@
 
             <Border Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" 
                     Visibility="{TemplateBinding local:YAttachProperty.YScrollBarButtonVisibility}">
-                <RepeatButton  local:YAttachProperty.YIcon="&#xe65e;"  Style="{StaticResource ScrollBarButton}" x:Name="HorizontalSmallDecrease"
+                <RepeatButton  local:YAttachProperty.YIcon="&#xf0d9;"  Style="{StaticResource ScrollBarButton}" x:Name="HorizontalSmallDecrease"
                                IsTabStop="False" Interval="50" Margin="0,1,0,0" Command="ScrollBar.LineLeftCommand"/>
             </Border>
             <!--中间滑动区域-->
@@ -119,7 +119,7 @@
             <!--右按钮-->
             <Border Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" 
                     Visibility="{TemplateBinding local:YAttachProperty.YScrollBarButtonVisibility}">
-                <RepeatButton local:YAttachProperty.YIcon="&#xe605;"  Style="{StaticResource ScrollBarButton}"
+                <RepeatButton local:YAttachProperty.YIcon="&#xf0da;"  Style="{StaticResource ScrollBarButton}"
                               IsTabStop="False" Interval="50" Margin="0,1,0,0" Command="ScrollBar.LineRightCommand"/>
             </Border>
         </Grid>
@@ -145,7 +145,7 @@
             <!--上按钮-->
             <Border Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="VerticalSmallDecrease" 
                     Visibility="{TemplateBinding local:YAttachProperty.YScrollBarButtonVisibility}">
-                <RepeatButton local:YAttachProperty.YIcon="&#xe65d;"  Style="{StaticResource ScrollBarButton}"
+                <RepeatButton local:YAttachProperty.YIcon="&#xf0d8;"  Style="{StaticResource ScrollBarButton}"
                               IsTabStop="False" Interval="50" Margin="0" Command="ScrollBar.LineUpCommand"/>
             </Border>
             <!--中间滑动区域-->
@@ -168,7 +168,7 @@
             <!--下按钮-->
             <Border Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="VerticalSmallIncrease" 
                     Visibility="{TemplateBinding local:YAttachProperty.YScrollBarButtonVisibility}">
-                <RepeatButton local:YAttachProperty.YIcon="&#xe64b;"  Style="{StaticResource ScrollBarButton}"
+                <RepeatButton local:YAttachProperty.YIcon="&#xf0d7;"  Style="{StaticResource ScrollBarButton}"
                               IsTabStop="False" Interval="50" Margin="0" Command="ScrollBar.LineDownCommand"/>
             </Border>
         </Grid>

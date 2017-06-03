@@ -58,5 +58,7 @@
         <ScrollViewer Margin="10" Height="200" Width="300" HorizontalScrollBarVisibility="Auto">
             <TextBlock Text="测试" FontSize="300" Foreground="{StaticResource YTextForeground}"></TextBlock>
         </ScrollViewer>
+        <ListBox Margin="10" Height="100" ItemsSource="{Binding Data}">
+        </ListBox>
     </StackPanel>
 </Window>
