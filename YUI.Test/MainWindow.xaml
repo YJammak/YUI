@@ -19,7 +19,7 @@
                         <MenuItem Header="T1"></MenuItem>
                         <MenuItem Header="T1"></MenuItem>
                     </MenuItem>
-                    <MenuItem Header="T2"></MenuItem>
+                    <MenuItem Header="T2" IsChecked="True" IsCheckable="True"></MenuItem>
                     <MenuItem Header="T3"></MenuItem>
                     <Separator/>
                     <MenuItem Header="T4"></MenuItem>
@@ -28,7 +28,7 @@
             </TextBox.ContextMenu>
         </TextBox>
         <ToggleButton>你好</ToggleButton>
-        <CheckBox>测试CheckBox</CheckBox>
+        <CheckBox IsThreeState="True">测试CheckBox</CheckBox>
         <StackPanel Orientation="Horizontal">
             <RadioButton>测试1</RadioButton>
             <RadioButton>测试2</RadioButton>

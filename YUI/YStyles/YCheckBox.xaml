@@ -15,10 +15,10 @@
         <Setter Property="local:YAttachProperty.YIconMargin" Value="1, 1, 3, 1"/>
         <Setter Property="local:YAttachProperty.YIconSize" Value="14"/>
         <Setter Property="local:YAttachProperty.YCheckedForeground" Value="{StaticResource YTextForeground}"/>
-        <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#SF2015"/>
-        <Setter Property="local:YAttachProperty.YIcon" Value="&#xe68b;"/>
-        <Setter Property="local:YAttachProperty.YIconChecked" Value="&#xe660;"/>
-        <Setter Property="local:YAttachProperty.YIconCheckedNull" Value="&#xe68c;"/>
+        <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#FontAwesome"/>
+        <Setter Property="local:YAttachProperty.YIcon" Value="&#xf096;"/>
+        <Setter Property="local:YAttachProperty.YIconChecked" Value="&#xf046;"/>
+        <Setter Property="local:YAttachProperty.YIconCheckedNull" Value="&#xf0c8;"/>
         <Setter Property="local:YAttachProperty.YIconCheckedForeground" Value="{StaticResource YCheckedForeground}"/>
         <Setter Property="local:YAttachProperty.YIconMouseOverForeground" Value="{StaticResource YCheckedMouseoverForeground}"/>
         <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YTextForeground}"/>
