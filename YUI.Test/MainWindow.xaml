@@ -60,5 +60,16 @@
         </ScrollViewer>
         <ListBox Margin="10" Height="100" ItemsSource="{Binding Data}">
         </ListBox>
+        <TreeView Margin="10" Height="100">
+            <TreeViewItem Header="Test1">
+                <TreeViewItem Header="Test1"/>
+                <TreeViewItem Header="Test1"/>
+                <TreeViewItem Header="Test1"/>
+            </TreeViewItem>
+            <TreeViewItem Header="Test1"/>
+            <TreeViewItem Header="Test1"/>
+            <TreeViewItem Header="Test1"/>
+            <TreeViewItem Header="Test1"/>
+        </TreeView>
     </StackPanel>
 </Window>

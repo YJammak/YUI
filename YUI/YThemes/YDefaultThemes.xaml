@@ -17,6 +17,21 @@
     <Style TargetType="ScrollBar" BasedOn="{StaticResource YScrollBarDefaultStyle}"/>
     <Style TargetType="ListBox" BasedOn="{StaticResource YListBoxDefaultStyle}"/>
 
+    <Style x:Key="TreeViewItemStyle" TargetType="TreeViewItem" BasedOn="{StaticResource YTreeViewItemDefaultStyle}">
+        <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
+        <Setter Property="yui:YAttachProperty.YMouseOverForeground" Value="{StaticResource YItemMouseOverForeground}"/>
+        <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="{StaticResource YItemMouseOverBackground}"/>
+        <Setter Property="yui:YAttachProperty.YItemSelectedForeground" Value="{StaticResource YControlBackground}"/>
+        <Setter Property="yui:YAttachProperty.YItemSelectedBackground" Value="{StaticResource YItemSelectedBackground}"/>
+    </Style>
+
+    <Style TargetType="TreeViewItem" BasedOn="{StaticResource TreeViewItemStyle}"/>
+
+    <Style TargetType="TreeView">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource YControlBorderBrush}"/>
+    </Style>
+
     <Style x:Key="SeparatorStyle" TargetType="Separator" BasedOn="{StaticResource YHorizontalSeparatorStyle}">
         <Setter Property="Margin" Value="8 1 2 1"/>
         <Setter Property="Background" Value="#E0E0E0"/>
