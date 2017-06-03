@@ -10,7 +10,7 @@
         Title="MainWindow">
     <StackPanel DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
         <Button Width="80" Height="27" VerticalAlignment="Center" HorizontalAlignment="Center" Content="你好"
-                Click="ButtonBase_OnClick"/>
+                Click="ButtonBase_OnClick" Margin="5 20 5 5"/>
         <TextBox x:Name="textBox" Margin="10" yui:YAttachProperty.YWatermark="你好">
             <TextBox.ContextMenu>
                 <ContextMenu>
@@ -29,14 +29,14 @@
             </TextBox.ContextMenu>
         </TextBox>
         <PasswordBox Margin="10" yui:YAttachProperty.YWatermark="请输入密码"></PasswordBox>
-        <ToggleButton>你好</ToggleButton>
-        <CheckBox IsThreeState="True">测试CheckBox</CheckBox>
-        <StackPanel Orientation="Horizontal">
-            <RadioButton>测试1</RadioButton>
-            <RadioButton>测试2</RadioButton>
-            <RadioButton>测试3</RadioButton>
+        <ToggleButton Margin="10">你好</ToggleButton>
+        <CheckBox IsChecked="True" IsThreeState="True" Margin="10">测试CheckBox</CheckBox>
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <RadioButton IsChecked="True" Margin="0 0 10 0">测试1</RadioButton>
+            <RadioButton Margin="0 0 10 0">测试2</RadioButton>
+            <RadioButton Margin="0 0 10 0">测试3</RadioButton>
         </StackPanel>
-        <ComboBox Width="140" yui:YAttachProperty.YWatermark="选择一项">
+        <ComboBox Width="140" yui:YAttachProperty.YWatermark="选择一项" Margin="10">
             <TextBlock>Item1</TextBlock>
             <TextBlock>Item2</TextBlock>
             <TextBlock>Item3</TextBlock>
@@ -45,15 +45,18 @@
         </ComboBox>
         <yctr:YProgressRing Width="50" Height="50" Margin="5"></yctr:YProgressRing>
         <ProgressBar Value="0.4" Margin="10 3" Height="10" yui:YAttachProperty.YCornerRadius="5"></ProgressBar>
-        <Calendar/>
-        <DatePicker/>
-        <DataGrid Height="100" ItemsSource="{Binding Data}">
+        <Calendar Margin="10"/>
+        <DatePicker SelectedDate="2017-06-06" Margin="10"/>
+        <DataGrid Height="200" Width="300" ItemsSource="{Binding Data}" Margin="10">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
                 <DataGridTextColumn Header="名称" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="电话" Binding="{Binding Phone}"/>
-                <DataGridTextColumn Header="地址" Binding="{Binding Address }"/>
+                <DataGridTextColumn Header="地址" Binding="{Binding Address }" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
+        <ScrollViewer Margin="10" Height="200" Width="300" HorizontalScrollBarVisibility="Auto">
+            <TextBlock Text="测试" FontSize="300" Foreground="{StaticResource YTextForeground}"></TextBlock>
+        </ScrollViewer>
     </StackPanel>
 </Window>
