@@ -40,10 +40,14 @@
 
     <SolidColorBrush x:Key="YItemSelectedBackground" Color="DodgerBlue"/>
     <SolidColorBrush x:Key="YItemSelectedForeground" Color="#555555"/>
-    <SolidColorBrush x:Key="YItemMouseOverBackground" Color="#C0C0C0"/>
-    <SolidColorBrush x:Key="YItemMouseOverForeground" Color="#555555"/>
+    <SolidColorBrush x:Key="YItemMouseOverBackground" Color="White"/>
+    <SolidColorBrush x:Key="YItemMouseOverForeground" Color="DodgerBlue"/>
     <SolidColorBrush x:Key="YItemHighlighteBackground" Color="LightSkyBlue"/>
     <SolidColorBrush x:Key="YItemHighlighteForeground" Color="#555555"/>
+    
+    <SolidColorBrush x:Key="YDataGridHeaderBorderBrush" Color="#DDDDDD"/>
+    <SolidColorBrush x:Key="YDataGridLinesBrush" Color="#E8E8E8"/>
+    
 
     <!--边框-->
     <DropShadowEffect x:Key="YDropShadow" Color="Black" ShadowDepth="0" Opacity="0.5" />
