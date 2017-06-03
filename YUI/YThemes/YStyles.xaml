@@ -17,5 +17,6 @@
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YCalendar.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YDatePicker.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YDataGrid.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YPasswordBox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

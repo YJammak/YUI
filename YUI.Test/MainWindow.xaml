@@ -28,6 +28,7 @@
                 </ContextMenu>
             </TextBox.ContextMenu>
         </TextBox>
+        <PasswordBox Margin="10" yui:YAttachProperty.YWatermark="请输入密码"></PasswordBox>
         <ToggleButton>你好</ToggleButton>
         <CheckBox IsThreeState="True">测试CheckBox</CheckBox>
         <StackPanel Orientation="Horizontal">

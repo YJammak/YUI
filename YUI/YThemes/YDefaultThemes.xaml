@@ -12,6 +12,7 @@
     <Style TargetType="RadioButton" BasedOn="{StaticResource YRadioButtonDefaultStyle}"/>
     <Style TargetType="ComboBox" BasedOn="{StaticResource YComboBoxDefaultStyle}"/>
     <Style TargetType="ProgressBar" BasedOn="{StaticResource YProgressBarDefaultStyle}"/>
+    <Style TargetType="PasswordBox" BasedOn="{StaticResource YPasswordBoxDefaultStyle}"/>
 
     <Style x:Key="SeparatorStyle" TargetType="Separator" BasedOn="{StaticResource YHorizontalSeparatorStyle}">
         <Setter Property="Margin" Value="8 1 2 1"/>
