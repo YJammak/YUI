@@ -17,7 +17,7 @@
         <Setter Property="Width" Value="Auto"/>
         <Setter Property="Margin" Value="1"/>
         <Setter Property="local:YAttachProperty.YIconSize" Value="18"/>
-        <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/#FontAwesome"/>
+        <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#FontAwesome"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type MenuItem}">
@@ -35,7 +35,7 @@
                             <TextBlock x:Name="PART_Icon" Text="{TemplateBinding Icon}" Foreground="{TemplateBinding Foreground}" 
                                        Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"
                                        FontSize="{TemplateBinding local:YAttachProperty.YIconSize}" Style="{StaticResource YIcon}"
-                                       FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}"
+                                       FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}" Background="Transparent"
                             />
                             <!--Header-->
                             <ContentPresenter Grid.Column="1" x:Name="txtHeader" Margin="3,1,5,1" MinWidth="90"
@@ -45,7 +45,7 @@
                                        FontSize="{TemplateBinding FontSize}"
                                        VerticalAlignment="Center" Visibility="Visible" Foreground="{TemplateBinding Foreground}" />
                             <!--右指针-->
-                            <TextBlock x:Name="PART_Arrow" Grid.Column="3" Text="&#xe605;" Foreground="{TemplateBinding Foreground}" 
+                            <TextBlock x:Name="PART_Arrow" Grid.Column="3" Text="&#xf0da;" Foreground="{TemplateBinding Foreground}" 
                                        FontSize="14">
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock" BasedOn="{StaticResource YIcon}">
@@ -101,7 +101,7 @@
                         </Trigger>
                         <!--选中状态，优先级将高于Icon-->
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="PART_Icon" Value="&#xe62a;" Property="Text"></Setter>
+                            <Setter TargetName="PART_Icon" Value="&#xf00c;" Property="Text"></Setter>
                             <Setter TargetName="PART_Icon" Value="18" Property="FontSize"></Setter>
                             <Setter TargetName="PART_Icon" Value="{StaticResource YCheckedForeground}" Property="Foreground"></Setter>
                         </Trigger>
@@ -225,10 +225,10 @@
                            FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}"
                            Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"/>
                 <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left" Name="HeaderHost" Grid.Column="1" ContentSource="Header" RecognizesAccessKey="True"/>
-                <Border Grid.Column="0" Name="Check" Width="13" Height="13" Visibility="Collapsed" Margin="6,0,6,0" 
-                        Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}">
-                    <Path Name="CheckMark" Width="7" Height="7"  Visibility="Hidden"  SnapsToDevicePixels="False"
-                          Stroke="{TemplateBinding Foreground}" StrokeThickness="2" Data="M 0 0 L 7 7 M 0 7 L 7 0" />
+                <Border Grid.Column="0" Name="Check" Visibility="Collapsed" Margin="3 0 5 0" 
+                        Background="Transparent" BorderThickness="0" VerticalAlignment="Center">
+                    <TextBlock x:Name="CheckMark" FontFamily="/YUI;component/Resources/Fonts/#FontAwesome" Text="&#xf00c;" Foreground="{StaticResource YCheckedForeground}"
+                               Background="Transparent" Visibility="Hidden" VerticalAlignment="Center"/>
                 </Border>
                 <TextBlock x:Name="InputGestureText" Grid.Column="2" 
                            Text="{TemplateBinding InputGestureText}" Margin="5,2,0,2" DockPanel.Dock="Right" />
@@ -243,7 +243,7 @@
             </Trigger>
             <Trigger Property="IsCheckable" Value="true">
                 <Setter TargetName="Check" Property="Visibility" Value="Visible"/>
-                <Setter TargetName="PART_Icon" Property="Visibility" Value="Hidden"/>
+                <Setter TargetName="PART_Icon" Property="Visibility" Value="Collapsed"/>
             </Trigger>
             <Trigger Property="IsHighlighted" Value="true">
                 <Setter TargetName="Border" Property="Background" 
@@ -323,7 +323,7 @@
         <Setter Property="local:YAttachProperty.YPressedBackground" Value="{StaticResource YMenuPressedBackground}"/>
         <Setter Property="FontSize" Value="{StaticResource YFontSize}"/>
         <Setter Property="local:YAttachProperty.YIconSize" Value="18"/>
-        <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/#SF2015"/>
+        <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#FontAwesome"/>
         <Setter Property="local:YAttachProperty.YCornerRadius" Value="0"/>
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="local:YAttachProperty.YMenuPopupBackground" Value="{StaticResource YMenuMouseOverForeground}"/>
@@ -372,7 +372,7 @@
                     <Setter Property="Width" Value="Auto"/>
                     <Setter Property="Margin" Value="1"/>
                     <Setter Property="local:YAttachProperty.YIconSize" Value="18"/>
-                    <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/#SF2015"/>
+                    <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#FontAwesome"/>
                     <Setter Property="local:YAttachProperty.YCornerRadius" Value="{Binding Path=(local:YAttachProperty.YMenuPopupCornerRadius), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Menu}, AncestorLevel=1}}"/>
                     <Setter Property="Template">
                         <Setter.Value>
@@ -389,7 +389,7 @@
                                         <!--icon-->
                                         <TextBlock x:Name="PART_Icon" Text="{TemplateBinding Icon}" Foreground="{TemplateBinding Foreground}" Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"
                                                    FontSize="{TemplateBinding local:YAttachProperty.YIconSize}" Style="{StaticResource YIcon}"
-                                                   FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}"
+                                                   FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}" Background="Transparent"
                                         />
                                         <!--Header-->
                                         <ContentPresenter Grid.Column="1" x:Name="txtHeader" Margin="3,1,5,1" MinWidth="90"
@@ -399,7 +399,7 @@
                                                    FontSize="{TemplateBinding FontSize}"
                                                    VerticalAlignment="Center" Visibility="Visible" Foreground="{TemplateBinding Foreground}" />
                                         <!--右指针-->
-                                        <TextBlock x:Name="PART_Arrow" Grid.Column="3" Text="&#xe605;" Foreground="{TemplateBinding Foreground}" Style="{StaticResource YIcon}"/>
+                                        <TextBlock x:Name="PART_Arrow" Grid.Column="3" Text="&#xf0da;" Foreground="{TemplateBinding Foreground}" Style="{StaticResource YIcon}"/>
                                         <!--淡出子集菜单容器-->
                                         <Popup Grid.Column="0" x:Name="SubMenuPopup" AllowsTransparency="true" 
                                                IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" 
@@ -451,7 +451,7 @@
                                     </Trigger>
                                     <!--选中状态，优先级将高于Icon-->
                                     <Trigger Property="IsChecked" Value="True">
-                                        <Setter TargetName="PART_Icon" Value="&#xe62a;" Property="Text"></Setter>
+                                        <Setter TargetName="PART_Icon" Value="&#xf00c;" Property="Text"></Setter>
                                         <Setter TargetName="PART_Icon" Value="18" Property="FontSize"></Setter>
                                         <Setter TargetName="PART_Icon" Value="{StaticResource YCheckedForeground}" Property="Foreground"></Setter>
                                     </Trigger>
@@ -519,7 +519,7 @@
                     <Setter Property="Width" Value="Auto"/>
                     <Setter Property="Margin" Value="1"/>
                     <Setter Property="local:YAttachProperty.YIconSize" Value="18"/>
-                    <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/#SF2015"/>
+                    <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#FontAwesome"/>
                     <Setter Property="local:YAttachProperty.YCornerRadius" Value="{Binding Path=(local:YAttachProperty.YMenuPopupCornerRadius), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Menu}, AncestorLevel=1}}"/>
                     <Setter Property="Template">
                         <Setter.Value>
@@ -536,7 +536,7 @@
                                         <!--icon-->
                                         <TextBlock x:Name="PART_Icon" Text="{TemplateBinding Icon}" Foreground="{TemplateBinding Foreground}" Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"
                                                    FontSize="{TemplateBinding local:YAttachProperty.YIconSize}" Style="{StaticResource YIcon}"
-                                                   FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}"
+                                                   FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}" Background="Transparent"
                                         />
                                         <!--Header-->
                                         <ContentPresenter Grid.Column="1" x:Name="txtHeader" Margin="3,1,5,1" MinWidth="90"
@@ -546,7 +546,7 @@
                                                    FontSize="{TemplateBinding FontSize}"
                                                    VerticalAlignment="Center" Visibility="Visible" Foreground="{TemplateBinding Foreground}" />
                                         <!--右指针-->
-                                        <TextBlock x:Name="PART_Arrow" Grid.Column="3" Text="&#xe605;" Foreground="{TemplateBinding Foreground}" Style="{StaticResource YIcon}"/>
+                                        <TextBlock x:Name="PART_Arrow" Grid.Column="3" Text="&#xf0da;" Foreground="{TemplateBinding Foreground}" Style="{StaticResource YIcon}"/>
                                         <!--淡出子集菜单容器-->
                                         <Popup Grid.Column="0" x:Name="SubMenuPopup" AllowsTransparency="true" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" 
                                                Placement="Bottom"  Focusable="false" VerticalOffset="0"
@@ -595,7 +595,7 @@
                                     </Trigger>
                                     <!--选中状态，优先级将高于Icon-->
                                     <Trigger Property="IsChecked" Value="True">
-                                        <Setter TargetName="PART_Icon" Value="&#xe62a;" Property="Text"></Setter>
+                                        <Setter TargetName="PART_Icon" Value="&#xf00c;" Property="Text"></Setter>
                                         <Setter TargetName="PART_Icon" Value="18" Property="FontSize"></Setter>
                                         <Setter TargetName="PART_Icon" Value="{StaticResource YCheckedForeground}" Property="Foreground"></Setter>
                                     </Trigger>
