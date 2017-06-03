@@ -8,7 +8,7 @@
         xmlns:yctr="clr-namespace:YUI.YControls;assembly=YUI"
         mc:Ignorable="d" SizeToContent="WidthAndHeight"
         Title="MainWindow">
-    <StackPanel>
+    <StackPanel DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
         <Button Width="80" Height="27" VerticalAlignment="Center" HorizontalAlignment="Center" Content="你好"/>
         <TextBox Margin="10" yui:YAttachProperty.YWatermark="你好">
             <TextBox.ContextMenu>
@@ -45,5 +45,13 @@
         <ProgressBar Value="0.4" Margin="10 3" Height="16" yui:YAttachProperty.YCornerRadius="8"></ProgressBar>
         <Calendar/>
         <DatePicker/>
+        <DataGrid Height="100" ItemsSource="{Binding Data}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                <DataGridTextColumn Header="名称" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="电话" Binding="{Binding Phone}"/>
+                <DataGridTextColumn Header="地址" Binding="{Binding Address }"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </StackPanel>
 </Window>

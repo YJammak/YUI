@@ -118,4 +118,48 @@
         <Setter Property="yui:YAttachProperty.YCornerRadius" Value="2"/>
         <Setter Property="CalendarStyle" Value="{StaticResource DatePickerCalendarStyle}" />
     </Style>
+
+    <Style x:Key="DataGridColumnHeaderStyle" TargetType="DataGridColumnHeader" BasedOn="{StaticResource YDataGridColumnHeaderDefaultStyle}">
+        <Setter Property="BorderThickness" Value="0 0 0 1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource YControlBorderBrush}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="MinHeight" Value="20"/>
+    </Style>
+
+    <!--行样式-->
+    <Style x:Key="DataGridRowStyle" TargetType="{x:Type DataGridRow}">
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
+        <Style.Triggers>
+            <Trigger Property="AlternationIndex" Value="0" >
+                <Setter Property="Background" Value="White" />
+            </Trigger>
+            <Trigger Property="AlternationIndex" Value="1">
+                <Setter Property="Background" Value="#F5F5F5" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource YItemMouseOverBackground}"/>
+                <Setter Property="Foreground" Value="{StaticResource YItemMouseOverForeground}" />
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{StaticResource YItemSelectedBackground}" />
+                <Setter Property="Foreground" Value="White" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="DataGridStyle" TargetType="DataGrid" BasedOn="{StaticResource YDataGridDefaultStyle}">
+        <Setter Property="MinRowHeight" Value="20" />
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="{StaticResource YMouseOverBorderBrush}"/>
+        <Setter Property="ColumnHeaderStyle" Value="{StaticResource DataGridColumnHeaderStyle}"/>
+        <Setter Property="RowStyle" Value="{StaticResource DataGridRowStyle}"/>
+        <Setter Property="yui:YAttachProperty.YGridTopRightBorderThickness" Value="0 0 0 1"/>
+        <Setter Property="CanUserAddRows" Value="False"/>
+        <Setter Property="CanUserResizeRows" Value="False"/>
+        <Setter Property="CanUserDeleteRows" Value="False"/>
+    </Style>
+
+    <Style TargetType="DataGrid" BasedOn="{StaticResource DataGridStyle}"/>
 </ResourceDictionary>
