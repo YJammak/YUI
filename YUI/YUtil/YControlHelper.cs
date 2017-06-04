@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -11,6 +12,25 @@ namespace YUI.YUtil
     /// </summary>
     public static class YControlHelper
     {
+        /// <summary>
+        /// 绑定命令和命令事件到宿主UI
+        /// </summary>
+        public static void BindCommand(this UIElement @ui, ICommand com, Action<object, ExecutedRoutedEventArgs> call)
+        {
+            var bind = new CommandBinding(com);
+            bind.Executed += new ExecutedRoutedEventHandler(call);
+            @ui.CommandBindings.Add(bind);
+        }
+
+        /// <summary>
+        /// 绑定RelayCommand命令到宿主UI
+        /// </summary>
+        public static void BindCommand(this UIElement @ui, ICommand com)
+        {
+            var bind = new CommandBinding(com);
+            @ui.CommandBindings.Add(bind);
+        }
+
         /// <summary>
         /// 计算文字长度
         /// </summary>

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Reflection;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace YUI.YUtil
 {
@@ -62,6 +64,21 @@ namespace YUI.YUtil
         {
             var dpi = GetDpiInfo();
             return new Point(p.X / dpi.DpiXScale, p.Y / dpi.DpiYScale);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public static ImageSource GetIcon(string fileName)
+        {
+            var icon = System.Drawing.Icon.ExtractAssociatedIcon(fileName);
+            if (icon == null) return null;
+            return System.Windows.Interop.Imaging.CreateBitmapSourceFromHIcon(
+                icon.Handle,
+                new Int32Rect(0, 0, icon.Width, icon.Height),
+                BitmapSizeOptions.FromEmptyOptions());
         }
     }
 }

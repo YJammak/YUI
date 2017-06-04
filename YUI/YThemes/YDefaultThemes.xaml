@@ -16,6 +16,7 @@
     <Style TargetType="ScrollViewer" BasedOn="{StaticResource YScrollViewerDefaultStyle}"/>
     <Style TargetType="ScrollBar" BasedOn="{StaticResource YScrollBarDefaultStyle}"/>
     <Style TargetType="ListBox" BasedOn="{StaticResource YListBoxDefaultStyle}"/>
+    <Style TargetType="ToolTip" BasedOn="{StaticResource YToolTipDefaultStyle}"/>
 
     <Style x:Key="TreeViewItemStyle" TargetType="TreeViewItem" BasedOn="{StaticResource YTreeViewItemDefaultStyle}">
         <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
@@ -171,7 +172,6 @@
     <Style x:Key="DataGridStyle" TargetType="DataGrid" BasedOn="{StaticResource YDataGridDefaultStyle}">
         <Setter Property="MinRowHeight" Value="20" />
         <Setter Property="Background" Value="White"/>
-        <Setter Property="BorderBrush" Value="{StaticResource YMouseOverBorderBrush}"/>
         <Setter Property="ColumnHeaderStyle" Value="{StaticResource DataGridColumnHeaderStyle}"/>
         <Setter Property="RowStyle" Value="{StaticResource DataGridRowStyle}"/>
         <Setter Property="yui:YAttachProperty.YGridTopRightBorderThickness" Value="0 0 0 1"/>

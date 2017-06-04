@@ -69,5 +69,34 @@ namespace YUI.YProperties
         }
 
         #endregion
+
+        #region YHasHeaderPropert 是否含有Header
+        /// <summary>
+        /// 背景色附加属性
+        /// </summary>
+        public static readonly DependencyProperty YHasHeaderPropert = DependencyProperty.RegisterAttached(
+            "YHasHeader", typeof(bool), typeof(YAttachProperty), new FrameworkPropertyMetadata(true));
+
+        /// <summary>
+        /// 设置背景色附加属性
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="value"></param>
+        public static void SetYHasHeader(DependencyObject element, bool value)
+        {
+            element.SetValue(YHasHeaderPropert, value);
+        }
+
+        /// <summary>
+        /// 获取景色附加属性
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        public static bool GetYHasHeader(DependencyObject element)
+        {
+            return (bool)element.GetValue(YHasHeaderPropert);
+        }
+
+        #endregion
     }
 }

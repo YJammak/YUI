@@ -3,6 +3,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YConverters/YConverters.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YControls/YProgressRing.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YControls/YWindow.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YShare.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YIcon.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YButton.xaml"/>
@@ -21,5 +22,6 @@
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YScrollViewer.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YListBox.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YTreeView.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YToolTip.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
