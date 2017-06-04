@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Windows;
 
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
@@ -21,6 +21,15 @@ using System.Runtime.InteropServices;
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
 [assembly: Guid("85316835-3f20-460e-a20d-918566b5cd43")]
+
+[assembly: ThemeInfo(
+    ResourceDictionaryLocation.None, //主题特定资源词典所处位置
+    //(在页面或应用程序资源词典中 
+    // 未找到某个资源的情况下使用)
+    ResourceDictionaryLocation.SourceAssembly //常规资源词典所处位置
+    //(在页面、应用程序或任何主题特定资源词典中 
+    // 未找到某个资源的情况下使用)
+)]
 
 // 程序集的版本信息由下列四个值组成: 
 //

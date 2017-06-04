@@ -66,15 +66,33 @@ namespace YUI.YUtil
         {
             if (wc == null)
             {
-                wc = new WindowChrome
+                switch (w.ResizeMode)
                 {
-                    CaptionHeight = 0,
-                    GlassFrameThickness = new Thickness(7),
-                    CornerRadius = new CornerRadius(0),
-                    UseAeroCaptionButtons = true,
-                    ResizeBorderThickness = new Thickness(6)
-                };
+                    case ResizeMode.NoResize:
+                    case ResizeMode.CanResizeWithGrip:
+                    case ResizeMode.CanMinimize:
+                        wc = new WindowChrome
+                        {
+                            CaptionHeight = 0,
+                            GlassFrameThickness = new Thickness(0),
+                            CornerRadius = new CornerRadius(0),
+                            UseAeroCaptionButtons = true,
+                            ResizeBorderThickness = new Thickness(0)
+                        };
+                        break;
+                    case ResizeMode.CanResize:
+                        wc = new WindowChrome
+                        {
+                            CaptionHeight = 0,
+                            GlassFrameThickness = new Thickness(7),
+                            CornerRadius = new CornerRadius(0),
+                            UseAeroCaptionButtons = true,
+                            ResizeBorderThickness = new Thickness(6)
+                        };
+                        break;
+                }
             }
+
             WindowChrome.SetWindowChrome(w, wc);
         }
 

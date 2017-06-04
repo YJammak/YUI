@@ -1,0 +1,192 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:YUI.YControls"
+                    xmlns:yui="clr-namespace:YUI.YProperties">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/Colors.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YButton.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="WindowTemplateKey" TargetType="{x:Type local:YWindow}">
+        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+            <Grid>
+                <AdornerDecorator>
+                    <ContentPresenter/>
+                </AdornerDecorator>
+                <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" IsTabStop="false" Visibility="Collapsed" VerticalAlignment="Bottom"/>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="ResizeMode" Value="CanResizeWithGrip"/>
+                    <Condition Property="WindowState" Value="Normal"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="Visibility" TargetName="WindowResizeGrip" Value="Visible"/>
+            </MultiTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="Button" x:Key="WindowButton" BasedOn="{StaticResource YButtonDefaultStyle}">
+        <Setter Property="Width" Value="26"/>
+        <Setter Property="Height" Value="26"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="yui:YAttachProperty.YIconForeground" Value="#CC000000"/>
+        <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="#11000000"/>
+        <Setter Property="yui:YAttachProperty.YPressedBackground" Value="#33000000"/>
+        <Setter Property="yui:YAttachProperty.YIconMouseOverForeground" Value="LightSkyBlue"/>
+        <Setter Property="yui:YAttachProperty.YIconPressedForeground" Value="LightSkyBlue"/>
+        <Setter Property="yui:YAttachProperty.YCornerRadius" Value="0"/>
+        <Setter Property="yui:YAttachProperty.YIconSize" Value="14"/>
+        <Setter Property="yui:YAttachProperty.YIconFontFamily" Value="../Resources/Fonts/#iconfont"/>
+    </Style>
+
+    <Style x:Key="YWindowDefaultStyle" TargetType="{x:Type local:YWindow}">
+        <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
+        <Setter Property="yui:YAttachProperty.YCornerRadius" Value="3"/>
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="yui:YAttachProperty.YHeaderBackground" Value="{StaticResource YControlBackground}"/>
+        <Setter Property="yui:YAttachProperty.YHeaderForeground" Value="{StaticResource YTextForeground}"/>
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome CaptionHeight="0" ResizeBorderThickness="6" GlassFrameThickness="7"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:YWindow}">
+                    <Grid>
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="White"
+                                CornerRadius="{TemplateBinding yui:YAttachProperty.YCornerRadius}"
+                                x:Name="MainBorder">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:YWindow}}, Path=WindowState}" Value="Normal">
+                                            <Setter Property="Margin" Value="5"/>
+                                            <Setter Property="Effect" Value="{StaticResource YDropShadow}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Border x:Name="PART_Header" Background="{TemplateBinding yui:YAttachProperty.YHeaderBackground}">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:YWindow}}, Path=WindowState}" Value="Normal">
+                                                    <Setter Property="CornerRadius" Value="3 3 0 0"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Path=(yui:YAttachProperty.YHasHeader), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:YWindow}}}"
+                                                             Value="False">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <StackPanel Orientation="Horizontal" Margin="5">
+                                        <Image Width="20" Height="20" Source="{TemplateBinding Icon}" VerticalAlignment="Center"/>
+                                        <TextBlock Margin="6 0 0 0" VerticalAlignment="Center" Text="{TemplateBinding Title}"
+                                                   Foreground="{TemplateBinding yui:YAttachProperty.YHeaderForeground}"/>
+                                    </StackPanel>
+                                </Border>
+                                <AdornerDecorator Grid.Row="1">
+                                    <ContentPresenter Content="{TemplateBinding Content}" />
+                                </AdornerDecorator>
+                                <StackPanel Grid.Row="0" Grid.RowSpan="2" Orientation="Horizontal"
+                                            VerticalAlignment="Top" 
+                                            HorizontalAlignment="Right"
+                                            Margin="0">
+                                    <Button yui:YAttachProperty.YIcon="&#xe60a;" 
+                                            Command="{Binding MinimizeWindowCommand, RelativeSource={RelativeSource TemplatedParent}}"
+                                            ToolTip="最小化"
+                                            yui:YAttachProperty.YIconMargin="0 0 0 -7">
+                                        <Button.Style>
+                                            <Style BasedOn="{StaticResource WindowButton}" TargetType="Button">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Path=ResizeMode,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:YWindow}}}"
+                                                                 Value="NoResize">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Path=ResizeMode,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:YWindow}}}"
+                                                                 Value="CanResizeWithGrip">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                    <Button Command="{Binding MaximizeWindowCommand, RelativeSource={RelativeSource TemplatedParent}}">
+                                        <Button.Style>
+                                            <Style BasedOn="{StaticResource WindowButton}" TargetType="Button">
+                                                <Setter Property="yui:YAttachProperty.YIcon" Value="&#xe611;"/>
+                                                <Setter Property="yui:YAttachProperty.YIconSize" Value="16"/>
+                                                <Setter Property="yui:YAttachProperty.YIconMargin" Value="0"/>
+                                                <Setter Property="ToolTip" Value="向下还原"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Path=WindowState,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:YWindow}}}"
+                                                                 Value="Normal">
+                                                        <Setter Property="yui:YAttachProperty.YIcon" Value="&#xe616;"/>
+                                                        <Setter Property="ToolTip" Value="最大化"/>
+                                                        <Setter Property="yui:YAttachProperty.YIconSize" Value="20"/>
+                                                        <Setter Property="yui:YAttachProperty.YIconMargin" Value="0 0 0 -4"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Path=ResizeMode,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:YWindow}}}"
+                                                                 Value="NoResize">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Path=ResizeMode,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:YWindow}}}"
+                                                                 Value="CanMinimize">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Path=ResizeMode,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:YWindow}}}"
+                                                                 Value="CanResizeWithGrip">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                    <Button yui:YAttachProperty.YIcon="&#xe60c;" 
+                                            yui:YAttachProperty.YMouseOverBackground="#DD0000"
+                                            yui:YAttachProperty.YPressedBackground="DarkRed"
+                                            yui:YAttachProperty.YIconMouseOverForeground="{StaticResource YControlBackground}"
+                                            yui:YAttachProperty.YIconPressedForeground="{StaticResource YControlBackground}"
+                                            Command="{Binding CloseWindowCommand, RelativeSource={RelativeSource TemplatedParent}}"
+                                            ToolTip="关闭">
+                                        <Button.Style>
+                                            <Style BasedOn="{StaticResource WindowButton}" TargetType="Button">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Path=WindowState,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:YWindow}}}"
+                                                                 Value="Normal">
+                                                        <Setter Property="yui:YAttachProperty.YCornerRadius" Value="0 3 0 0"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="WindowState" Value="Maximized">
+                <Setter Property="yui:YAttachProperty.YCornerRadius" Value="0"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="local:YWindow" BasedOn="{StaticResource YWindowDefaultStyle}"/>
+</ResourceDictionary>

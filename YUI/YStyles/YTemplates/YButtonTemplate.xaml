@@ -105,17 +105,17 @@
             </Trigger>
             <!--设置鼠标进入时的背景、前景样式-->
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground),RelativeSource={RelativeSource Self}}" TargetName="border" />
-                <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground),RelativeSource={RelativeSource Self}}" TargetName="icon"/>
-                <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground),RelativeSource={RelativeSource Self}}" TargetName="txt"/>
-                <Setter Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YMouseOverBorderBrush),RelativeSource={RelativeSource Self}}" TargetName="border"/>
+                <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border" />
+                <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YIconMouseOverForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="icon"/>
+                <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="txt"/>
+                <Setter Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YMouseOverBorderBrush),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>
             </Trigger>
             <!--鼠标按下时的前景、背景样式-->
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YPressedBackground),RelativeSource={RelativeSource Self}}" TargetName="border" />
-                <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YPressedForeground),RelativeSource={RelativeSource Self}}" TargetName="icon"/>
-                <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YPressedForeground),RelativeSource={RelativeSource Self}}" TargetName="txt"/>
-                <Setter Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YPressedBorderBrush),RelativeSource={RelativeSource Self}}" TargetName="border"/>
+                <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YPressedBackground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border" />
+                <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YIconPressedForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="icon"/>
+                <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YPressedForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="txt"/>
+                <Setter Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YPressedBorderBrush),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
                 <Setter Property="Opacity" Value="0.5" TargetName="border"/>
