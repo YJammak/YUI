@@ -54,6 +54,7 @@ namespace YUI.Test
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             textBox.PopupToolTip("这是弹出信息");
+            YMessageBox.ShowWindow("这是测试信息", "这是测试标题", MessageBoxButton.OKCancel, MessageBoxImage.Information);
         }
     }
 }
