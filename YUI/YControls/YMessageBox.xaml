@@ -9,7 +9,7 @@
                Title="YMessageBox" ResizeMode="NoResize" UseLayoutRounding="True" SizeToContent="WidthAndHeight"
                SnapsToDevicePixels="True" MinWidth="300" Background="Transparent" WindowStyle="None"
                yui:YAttachProperty.YIconForeground="DodgerBlue"
-               >
+              >
     <local:YWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

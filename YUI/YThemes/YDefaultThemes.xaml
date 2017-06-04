@@ -94,13 +94,13 @@
             <Setter.Value>
                 <Style TargetType="Button" BasedOn="{StaticResource YButtonDefaultStyle}">
                     <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-                    <Setter Property="Background" Value="{StaticResource YControlBackground}" />
-                    <Setter Property="Foreground" Value="#777777" />
-                    <Setter Property="yui:YAttachProperty.YIconForeground" Value="#777777" />
-                    <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="{StaticResource YControlBackground}" />
-                    <Setter Property="yui:YAttachProperty.YMouseOverForeground" Value="{StaticResource YItemSelectedBackground}" />
-                    <Setter Property="yui:YAttachProperty.YPressedBackground" Value="{StaticResource YControlBackground}" />
-                    <Setter Property="yui:YAttachProperty.YPressedForeground" Value="CornflowerBlue" />
+                    <Setter Property="Background" Value="{StaticResource YControlBackground}"/>
+                    <Setter Property="Foreground" Value="#777777"/>
+                    <Setter Property="yui:YAttachProperty.YIconForeground" Value="#777777"/>
+                    <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="{StaticResource YControlBackground}"/>
+                    <Setter Property="yui:YAttachProperty.YMouseOverForeground" Value="{StaticResource YItemSelectedBackground}"/>
+                    <Setter Property="yui:YAttachProperty.YPressedBackground" Value="{StaticResource YControlBackground}"/>
+                    <Setter Property="yui:YAttachProperty.YPressedForeground" Value="CornflowerBlue"/>
                     <Setter Property="yui:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#fontawesome"/>
                     <Setter Property="FontSize" Value="14"/>
                 </Style>
@@ -119,24 +119,24 @@
     </Style>
 
     <Style x:Key="DatePickerCalendarStyle" TargetType="Calendar" BasedOn="{StaticResource YCalendarDefaultStyle}">
-        <Setter Property="CalendarDayButtonStyle" Value="{StaticResource DatePickerCalendarDayButtonStyle}" />
-        <Setter Property="CalendarItemStyle" Value="{StaticResource DatePickerCalendarItemStyle}" />
-        <Setter Property="CalendarButtonStyle" Value="{StaticResource DatePickerCalendarButtonStyle}" />
+        <Setter Property="CalendarDayButtonStyle" Value="{StaticResource DatePickerCalendarDayButtonStyle}"/>
+        <Setter Property="CalendarItemStyle" Value="{StaticResource DatePickerCalendarItemStyle}"/>
+        <Setter Property="CalendarButtonStyle" Value="{StaticResource DatePickerCalendarButtonStyle}"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="FontSize" Value="5" />
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="5"/>
         <Setter Property="Effect" Value="{StaticResource YDropShadow}"/>
     </Style>
 
     <Style TargetType="Calendar" BasedOn="{StaticResource DatePickerCalendarStyle}"/>
 
     <Style TargetType="DatePicker" BasedOn="{StaticResource YDatePickerDefaultStyle}">
-        <Setter Property="Background" Value="White" />
-        <Setter Property="MinHeight" Value="20" />
-        <Setter Property="Height" Value="24" />
-        <Setter Property="Width" Value="120" />
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Width" Value="120"/>
         <Setter Property="yui:YAttachProperty.YCornerRadius" Value="2"/>
-        <Setter Property="CalendarStyle" Value="{StaticResource DatePickerCalendarStyle}" />
+        <Setter Property="CalendarStyle" Value="{StaticResource DatePickerCalendarStyle}"/>
     </Style>
 
     <Style x:Key="DataGridColumnHeaderStyle" TargetType="DataGridColumnHeader" BasedOn="{StaticResource YDataGridColumnHeaderDefaultStyle}">
@@ -149,28 +149,28 @@
 
     <!--行样式-->
     <Style x:Key="DataGridRowStyle" TargetType="{x:Type DataGridRow}">
-        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="Margin" Value="0,0,0,0"/>
         <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
         <Style.Triggers>
-            <Trigger Property="AlternationIndex" Value="0" >
-                <Setter Property="Background" Value="White" />
+            <Trigger Property="AlternationIndex" Value="0">
+                <Setter Property="Background" Value="White"/>
             </Trigger>
             <Trigger Property="AlternationIndex" Value="1">
-                <Setter Property="Background" Value="#F5F5F5" />
+                <Setter Property="Background" Value="#F5F5F5"/>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{StaticResource YItemMouseOverBackground}"/>
-                <Setter Property="Foreground" Value="{StaticResource YItemMouseOverForeground}" />
+                <Setter Property="Foreground" Value="{StaticResource YItemMouseOverForeground}"/>
             </Trigger>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="{StaticResource YItemSelectedBackground}" />
-                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Background" Value="{StaticResource YItemSelectedBackground}"/>
+                <Setter Property="Foreground" Value="White"/>
             </Trigger>
         </Style.Triggers>
     </Style>
 
     <Style x:Key="DataGridStyle" TargetType="DataGrid" BasedOn="{StaticResource YDataGridDefaultStyle}">
-        <Setter Property="MinRowHeight" Value="20" />
+        <Setter Property="MinRowHeight" Value="20"/>
         <Setter Property="Background" Value="White"/>
         <Setter Property="ColumnHeaderStyle" Value="{StaticResource DataGridColumnHeaderStyle}"/>
         <Setter Property="RowStyle" Value="{StaticResource DataGridRowStyle}"/>

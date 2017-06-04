@@ -12,7 +12,7 @@
                             CornerRadius="1" Background="{StaticResource YControlBackground}"
                             Effect="{StaticResource YDropShadow}">
                         <Grid Effect="{x:Null}">
-                            <ContentPresenter Margin="1" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                            <ContentPresenter Margin="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Grid>
                     </Border>
                 </ControlTemplate>

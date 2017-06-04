@@ -32,7 +32,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="10,4,4,7"/>
         <Setter Property="Margin" Value="0,0,0,0"/>
-        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="FontSize" Value="{StaticResource YHeaderFontSize}"/>
         <Setter Property="BorderThickness" Value="0,0,0,2"/>
         <Setter Property="BorderBrush" Value="{StaticResource YDataGridHeaderBorderBrush}"/>
@@ -85,7 +85,7 @@
                         </MultiTrigger>
                         <!--可排序列鼠标样式-->
                         <Trigger Property="CanUserSort" Value="True">
-                            <Setter Property="Cursor" Value="Hand"></Setter>
+                            <Setter Property="Cursor" Value="Hand"/>
                         </Trigger>
                         <Trigger Property="CanUserSort" Value="False">
                             <Setter TargetName="SortArrow" Property="Visibility" Value="Collapsed"/>
@@ -113,7 +113,7 @@
     <Style x:Key="YDataGridRowDefaultStyle" TargetType="{x:Type DataGridRow}">
         <Setter Property="Margin" Value="0,0,0,0"/>
         <Style.Triggers>
-            <Trigger Property="AlternationIndex" Value="0" >
+            <Trigger Property="AlternationIndex" Value="0">
                 <Setter Property="Background" Value="#e7e7e7"/>
                 <Setter Property="Foreground" Value="Black"/>
             </Trigger>

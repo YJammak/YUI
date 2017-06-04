@@ -56,9 +56,9 @@
     <SolidColorBrush x:Key="YScrollBarPressedBackground" Color="#11000000"></SolidColorBrush>
 
     <!--边框-->
-    <DropShadowEffect x:Key="YDropShadow" Color="Black" ShadowDepth="0" Opacity="0.5" />
+    <DropShadowEffect x:Key="YDropShadow" Color="Black" ShadowDepth="0" Opacity="0.5"/>
 
-    <FontFamily x:Key="YFontFamily" >微软雅黑</FontFamily>
+    <FontFamily x:Key="YFontFamily">微软雅黑</FontFamily>
     <sys:Double x:Key="YFontSize">12</sys:Double>
     <sys:Double x:Key="YHeaderFontSize">14</sys:Double>
     <sys:Double x:Key="YDisableOpacity">0.5</sys:Double>

@@ -10,7 +10,7 @@
         <Setter Property="local:YAttachProperty.YIconSize" Value="20"/>
         <Setter Property="local:YAttachProperty.YIconMargin" Value="0,1,5,1"/>
         <Setter Property="local:YAttachProperty.YIcon" Value="&#xf0d7;"/>
-        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YComboBoxArrowMouseOverForeground}"/>
         <Setter Property="local:YAttachProperty.YPressedForeground" Value="{StaticResource YComboBoxArrowPressedForeground}"/>
         <Setter Property="local:YAttachProperty.YCheckedForeground" Value="{StaticResource YComboBoxArrowCheckedForeground}"/>
@@ -40,16 +40,16 @@
                     <!--z触发器-->
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground),RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Opacity" TargetName="Bg" Value="0.55" />
+                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="Opacity" TargetName="Bg" Value="0.55"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YPressedForeground),RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Opacity" TargetName="Bg" Value="0.6" />
+                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YPressedForeground),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="Opacity" TargetName="Bg" Value="0.6"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YCheckedForeground),RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Opacity" TargetName="Bg" Value="0.6" />
+                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YCheckedForeground),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="Opacity" TargetName="Bg" Value="0.6"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Opacity" Value="{StaticResource YDisableOpacity}" TargetName="Grid"/>
@@ -68,20 +68,20 @@
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="MaxLength" Value="2048"/>
         <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
-        <Setter Property="ContextMenu" Value="{DynamicResource TextBoxContextMenu}" />
-        <Setter Property="SelectionBrush" Value="{StaticResource YTextSelectionBrush}" />
-        <Setter Property="FontSize" Value="{StaticResource YFontSize}"></Setter>
-        <Setter Property="FontFamily" Value="{StaticResource YFontFamily}"></Setter>
+        <Setter Property="ContextMenu" Value="{DynamicResource TextBoxContextMenu}"/>
+        <Setter Property="SelectionBrush" Value="{StaticResource YTextSelectionBrush}"/>
+        <Setter Property="FontSize" Value="{StaticResource YFontSize}"/>
+        <Setter Property="FontFamily" Value="{StaticResource YFontFamily}"/>
         <Setter Property="Focusable" Value="True"/>
-        <Setter Property="CaretBrush" Value="{StaticResource YTextForeground}" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="SnapsToDevicePixels" Value="True"></Setter>
+        <Setter Property="CaretBrush" Value="{StaticResource YTextForeground}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Style.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
-                <Setter Property="Opacity" Value="{StaticResource YReadonlyOpacity}"></Setter>
+                <Setter Property="Opacity" Value="{StaticResource YReadonlyOpacity}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Opacity" Value="{StaticResource YDisableOpacity}"></Setter>
+                <Setter Property="Opacity" Value="{StaticResource YDisableOpacity}"/>
             </Trigger>
         </Style.Triggers>
     </Style>

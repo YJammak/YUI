@@ -6,18 +6,18 @@
     </ResourceDictionary.MergedDictionaries>
     <!--ProgressBar Style-->
     <Style TargetType="ProgressBar" x:Key="YProgressBarDefaultStyle">
-        <Setter Property="Background" Value="{StaticResource YControlBorderBrush}" />
-        <Setter Property="Maximum" Value="1" />
-        <Setter Property="Value" Value="0" />
-        <Setter Property="Height" Value="10" />
-        <Setter Property="IsTabStop" Value="False" />
-        <Setter Property="Foreground" Value="{StaticResource YFocusBorderBrush}" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="local:YAttachProperty.YCornerRadius" Value="0" />
+        <Setter Property="Background" Value="{StaticResource YControlBorderBrush}"/>
+        <Setter Property="Maximum" Value="1"/>
+        <Setter Property="Value" Value="0"/>
+        <Setter Property="Height" Value="10"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Foreground" Value="{StaticResource YFocusBorderBrush}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="local:YAttachProperty.YCornerRadius" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ProgressBar">
-                    <Grid x:Name="Root" >
+                    <Grid x:Name="Root">
                         <Border x:Name="PART_Track" Background="{TemplateBinding Background}" 
                                 CornerRadius="{TemplateBinding local:YAttachProperty.YCornerRadius}"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
@@ -27,9 +27,9 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="Orientation" Value="Vertical">
-                            <Setter Property="LayoutTransform" TargetName="Root" >
+                            <Setter Property="LayoutTransform" TargetName="Root">
                                 <Setter.Value>
-                                    <RotateTransform Angle="-90" />
+                                    <RotateTransform Angle="-90"/>
                                 </Setter.Value>
                             </Setter>
                         </Trigger>

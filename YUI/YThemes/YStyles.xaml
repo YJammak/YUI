@@ -3,6 +3,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YConverters/YConverters.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YControls/YProgressRing.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YControls/YLoading.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YControls/YWindow.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YShare.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YIcon.xaml"/>

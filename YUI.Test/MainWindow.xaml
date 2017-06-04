@@ -43,7 +43,19 @@
             <TextBlock>Item4</TextBlock>
             <TextBlock>Item5</TextBlock>
         </ComboBox>
-        <yctr:YProgressRing Width="50" Height="50" Margin="5"></yctr:YProgressRing>
+        <StackPanel Orientation="Horizontal">
+            <yctr:YProgressRing Width="50" Height="50" Margin="5"></yctr:YProgressRing>
+            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI;component/Resources/Fonts/#FontAwesome"
+                           yui:YAttachProperty.YIcon="&#xf1ce;"/>
+            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI;component/Resources/Fonts/#FontAwesome"
+                           yui:YAttachProperty.YIcon="&#xf013;"/>
+            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI;component/Resources/Fonts/#FontAwesome"
+                           yui:YAttachProperty.YIcon="&#xf0a3;"/>
+            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI;component/Resources/Fonts/#FontAwesome"
+                           yui:YAttachProperty.YIcon="&#xf01e;"/>
+            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI;component/Resources/Fonts/#FontAwesome"
+                           yui:YAttachProperty.YIcon="&#xf021;"/>
+        </StackPanel>
         <ProgressBar Value="0.4" Margin="10 3" Height="10" yui:YAttachProperty.YCornerRadius="5"></ProgressBar>
         <Calendar Margin="10"/>
         <DatePicker SelectedDate="2017-06-06" Margin="10"/>

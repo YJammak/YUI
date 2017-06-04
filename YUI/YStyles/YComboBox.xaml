@@ -9,10 +9,10 @@
     <!--下拉条目样式-->
     <Style TargetType="ComboBoxItem" x:Key="YComboBoxItemStyle">
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="RenderOptions.ClearTypeHint" Value="Enabled" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Height" Value="28" />
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="RenderOptions.ClearTypeHint" Value="Enabled"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Height" Value="28"/>
         <Setter Property="local:YAttachProperty.YItemSelectedBackground" Value="Transparent"/>
         <Setter Property="local:YAttachProperty.YItemMouseOverBackground" Value="#3399FF"/>
         <Setter Property="Template">
@@ -26,15 +26,15 @@
                                 Background="{TemplateBinding Background}">
                             <ContentPresenter x:Name="contentPresenter" Margin="{TemplateBinding Padding}" 
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter TargetName="ItemBackground" Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemSelectedBackground),RelativeSource={RelativeSource Self}}" />
+                            <Setter TargetName="ItemBackground" Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemSelectedBackground),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="ItemBackground" Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemMouseOverBackground),RelativeSource={RelativeSource Self}}" />
+                            <Setter TargetName="ItemBackground" Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemMouseOverBackground),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -44,25 +44,25 @@
 
     <!--ComboBox默认Style-->
     <Style TargetType="{x:Type ComboBox}" x:Key="YComboBoxDefaultStyle">
-        <Setter Property="Foreground" Value="{StaticResource YTextForeground}" />
-        <Setter Property="Background" Value="{StaticResource YComboBoxBackground}" />
-        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="BorderBrush" Value="{StaticResource YControlBorderBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
+        <Setter Property="Background" Value="{StaticResource YComboBoxBackground}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource YControlBorderBrush}"/>
         <Setter Property="local:YAttachProperty.YCornerRadius" Value="3"/>
-        <Setter Property="local:YAttachProperty.YFocusBackground" Value="Transparent" />
-        <Setter Property="local:YAttachProperty.YFocusBorderBrush" Value="{StaticResource YFocusBorderBrush}" />
-        <Setter Property="local:YAttachProperty.YMouseOverBorderBrush" Value="{StaticResource YMouseOverBorderBrush}" />
-        <Setter Property="FontFamily" Value="{StaticResource YFontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource YFontSize}" />
-        <Setter Property="ItemContainerStyle" Value="{StaticResource YComboBoxItemStyle}" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="MaxDropDownHeight" Value="400" />
-        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <Setter Property="local:YAttachProperty.YFocusBackground" Value="Transparent"/>
+        <Setter Property="local:YAttachProperty.YFocusBorderBrush" Value="{StaticResource YFocusBorderBrush}"/>
+        <Setter Property="local:YAttachProperty.YMouseOverBorderBrush" Value="{StaticResource YMouseOverBorderBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource YFontFamily}"/>
+        <Setter Property="FontSize" Value="{StaticResource YFontSize}"/>
+        <Setter Property="ItemContainerStyle" Value="{StaticResource YComboBoxItemStyle}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="MaxDropDownHeight" Value="400"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
         <Setter Property="VirtualizingStackPanel.IsVirtualizing" Value="True"/>
         <Setter Property="VirtualizingStackPanel.VirtualizationMode" Value="Recycling"/>
-        <Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="False" />
+        <Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBox}">
@@ -74,10 +74,10 @@
                                 Background="{TemplateBinding Background}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="21" />
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="21"/>
                                 </Grid.ColumnDefinitions>
                                 <!--Label区域-->
                                 <ContentControl x:Name="Label" 
@@ -87,9 +87,9 @@
                                                 Margin="1,1,0,1"/>
                                 <!--附加内容区域-->
                                 <Border x:Name="PART_AttachContent" Panel.ZIndex="2" Grid.Column="2" 
-                                        VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                        VerticalAlignment="Center" HorizontalAlignment="Center">
                                     <ContentControl VerticalAlignment="Center" VerticalContentAlignment="Center" 
-                                                    Template="{TemplateBinding local:YAttachProperty.YAttachContent}" />
+                                                    Template="{TemplateBinding local:YAttachProperty.YAttachContent}"/>
                                 </Border>
                                 <!--下拉按钮-->
                                 <ToggleButton x:Name="PART_DropDownToggle" IsTabStop="False" 
@@ -101,13 +101,13 @@
                                                          Converter={x:Static cvt:YConverters.YBooleanReverseConverter},Mode=OneWay}"
                                               Background="{TemplateBinding local:YAttachProperty.YFocusBackground}"/>
                                 <!--主内容区域-->
-                                <Grid Grid.Column="1" x:Name="ContentSite" Margin="2 0 0 0" >
+                                <Grid Grid.Column="1" x:Name="ContentSite" Margin="2 0 0 0">
                                     <ContentPresenter x:Name="PART_SelectedItem" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                                                       ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                                                       Content="{TemplateBinding SelectionBoxItem}" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}"
                                                       HorizontalAlignment="Stretch" Margin="2,0,2,0" 
                                                       IsHitTestVisible="False" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                                     <!--文本编辑-->
                                     <TextBox  x:Name="PART_EditableTextBox" Style="{StaticResource YEditableTextBoxStyle}" Visibility="Collapsed" 
                                               HorizontalAlignment="Stretch" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" IsHitTestVisible="True"
@@ -123,7 +123,7 @@
                                                Foreground="{TemplateBinding Foreground}" IsHitTestVisible="False" 
                                                Opacity="{StaticResource YWatermarkOpacity}" HorizontalAlignment="Left" 
                                                TextAlignment="Center" 
-                                               VerticalAlignment="Center" Margin="5,2,5,2" />
+                                               VerticalAlignment="Center" Margin="5,2,5,2"/>
                                 </Border>
                             </Grid>
                         </Border>
@@ -141,7 +141,7 @@
                                         <DropShadowEffect BlurRadius="2" ShadowDepth="0" Opacity="0.5"></DropShadowEffect>
                                     </Border.Effect>
                                     <ScrollViewer x:Name="DropDownScrollViewer" BorderThickness="0" Margin="1">
-                                        <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                        <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained"/>
                                     </ScrollViewer>
                                 </Border>
                             </Grid>
@@ -151,17 +151,17 @@
                     <ControlTemplate.Triggers>
                         <!--1.显示水印-->
                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="">
-                            <Setter TargetName="Message" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="Message" Property="Visibility" Value="Visible"/>
                         </DataTrigger>
                         <!--编辑模式-->
                         <Trigger Property="IsEditable" Value="True">
-                            <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="PART_SelectedItem" Property="Visibility" Value="Collapsed" />
-                            <Setter TargetName="PART_DropDownToggle" Property="Grid.Column" Value="3" />
-                            <Setter TargetName="PART_DropDownToggle" Property="Grid.ColumnSpan" Value="1" />
-                            <Setter TargetName="PART_DropDownToggle" Property="Background" Value="Transparent" />
-                            <Setter Property="IsTabStop" Value="false" />
-                            <Setter TargetName="PART_DropDownToggle" Property="Focusable" Value="False" />
+                            <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="PART_SelectedItem" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="PART_DropDownToggle" Property="Grid.Column" Value="3"/>
+                            <Setter TargetName="PART_DropDownToggle" Property="Grid.ColumnSpan" Value="1"/>
+                            <Setter TargetName="PART_DropDownToggle" Property="Background" Value="Transparent"/>
+                            <Setter Property="IsTabStop" Value="false"/>
+                            <Setter TargetName="PART_DropDownToggle" Property="Focusable" Value="False"/>
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="True">
@@ -174,7 +174,7 @@
                             <Setter  Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YFocusBorderBrush),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="PART_Root" Property="Opacity" Value="{StaticResource YDisableOpacity}"></Setter>
+                            <Setter TargetName="PART_Root" Property="Opacity" Value="{StaticResource YDisableOpacity}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
