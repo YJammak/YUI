@@ -33,7 +33,7 @@
         <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="Height" Value="auto"/>
         <Setter Property="SnapsToDevicePixels" Value="true"/>
-        <Setter Property="BorderBrush" Value="{StaticResource YControlBorderBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource YControlBorderBrush}"/>
         <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YCheckedMouseoverForeground}"/>
         <Setter Property="local:YAttachProperty.YCheckedForeground" Value="{StaticResource YCheckedForeground}"/>
         <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#SF2015"/>
@@ -66,7 +66,7 @@
                     <!--触发器：设置选中状态符号-->
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="true">
-                            <Setter Property="Visibility" Value="Visible" TargetName="checkState" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="checkState"/>
                             <Setter Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YCheckedForeground),RelativeSource={RelativeSource Self}}"/>
                             <Setter TargetName="checkState" Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YCheckedForeground),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
@@ -75,7 +75,7 @@
                             <Setter TargetName="checkState" Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Opacity" Value="{StaticResource YDisableOpacity}" TargetName="grid" />
+                            <Setter Property="Opacity" Value="{StaticResource YDisableOpacity}" TargetName="grid"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

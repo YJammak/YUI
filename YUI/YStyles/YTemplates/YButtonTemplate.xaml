@@ -42,7 +42,7 @@
                        Source="{TemplateBinding local:YAttachProperty.YImageSource}"
                        Stretch="{TemplateBinding local:YAttachProperty.YStretch}"
                        Visibility="Visible"
-                />
+               />
 
                 <TextBlock Grid.Row="0" Grid.Column="1" 
                            VerticalAlignment="Center"  
@@ -52,18 +52,18 @@
                            FontSize="{TemplateBinding FontSize}" 
                            Foreground="{TemplateBinding Foreground}"
                            TextTrimming="{TemplateBinding local:YAttachProperty.YTextTrimming}"
-                />
+               />
             </Grid>
         </Border>
         <!--触发器-->
         <ControlTemplate.Triggers>
             <Trigger Property="local:YAttachProperty.YButtonIconType" Value="Font">
                 <Setter TargetName="icon" Property="Visibility" Value="Visible"/>
-                <Setter TargetName="image" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="image" Property="Visibility" Value="Collapsed"/>
             </Trigger>
             <Trigger Property="local:YAttachProperty.YButtonIconType" Value="Image">
                 <Setter TargetName="icon" Property="Visibility" Value="Collapsed"/>
-                <Setter TargetName="image" Property="Visibility" Value="Visible" />
+                <Setter TargetName="image" Property="Visibility" Value="Visible"/>
             </Trigger>
             <Trigger Property="local:YAttachProperty.YButtonIconAlignment" Value="Left">
                 <Setter TargetName="icon" Property="Grid.Row" Value="0"/>
@@ -105,14 +105,14 @@
             </Trigger>
             <!--设置鼠标进入时的背景、前景样式-->
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border" />
+                <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>
                 <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YIconMouseOverForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="icon"/>
                 <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="txt"/>
                 <Setter Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YMouseOverBorderBrush),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>
             </Trigger>
             <!--鼠标按下时的前景、背景样式-->
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YPressedBackground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border" />
+                <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YPressedBackground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>
                 <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YIconPressedForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="icon"/>
                 <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YPressedForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="txt"/>
                 <Setter Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YPressedBorderBrush),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>

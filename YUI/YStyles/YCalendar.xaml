@@ -8,14 +8,14 @@
 
     <!--Day按钮样式-->
     <Style x:Key="YCalendarDayButtonDefaultStyle" TargetType="{x:Type CalendarDayButton}">
-        <Setter Property="MinWidth" Value="28" />
-        <Setter Property="MinHeight" Value="5" />
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{StaticResource YTextForeground}" />
-        <Setter Property="Margin" Value="0" />
-        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="MinWidth" Value="28"/>
+        <Setter Property="MinHeight" Value="5"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="local:YAttachProperty.YItemSelectedBackground" Value="{StaticResource YItemSelectedBackground}"/>
         <Setter Property="local:YAttachProperty.YItemSelectedForeground" Value="{StaticResource YItemSelectedForeground}"/>
         <Setter Property="local:YAttachProperty.YItemMouseOverBackground" Value="{StaticResource YItemMouseOverBackground}"/>
@@ -30,32 +30,32 @@
                                 BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="{TemplateBinding local:YAttachProperty.YCornerRadius}">
                             <ContentPresenter x:Name="NormalText" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               Margin="5,2,5,2" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              TextElement.Foreground="{TemplateBinding Foreground}" />
+                                              TextElement.Foreground="{TemplateBinding Foreground}"/>
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsToday" Value="True">
-                            <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemCurrentBackground),RelativeSource={RelativeSource Self}}"></Setter>
-                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YItemCurrentForeground),RelativeSource={RelativeSource Self}}"></Setter>
+                            <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemCurrentBackground),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YItemCurrentForeground),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemMouseOverBackground),RelativeSource={RelativeSource Self}}"></Setter>
-                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YItemMouseOverForeground),RelativeSource={RelativeSource Self}}"></Setter>
+                            <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemMouseOverBackground),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YItemMouseOverForeground),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemSelectedBackground),RelativeSource={RelativeSource Self}}"></Setter>
-                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YItemSelectedForeground),RelativeSource={RelativeSource Self}}"></Setter>
+                            <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemSelectedBackground),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YItemSelectedForeground),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <!--不可用日期-->
                         <Trigger Property="IsBlackedOut" Value="True">
-                            <Setter Property="Opacity" Value="{StaticResource YDisableOpacity}" TargetName="Grid"></Setter>
+                            <Setter Property="Opacity" Value="{StaticResource YDisableOpacity}" TargetName="Grid"/>
                         </Trigger>
                         <!--不在当月的日期-->
                         <Trigger Property="IsInactive" Value="True">
-                            <Setter Property="Opacity" Value="0.65" TargetName="Grid"></Setter>
+                            <Setter Property="Opacity" Value="0.65" TargetName="Grid"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Opacity" Value="{StaticResource YDisableOpacity}" TargetName="Grid"></Setter>
+                            <Setter Property="Opacity" Value="{StaticResource YDisableOpacity}" TargetName="Grid"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -65,7 +65,7 @@
 
     <!--日历日期面板样式-->
     <Style x:Key="YCalendarItemDefaultStyle" TargetType="{x:Type CalendarItem}">
-        <Setter Property="Margin" Value="0,1,0,1" />
+        <Setter Property="Margin" Value="0,1,0,1"/>
         <Setter Property="local:YAttachProperty.YContentStyle" Value="{StaticResource YButtonDefaultStyle}"/>
         <Setter Property="local:YAttachProperty.YHeaderForeground" Value="{StaticResource YButtonPressedForeground}"/>
         <Setter Property="Template">
@@ -76,18 +76,18 @@
                         <DataTemplate x:Key="{x:Static CalendarItem.DayTitleTemplateResourceKey}">
                             <TextBlock Text="{Binding}" FontWeight="Bold"
                                        Foreground="{Binding Path=(local:YAttachProperty.YHeaderForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type CalendarItem}}}"
-                                       FontSize="{StaticResource YHeaderFontSize}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,6,0,6" Opacity="0.8" />
+                                       FontSize="{StaticResource YHeaderFontSize}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,6,0,6" Opacity="0.8"/>
                         </DataTemplate>
                     </ControlTemplate.Resources>
                     <Grid x:Name="PART_Root">
                         <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" Background="{TemplateBinding Background}" Margin="{TemplateBinding Margin}">
                             <Grid Margin="2">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <!--Header-->
                                 <Grid Grid.Row="0" HorizontalAlignment="Stretch" Background="Transparent">
@@ -111,36 +111,36 @@
                                 <!--PART_MonthView-->
                                 <Grid x:Name="PART_MonthView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="6,1,6,6" Grid.Row="1" Visibility="Visible">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
                                 </Grid>
                                 <!--PART_YearView-->
                                 <Grid x:Name="PART_YearView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="6,10,6,10" Grid.Row="1" Visibility="Hidden">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
                                 </Grid>
                             </Grid>
@@ -148,16 +148,16 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Opacity" TargetName="PART_Root" Value="{StaticResource YDisableOpacity}" />
+                            <Setter Property="Opacity" TargetName="PART_Root" Value="{StaticResource YDisableOpacity}"/>
                         </Trigger>
                         <DataTrigger Binding="{Binding DisplayMode, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Calendar}}}" Value="Year">
-                            <Setter Property="Visibility" TargetName="PART_MonthView" Value="Hidden" />
-                            <Setter Property="Visibility" TargetName="PART_YearView" Value="Visible" />
+                            <Setter Property="Visibility" TargetName="PART_MonthView" Value="Hidden"/>
+                            <Setter Property="Visibility" TargetName="PART_YearView" Value="Visible"/>
                         </DataTrigger>
                         <!--Decade 美 ['dɛked] n. 十年，十年期；十-->
                         <DataTrigger Binding="{Binding DisplayMode, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Calendar}}}" Value="Decade">
-                            <Setter Property="Visibility" TargetName="PART_MonthView" Value="Hidden" />
-                            <Setter Property="Visibility" TargetName="PART_YearView" Value="Visible" />
+                            <Setter Property="Visibility" TargetName="PART_MonthView" Value="Hidden"/>
+                            <Setter Property="Visibility" TargetName="PART_YearView" Value="Visible"/>
                         </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -167,9 +167,9 @@
 
     <!--年、月按钮样式-->
     <Style x:Key="YCalendarButtonDefaultStyle" TargetType="{x:Type CalendarButton}">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="local:YAttachProperty.YItemSelectedBackground" Value="{StaticResource YItemSelectedBackground}"/>
         <Setter Property="local:YAttachProperty.YItemSelectedForeground" Value="{StaticResource YItemSelectedForeground}"/>
         <Setter Property="local:YAttachProperty.YItemMouseOverBackground" Value="{StaticResource YItemMouseOverBackground}"/>
@@ -178,26 +178,26 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CalendarButton}">
                     <Grid x:Name="Grid" Margin="{TemplateBinding Margin}">
-                        <Border x:Name="Bg" Background="{TemplateBinding Background}" />
+                        <Border x:Name="Bg" Background="{TemplateBinding Background}"/>
                         <ContentPresenter x:Name="NormalText" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           Margin="5,2,5,2" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          TextElement.Foreground="{TemplateBinding Foreground}" />
+                                          TextElement.Foreground="{TemplateBinding Foreground}"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemMouseOverBackground),RelativeSource={RelativeSource Self}}"></Setter>
-                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YItemMouseOverForeground),RelativeSource={RelativeSource Self}}"></Setter>
+                            <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemMouseOverBackground),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YItemMouseOverForeground),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemSelectedBackground),RelativeSource={RelativeSource Self}}"></Setter>
-                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YItemSelectedForeground),RelativeSource={RelativeSource Self}}"></Setter>
+                            <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YItemSelectedBackground),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YItemSelectedForeground),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <!--不在当月的日期-->
                         <Trigger Property="IsInactive" Value="True">
-                            <Setter Property="Opacity" Value="0.8" TargetName="Grid"></Setter>
+                            <Setter Property="Opacity" Value="0.8" TargetName="Grid"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Opacity" Value="{StaticResource YDisableOpacity}" TargetName="Grid"></Setter>
+                            <Setter Property="Opacity" Value="{StaticResource YDisableOpacity}" TargetName="Grid"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -207,16 +207,16 @@
 
     <!--默认日历样式-->
     <Style x:Key="YCalendarDefaultStyle" TargetType="{x:Type Calendar}">
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Foreground" Value="{StaticResource YTextForeground}" />
-        <Setter Property="CalendarDayButtonStyle" Value="{StaticResource YCalendarDayButtonDefaultStyle}" />
-        <Setter Property="CalendarItemStyle" Value="{StaticResource YCalendarItemDefaultStyle}" />
-        <Setter Property="CalendarButtonStyle" Value="{StaticResource YCalendarButtonDefaultStyle}" />
-        <Setter Property="Background" Value="{StaticResource YControlBackground}" />
-        <Setter Property="BorderBrush" Value="{StaticResource YControlBorderBrush}" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="FontSize" Value="13" />
-        <Setter Property="IsTodayHighlighted" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
+        <Setter Property="CalendarDayButtonStyle" Value="{StaticResource YCalendarDayButtonDefaultStyle}"/>
+        <Setter Property="CalendarItemStyle" Value="{StaticResource YCalendarItemDefaultStyle}"/>
+        <Setter Property="CalendarButtonStyle" Value="{StaticResource YCalendarButtonDefaultStyle}"/>
+        <Setter Property="Background" Value="{StaticResource YControlBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource YControlBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="IsTodayHighlighted" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Calendar}">
@@ -224,7 +224,7 @@
                         <CalendarItem x:Name="PART_CalendarItem" BorderBrush="{TemplateBinding BorderBrush}" FontSize="{TemplateBinding FontSize}"
                                       FontFamily="{TemplateBinding FontFamily}"
                                       BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"
-                                      Style="{TemplateBinding CalendarItemStyle}" />
+                                      Style="{TemplateBinding CalendarItemStyle}"/>
                     </StackPanel>
                 </ControlTemplate>
             </Setter.Value>

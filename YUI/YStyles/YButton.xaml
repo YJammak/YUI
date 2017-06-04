@@ -8,74 +8,74 @@
     
     <!--默认样式-->
     <Style x:Key="YButtonDefaultStyle" TargetType="{x:Type Button}">
-        <Setter Property="local:YAttachProperty.YMouseOverBackground" Value="{StaticResource YButtonMouseOverBackground}" />
-        <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YButtonMouseOverForeground}" />
-        <Setter Property="local:YAttachProperty.YPressedBackground" Value="{StaticResource YButtonPressedBackground}" />
-        <Setter Property="local:YAttachProperty.YPressedForeground" Value="{StaticResource YButtonPressedForeground}" />
-        <Setter Property="local:YAttachProperty.YCornerRadius" Value="3" />
-        <Setter Property="local:YAttachProperty.YIconSize" Value="20" />
-        <Setter Property="local:YAttachProperty.YIcon" Value="" />
-        <Setter Property="local:YAttachProperty.YIconMargin" Value="0,0,0,0" />
+        <Setter Property="local:YAttachProperty.YMouseOverBackground" Value="{StaticResource YButtonMouseOverBackground}"/>
+        <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YButtonMouseOverForeground}"/>
+        <Setter Property="local:YAttachProperty.YPressedBackground" Value="{StaticResource YButtonPressedBackground}"/>
+        <Setter Property="local:YAttachProperty.YPressedForeground" Value="{StaticResource YButtonPressedForeground}"/>
+        <Setter Property="local:YAttachProperty.YCornerRadius" Value="3"/>
+        <Setter Property="local:YAttachProperty.YIconSize" Value="20"/>
+        <Setter Property="local:YAttachProperty.YIcon" Value=""/>
+        <Setter Property="local:YAttachProperty.YIconMargin" Value="0,0,0,0"/>
         <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/#FontAwesome"/>
-        <Setter Property="Background" Value="{StaticResource YButtonBackground}" />
-        <Setter Property="Foreground" Value="{StaticResource YButtonForeground}" />
+        <Setter Property="Background" Value="{StaticResource YButtonBackground}"/>
+        <Setter Property="Foreground" Value="{StaticResource YButtonForeground}"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Focusable" Value="False"/>
-        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="Template" Value="{StaticResource YButtonTemplate}"/>
-        <Setter Property="Padding" Value="3,1,3,1" />
-        <Setter Property="Content" Value="{x:Null}" />
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="3,1,3,1"/>
+        <Setter Property="Content" Value="{x:Null}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
     </Style>
 
     <!--背景透明的YButton样式-->
     <Style x:Key="YButtonTransparencyStyle" TargetType="{x:Type Button}">
-        <Setter Property="local:YAttachProperty.YMouseOverBackground" Value="Transparent" />
-        <Setter Property="local:YAttachProperty.YPressedBackground" Value="Transparent" />
-        <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YButtonMouseOverForeground}" />
-        <Setter Property="local:YAttachProperty.YPressedForeground" Value="{StaticResource YButtonPressedForeground}" />
-        <Setter Property="local:YAttachProperty.YCornerRadius" Value="0" />
-        <Setter Property="local:YAttachProperty.YIconSize" Value="20" />
-        <Setter Property="local:YAttachProperty.YIconMargin" Value="0,0,2,0" />
+        <Setter Property="local:YAttachProperty.YMouseOverBackground" Value="Transparent"/>
+        <Setter Property="local:YAttachProperty.YPressedBackground" Value="Transparent"/>
+        <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YButtonMouseOverForeground}"/>
+        <Setter Property="local:YAttachProperty.YPressedForeground" Value="{StaticResource YButtonPressedForeground}"/>
+        <Setter Property="local:YAttachProperty.YCornerRadius" Value="0"/>
+        <Setter Property="local:YAttachProperty.YIconSize" Value="20"/>
+        <Setter Property="local:YAttachProperty.YIconMargin" Value="0,0,2,0"/>
         <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/#FontAwesome"/>
         <Setter Property="Focusable" Value="False"/>
-        <Setter Property="Height" Value="Auto" />
-        <Setter Property="Width" Value="Auto" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{StaticResource YButtonForeground}" />
-        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource YButtonForeground}"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="Template" Value="{StaticResource YButtonTemplate}"/>
-        <Setter Property="Padding" Value="3,1,3,1" />
-        <Setter Property="Content" Value="{x:Null}" />
-        <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="3,1,3,1"/>
+        <Setter Property="Content" Value="{x:Null}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
     </Style>
 
     <!--LinkButton的YButton样式，默认无YIcon-->
     <Style x:Key="YButtonLinkStyle" TargetType="{x:Type Button}">
-        <Setter Property="local:YAttachProperty.YMouseOverBackground" Value="Transparent" />
-        <Setter Property="local:YAttachProperty.YPressedBackground" Value="Transparent" />
-        <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YButtonMouseOverForeground}" />
-        <Setter Property="local:YAttachProperty.YPressedForeground" Value="{StaticResource YButtonPressedForeground}" />
-        <Setter Property="local:YAttachProperty.YCornerRadius" Value="0" />
-        <Setter Property="local:YAttachProperty.YIconSize" Value="20" />
-        <Setter Property="local:YAttachProperty.YIconMargin" Value="0" />
-        <Setter Property="local:YAttachProperty.YIcon" Value="" />
-        <Setter Property="local:YAttachProperty.YContentDecorations" Value="Underline" />
+        <Setter Property="local:YAttachProperty.YMouseOverBackground" Value="Transparent"/>
+        <Setter Property="local:YAttachProperty.YPressedBackground" Value="Transparent"/>
+        <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YButtonMouseOverForeground}"/>
+        <Setter Property="local:YAttachProperty.YPressedForeground" Value="{StaticResource YButtonPressedForeground}"/>
+        <Setter Property="local:YAttachProperty.YCornerRadius" Value="0"/>
+        <Setter Property="local:YAttachProperty.YIconSize" Value="20"/>
+        <Setter Property="local:YAttachProperty.YIconMargin" Value="0"/>
+        <Setter Property="local:YAttachProperty.YIcon" Value=""/>
+        <Setter Property="local:YAttachProperty.YContentDecorations" Value="Underline"/>
         <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/#FontAwesome"/>
         <Setter Property="Focusable" Value="False"/>
-        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="Foreground" Value="{StaticResource YLinkForeground}" />
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="Height" Value="Auto" />
-        <Setter Property="Width" Value="Auto" />
-        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Foreground" Value="{StaticResource YLinkForeground}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="Template" Value="{StaticResource YButtonTemplate}"/>
-        <Setter Property="Padding" Value="3,1,3,1" />
-        <Setter Property="Content" Value="{x:Null}" />
-        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Padding" Value="3,1,3,1"/>
+        <Setter Property="Content" Value="{x:Null}"/>
+        <Setter Property="Cursor" Value="Hand"/>
     </Style>
 </ResourceDictionary>

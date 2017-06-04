@@ -95,14 +95,14 @@ namespace YUI.YUtil
         /// <returns></returns>
         public static Image CreateThumbnail(Bitmap bitmap, int width, int height, System.Drawing.Color penColor)
         {
-            width = bitmap.Width > width ? width : bitmap.Width;
-            height = bitmap.Height > height ? height : bitmap.Height;
+            width = bitmap.Width> width ? width : bitmap.Width;
+            height = bitmap.Height> height ? height : bitmap.Height;
             var bitmap1 = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format64bppPArgb);
             using (var graphics = Graphics.FromImage(bitmap1))
             {
                 var width1 = width;
                 var height1 = height;
-                if (bitmap.Width > bitmap.Height)
+                if (bitmap.Width> bitmap.Height)
                     height1 = (int)(bitmap.Height / (double)bitmap.Width * width1);
                 else if (bitmap.Width < bitmap.Height)
                     width1 = (int)(bitmap.Width / (double)bitmap.Height * height1);
@@ -131,7 +131,7 @@ namespace YUI.YUtil
 
             using (var imageAttributes = new ImageAttributes())
             {
-                SetImageOpacity(imageAttributes, (double)opacity >= 1.0 ? 1f : opacity);
+                SetImageOpacity(imageAttributes, (double)opacity>= 1.0 ? 1f : opacity);
                 g.DrawImage(img, rect, 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, imageAttributes);
             }
         }

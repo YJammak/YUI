@@ -23,7 +23,7 @@
                 <ControlTemplate TargetType="{x:Type MenuItem}">
                     <!--Item-->
                     <Border  x:Name="border" Background="Transparent" Height="{TemplateBinding Height}" Opacity="1"
-                    >
+                   >
                         <Grid  VerticalAlignment="Center" Margin="{TemplateBinding Margin}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition x:Name="icon_col" MaxWidth="35" SharedSizeGroup="MenuItemIconColumnGroup"/>
@@ -36,14 +36,14 @@
                                        Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"
                                        FontSize="{TemplateBinding local:YAttachProperty.YIconSize}" Style="{StaticResource YIcon}"
                                        FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}" Background="Transparent"
-                            />
+                           />
                             <!--Header-->
                             <ContentPresenter Grid.Column="1" x:Name="txtHeader" Margin="3,1,5,1" MinWidth="90"
                                               RecognizesAccessKey="True" VerticalAlignment="Center" ContentSource="Header"/>
                             <!--快捷键 InputGestureText 暂不支持你了 -->
                             <TextBlock Grid.Column="2" Margin="3,1,3,1" x:Name="IGTHost" Text="{TemplateBinding InputGestureText}" 
                                        FontSize="{TemplateBinding FontSize}"
-                                       VerticalAlignment="Center" Visibility="Visible" Foreground="{TemplateBinding Foreground}" />
+                                       VerticalAlignment="Center" Visibility="Visible" Foreground="{TemplateBinding Foreground}"/>
                             <!--右指针-->
                             <TextBlock x:Name="PART_Arrow" Grid.Column="3" Text="&#xf0da;" Foreground="{TemplateBinding Foreground}" 
                                        FontSize="14">
@@ -101,25 +101,25 @@
                         </Trigger>
                         <!--选中状态，优先级将高于Icon-->
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="PART_Icon" Value="&#xf00c;" Property="Text"></Setter>
-                            <Setter TargetName="PART_Icon" Value="18" Property="FontSize"></Setter>
-                            <Setter TargetName="PART_Icon" Value="{StaticResource YCheckedForeground}" Property="Foreground"></Setter>
+                            <Setter TargetName="PART_Icon" Value="&#xf00c;" Property="Text"/>
+                            <Setter TargetName="PART_Icon" Value="18" Property="FontSize"/>
+                            <Setter TargetName="PART_Icon" Value="{StaticResource YCheckedForeground}" Property="Foreground"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="border" Value="{StaticResource YDisableOpacity}" Property="Opacity"></Setter>
+                            <Setter TargetName="border" Value="{StaticResource YDisableOpacity}" Property="Opacity"/>
                         </Trigger>
                         <!--高亮状态-->
                         <Trigger Property="IsHighlighted" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource YMenuMouseOverBackground}"></Setter>
-                            <Setter Property="Foreground" Value="{StaticResource YMenuMouseOverForeground}"></Setter>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource YMenuMouseOverBackground}"/>
+                            <Setter Property="Foreground" Value="{StaticResource YMenuMouseOverForeground}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource YMenuPressedBackground}"></Setter>
-                            <Setter Property="Foreground" Value="{StaticResource YMenuPressedForeground}"></Setter>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource YMenuPressedBackground}"/>
+                            <Setter Property="Foreground" Value="{StaticResource YMenuPressedForeground}"/>
                         </Trigger>
                         <!--子菜单打开状态-->
-                        <Trigger Property="IsSubmenuOpen" Value="true" >
-                            <Setter TargetName="PART_Arrow" Value="{StaticResource YCheckedForeground}" Property="Foreground"></Setter>
+                        <Trigger Property="IsSubmenuOpen" Value="true">
+                            <Setter TargetName="PART_Arrow" Value="{StaticResource YCheckedForeground}" Property="Foreground"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -151,7 +151,7 @@
                                FontSize="{TemplateBinding local:YAttachProperty.YIconSize}" Style="{StaticResource YIcon}"
                                FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}"
                                Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"    
-                    />
+                   />
                     <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left" Name="HeaderHost"
                                       ContentSource="Header" RecognizesAccessKey="True"/>
                 </StackPanel>
@@ -175,8 +175,8 @@
                 <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource Self},Path=(local:YAttachProperty.YMouseOverBackground)}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableBackground)}"></Setter>
-                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableForeground)}"></Setter>
+                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableBackground)}"/>
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableForeground)}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -187,13 +187,13 @@
             <StackPanel Orientation="Horizontal" x:Name="border" VerticalAlignment="Center" 
                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                         Margin="{TemplateBinding Padding}"
-            >
+           >
                 <!--icon-->
                 <TextBlock x:Name="PART_Icon" Text="{TemplateBinding Icon}" Foreground="{TemplateBinding Foreground}" 
                            FontSize="{TemplateBinding local:YAttachProperty.YIconSize}" Style="{StaticResource YIcon}"
                            FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}"
                            Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"       
-                />
+               />
                 <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left" Name="HeaderHost"
                                   ContentSource="Header" RecognizesAccessKey="True"/>
             </StackPanel>
@@ -203,8 +203,8 @@
                 <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource Self},Path=(local:YAttachProperty.YMouseOverBackground)}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableBackground)}"></Setter>
-                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableForeground)}"></Setter>
+                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableBackground)}"/>
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableForeground)}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -215,7 +215,7 @@
             <Grid Margin="{TemplateBinding Padding}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" SharedSizeGroup="PART_Icon"/>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto" SharedSizeGroup="Shortcut"/>
                     <ColumnDefinition Width="13"/>
                 </Grid.ColumnDefinitions>
@@ -231,7 +231,7 @@
                                Background="Transparent" Visibility="Hidden" VerticalAlignment="Center"/>
                 </Border>
                 <TextBlock x:Name="InputGestureText" Grid.Column="2" 
-                           Text="{TemplateBinding InputGestureText}" Margin="5,2,0,2" DockPanel.Dock="Right" />
+                           Text="{TemplateBinding InputGestureText}" Margin="5,2,0,2" DockPanel.Dock="Right"/>
             </Grid>
         </Border>
         <ControlTemplate.Triggers>
@@ -248,11 +248,11 @@
             <Trigger Property="IsHighlighted" Value="true">
                 <Setter TargetName="Border" Property="Background" 
                         Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Self}}"
-                />
+               />
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableBackground)}"></Setter>
-                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableForeground)}"></Setter>
+                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableBackground)}"/>
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableForeground)}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -263,7 +263,7 @@
             <Grid Margin="{TemplateBinding Padding}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" SharedSizeGroup="PART_Icon"/>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto" SharedSizeGroup="Shortcut"/>
                     <ColumnDefinition Width="13"/>
                 </Grid.ColumnDefinitions>
@@ -277,7 +277,7 @@
                            Text="{TemplateBinding InputGestureText}" Margin="5,2,2,2"
                            DockPanel.Dock="Right"/>
                 <Path Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"
-                      Data="M 0 0 L 0 7 L 4 3.5 Z"  Fill="{TemplateBinding Foreground}" />
+                      Data="M 0 0 L 0 7 L 4 3.5 Z"  Fill="{TemplateBinding Foreground}"/>
                 <Popup Grid.Column="0" Name="Popup" Placement="Right"
                        HorizontalOffset="-4" IsOpen="{TemplateBinding IsSubmenuOpen}"
                        AllowsTransparency="True" Focusable="False" PopupAnimation="Fade">
@@ -289,7 +289,7 @@
                             Margin="5"
                             Padding="1"
                             Effect="{StaticResource YDropShadow}">
-                        <VirtualizingStackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle" />
+                        <VirtualizingStackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle"/>
                     </Border>
                 </Popup>
             </Grid>
@@ -303,8 +303,8 @@
                         Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Self}}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableBackground)}"></Setter>
-                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableForeground)}"></Setter>
+                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableBackground)}"/>
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableForeground)}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -318,7 +318,7 @@
         <Setter Property="Background" Value="{StaticResource YMenuBackground}"/>
         <Setter Property="Foreground" Value="{StaticResource YMenuForeground}"/>
         <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YMenuMouseOverForeground}"/>
-        <Setter Property="local:YAttachProperty.YMouseOverBackground" Value="{StaticResource YMenuMouseOverBackground}"></Setter>
+        <Setter Property="local:YAttachProperty.YMouseOverBackground" Value="{StaticResource YMenuMouseOverBackground}"/>
         <Setter Property="local:YAttachProperty.YPressedForeground" Value="{StaticResource YMenuPressedForeground}"/>
         <Setter Property="local:YAttachProperty.YPressedBackground" Value="{StaticResource YMenuPressedBackground}"/>
         <Setter Property="FontSize" Value="{StaticResource YFontSize}"/>
@@ -327,7 +327,7 @@
         <Setter Property="local:YAttachProperty.YCornerRadius" Value="0"/>
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="local:YAttachProperty.YMenuPopupBackground" Value="{StaticResource YMenuMouseOverForeground}"/>
-        <Setter Property="local:YAttachProperty.YMenuPopupBorderBrush" Value="Transparent"></Setter>
+        <Setter Property="local:YAttachProperty.YMenuPopupBorderBrush" Value="Transparent"/>
         <Setter Property="local:YAttachProperty.YMenuPopupBorderThickness" Value="0"/>
         <Setter Property="local:YAttachProperty.YMenuPopupCornerRadius" Value="0"/>
         <Setter Property="local:YAttachProperty.YIconMargin" Value="0 0 5 0"/>
@@ -350,9 +350,9 @@
 
     <!--默认Menu样式-->
     <Style x:Key="YMenuDefaultStyle" TargetType="{x:Type Menu}">
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="RenderOptions.ClearTypeHint" Value="Enabled" />
-        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="RenderOptions.ClearTypeHint" Value="Enabled"/>
+        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="local:YAttachProperty.YCornerRadius" Value="5"/>
         <Setter Property="local:YAttachProperty.YMenuPopupBackground" Value="{Binding RelativeSource={RelativeSource Self}, Path=Background}"/>
@@ -390,14 +390,14 @@
                                         <TextBlock x:Name="PART_Icon" Text="{TemplateBinding Icon}" Foreground="{TemplateBinding Foreground}" Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"
                                                    FontSize="{TemplateBinding local:YAttachProperty.YIconSize}" Style="{StaticResource YIcon}"
                                                    FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}" Background="Transparent"
-                                        />
+                                       />
                                         <!--Header-->
                                         <ContentPresenter Grid.Column="1" x:Name="txtHeader" Margin="3,1,5,1" MinWidth="90"
                                                           RecognizesAccessKey="True" VerticalAlignment="Center" ContentSource="Header"/>
                                         <!--快捷键 InputGestureText 暂不支持你了 -->
                                         <TextBlock Grid.Column="2" Margin="3,1,3,1" x:Name="IGTHost" Text="{TemplateBinding InputGestureText}" 
                                                    FontSize="{TemplateBinding FontSize}"
-                                                   VerticalAlignment="Center" Visibility="Visible" Foreground="{TemplateBinding Foreground}" />
+                                                   VerticalAlignment="Center" Visibility="Visible" Foreground="{TemplateBinding Foreground}"/>
                                         <!--右指针-->
                                         <TextBlock x:Name="PART_Arrow" Grid.Column="3" Text="&#xf0da;" Foreground="{TemplateBinding Foreground}" Style="{StaticResource YIcon}"/>
                                         <!--淡出子集菜单容器-->
@@ -451,29 +451,29 @@
                                     </Trigger>
                                     <!--选中状态，优先级将高于Icon-->
                                     <Trigger Property="IsChecked" Value="True">
-                                        <Setter TargetName="PART_Icon" Value="&#xf00c;" Property="Text"></Setter>
-                                        <Setter TargetName="PART_Icon" Value="18" Property="FontSize"></Setter>
-                                        <Setter TargetName="PART_Icon" Value="{StaticResource YCheckedForeground}" Property="Foreground"></Setter>
+                                        <Setter TargetName="PART_Icon" Value="&#xf00c;" Property="Text"/>
+                                        <Setter TargetName="PART_Icon" Value="18" Property="FontSize"/>
+                                        <Setter TargetName="PART_Icon" Value="{StaticResource YCheckedForeground}" Property="Foreground"/>
                                     </Trigger>
                                     <Trigger Property="IsEnabled" Value="False">
-                                        <Setter TargetName="border" Value="{StaticResource YDisableOpacity}" Property="Opacity"></Setter>
+                                        <Setter TargetName="border" Value="{StaticResource YDisableOpacity}" Property="Opacity"/>
                                     </Trigger>
                                     <!--高亮状态-->
                                     <Trigger Property="IsHighlighted" Value="true">
-                                        <Setter Property="Background" TargetName="border" Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Self}}"></Setter>
-                                        <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground), RelativeSource={RelativeSource Self}}"></Setter>
+                                        <Setter Property="Background" TargetName="border" Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Self}}"/>
+                                        <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground), RelativeSource={RelativeSource Self}}"/>
                                     </Trigger>
                                     <Trigger Property="IsMouseOver" Value="true">
-                                        <Setter Property="Background" TargetName="border" Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Self}}"></Setter>
-                                        <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground), RelativeSource={RelativeSource Self}}"></Setter>
+                                        <Setter Property="Background" TargetName="border" Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Self}}"/>
+                                        <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground), RelativeSource={RelativeSource Self}}"/>
                                     </Trigger>
                                     <Trigger Property="IsPressed" Value="true">
-                                        <Setter Property="Background" TargetName="border" Value="{Binding Path=(local:YAttachProperty.YPressedBackground), RelativeSource={RelativeSource Self}}"></Setter>
-                                        <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YPressedForeground), RelativeSource={RelativeSource Self}}"></Setter>
+                                        <Setter Property="Background" TargetName="border" Value="{Binding Path=(local:YAttachProperty.YPressedBackground), RelativeSource={RelativeSource Self}}"/>
+                                        <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YPressedForeground), RelativeSource={RelativeSource Self}}"/>
                                     </Trigger>
                                     <!--子菜单打开状态-->
-                                    <Trigger Property="IsSubmenuOpen" Value="true" >
-                                        <Setter TargetName="PART_Arrow" Value="{StaticResource YCheckedForeground}" Property="Foreground"></Setter>
+                                    <Trigger Property="IsSubmenuOpen" Value="true">
+                                        <Setter TargetName="PART_Arrow" Value="{StaticResource YCheckedForeground}" Property="Foreground"/>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
@@ -489,8 +489,8 @@
                             Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                             CornerRadius="{TemplateBinding local:YAttachProperty.YCornerRadius}"
-                    >
-                        <ItemsPresenter Margin="0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                   >
+                        <ItemsPresenter Margin="0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -499,9 +499,9 @@
 
     <!--默认右键菜单ContextMenu样式-->
     <Style x:Key="YContextMenuNoBorderStyle" TargetType="{x:Type ContextMenu}">
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="RenderOptions.ClearTypeHint" Value="Enabled" />
-        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="RenderOptions.ClearTypeHint" Value="Enabled"/>
+        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -537,14 +537,14 @@
                                         <TextBlock x:Name="PART_Icon" Text="{TemplateBinding Icon}" Foreground="{TemplateBinding Foreground}" Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"
                                                    FontSize="{TemplateBinding local:YAttachProperty.YIconSize}" Style="{StaticResource YIcon}"
                                                    FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}" Background="Transparent"
-                                        />
+                                       />
                                         <!--Header-->
                                         <ContentPresenter Grid.Column="1" x:Name="txtHeader" Margin="3,1,5,1" MinWidth="90"
                                                           RecognizesAccessKey="True" VerticalAlignment="Center" ContentSource="Header"/>
                                         <!--快捷键 InputGestureText 暂不支持你了 -->
                                         <TextBlock Grid.Column="2" Margin="3,1,3,1" x:Name="IGTHost" Text="{TemplateBinding InputGestureText}" 
                                                    FontSize="{TemplateBinding FontSize}"
-                                                   VerticalAlignment="Center" Visibility="Visible" Foreground="{TemplateBinding Foreground}" />
+                                                   VerticalAlignment="Center" Visibility="Visible" Foreground="{TemplateBinding Foreground}"/>
                                         <!--右指针-->
                                         <TextBlock x:Name="PART_Arrow" Grid.Column="3" Text="&#xf0da;" Foreground="{TemplateBinding Foreground}" Style="{StaticResource YIcon}"/>
                                         <!--淡出子集菜单容器-->
@@ -595,25 +595,25 @@
                                     </Trigger>
                                     <!--选中状态，优先级将高于Icon-->
                                     <Trigger Property="IsChecked" Value="True">
-                                        <Setter TargetName="PART_Icon" Value="&#xf00c;" Property="Text"></Setter>
-                                        <Setter TargetName="PART_Icon" Value="18" Property="FontSize"></Setter>
-                                        <Setter TargetName="PART_Icon" Value="{StaticResource YCheckedForeground}" Property="Foreground"></Setter>
+                                        <Setter TargetName="PART_Icon" Value="&#xf00c;" Property="Text"/>
+                                        <Setter TargetName="PART_Icon" Value="18" Property="FontSize"/>
+                                        <Setter TargetName="PART_Icon" Value="{StaticResource YCheckedForeground}" Property="Foreground"/>
                                     </Trigger>
                                     <Trigger Property="IsEnabled" Value="False">
-                                        <Setter TargetName="border" Value="{StaticResource YDisableOpacity}" Property="Opacity"></Setter>
+                                        <Setter TargetName="border" Value="{StaticResource YDisableOpacity}" Property="Opacity"/>
                                     </Trigger>
                                     <!--高亮状态-->
                                     <Trigger Property="IsHighlighted" Value="true">
-                                        <Setter Property="Background" TargetName="border" Value="{StaticResource YMenuMouseOverBackground}"></Setter>
-                                        <Setter Property="Foreground" Value="{StaticResource YMenuMouseOverForeground}"></Setter>
+                                        <Setter Property="Background" TargetName="border" Value="{StaticResource YMenuMouseOverBackground}"/>
+                                        <Setter Property="Foreground" Value="{StaticResource YMenuMouseOverForeground}"/>
                                     </Trigger>
                                     <Trigger Property="IsPressed" Value="true">
-                                        <Setter Property="Background" TargetName="border" Value="{StaticResource YMenuPressedBackground}"></Setter>
-                                        <Setter Property="Foreground" Value="{StaticResource YMenuPressedForeground}"></Setter>
+                                        <Setter Property="Background" TargetName="border" Value="{StaticResource YMenuPressedBackground}"/>
+                                        <Setter Property="Foreground" Value="{StaticResource YMenuPressedForeground}"/>
                                     </Trigger>
                                     <!--子菜单打开状态-->
-                                    <Trigger Property="IsSubmenuOpen" Value="true" >
-                                        <Setter TargetName="PART_Arrow" Value="{StaticResource YCheckedForeground}" Property="Foreground"></Setter>
+                                    <Trigger Property="IsSubmenuOpen" Value="true">
+                                        <Setter TargetName="PART_Arrow" Value="{StaticResource YCheckedForeground}" Property="Foreground"/>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
@@ -630,8 +630,8 @@
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                             CornerRadius="{TemplateBinding local:YAttachProperty.YCornerRadius}"
                             Margin="5" Effect="{StaticResource YDropShadow}"
-                    >
-                        <ItemsPresenter Margin="0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                   >
+                        <ItemsPresenter Margin="0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -641,15 +641,15 @@
     <!--默认右键菜单ContextMenu样式-->
     <Style x:Key="YContextMenuDefaultStyle" TargetType="{x:Type ContextMenu}">
         <Setter Property="HasDropShadow" Value="False"/>
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="RenderOptions.ClearTypeHint" Value="Enabled" />
-        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="RenderOptions.ClearTypeHint" Value="Enabled"/>
+        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Background" Value="{StaticResource YMenuBackground}"/>
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Foreground" Value="{StaticResource YMenuForeground}"/>
-        <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="Grid.IsSharedSizeScope" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Grid.IsSharedSizeScope" Value="True"/>
         <Setter Property="ItemContainerStyle" Value="{StaticResource YMenuItemDefaultStyle}"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -659,13 +659,13 @@
                                 BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"
                                 Padding="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                 CornerRadius="{TemplateBinding local:YAttachProperty.YCornerRadius}"
-                        >
+                       >
                             <Border.Effect>
                                 <DropShadowEffect ShadowDepth="0" Opacity="0.5"/>
                             </Border.Effect>
                             <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Cycle"
                                             Grid.IsSharedSizeScope="True" Margin="0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                            KeyboardNavigation.TabNavigation="Cycle" />
+                                            KeyboardNavigation.TabNavigation="Cycle"/>
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
@@ -681,9 +681,9 @@
 
     <!--文本操作右键菜单-->
     <ContextMenu x:Key="YContextMenuTextBoxStyle" Style="{StaticResource YContextMenuDefaultStyle}">
-        <MenuItem Command="ApplicationCommands.Cut" Icon="&#xe662;" Style="{DynamicResource YMenuItemDefaultStyle}" />
-        <MenuItem Command="ApplicationCommands.Copy" Icon="&#xe661;" Style="{DynamicResource YMenuItemDefaultStyle}" />
-        <MenuItem Command="ApplicationCommands.Paste" Icon="&#xe663;" Style="{DynamicResource YMenuItemDefaultStyle}" />
+        <MenuItem Command="ApplicationCommands.Cut" Icon="&#xe662;" Style="{DynamicResource YMenuItemDefaultStyle}"/>
+        <MenuItem Command="ApplicationCommands.Copy" Icon="&#xe661;" Style="{DynamicResource YMenuItemDefaultStyle}"/>
+        <MenuItem Command="ApplicationCommands.Paste" Icon="&#xe663;" Style="{DynamicResource YMenuItemDefaultStyle}"/>
     </ContextMenu>
 
 </ResourceDictionary>
