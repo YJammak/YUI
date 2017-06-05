@@ -5,5 +5,5 @@
 ## 示例
 ![示例图片](image.png)
 
-## 运行环境
-.NET 4.5.2 runtime<br />
+## 开发环境
+`visual studio 2017` `.NET 4.5.2`<br />
