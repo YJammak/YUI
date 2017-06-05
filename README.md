@@ -6,4 +6,4 @@
 ![示例图片](image.png)
 
 ## 开发环境
-`visual studio 2017` `.NET 4.5.2`<br />
+`Visual Studio 2017` `.NET 4.5.2`<br />
