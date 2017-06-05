@@ -10,11 +10,11 @@ namespace YUI.YUtil
     /// </summary>
     public static class YXmlHelper
     {
-        private static readonly XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
+        private static readonly XmlSerializerNamespaces Namespaces = new XmlSerializerNamespaces();
 
         static YXmlHelper()
         {
-            namespaces.Add(string.Empty, string.Empty);
+            Namespaces.Add(string.Empty, string.Empty);
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace YUI.YUtil
                     ? new XmlSerializer(type)
                     : new XmlSerializer(type, new XmlRootAttribute(xmlRootName));
 
-                xmlSerializer.Serialize(writer, o, namespaces);
+                xmlSerializer.Serialize(writer, o, Namespaces);
             }
 
             return sb.ToString();
@@ -67,6 +67,18 @@ namespace YUI.YUtil
             }
 
             return result as T;
+        }
+
+        /// <summary>
+        /// 从文件读取并反序列化为对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        public static T LoadFromFileToObject<T>(string filePath) where T : class
+        {
+            var data = File.ReadAllText(filePath);
+            return DeserializeToObject<T>(data);
         }
     }
 }

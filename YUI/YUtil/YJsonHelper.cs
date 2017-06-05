@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 
 namespace YUI.YUtil
@@ -47,7 +48,7 @@ namespace YUI.YUtil
         }
 
         /// <summary>
-        /// 解析JSON字符串生成对象实体
+        /// 反序列化为对象
         /// </summary>
         /// <typeparam name="T">对象类型</typeparam>
         /// <param name="json">json字符串(eg.{"ID":"112","Name":"石子儿"})</param>
@@ -60,7 +61,20 @@ namespace YUI.YUtil
         }
 
         /// <summary>
-        /// 解析JSON数组生成对象实体集合
+        /// 从文件读取并反序列化为对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="filePath"></param>
+        /// <param name="dateTimeFormat"></param>
+        /// <returns></returns>
+        public static T LoadFromFileToObject<T>(string filePath, string dateTimeFormat = "yyyy-MM-dd HH:mm:ss") where T : class
+        {
+            var data = File.ReadAllText(filePath);
+            return DeserializeToObject<T>(data, dateTimeFormat);
+        }
+
+        /// <summary>
+        /// 反序列化为对象集合
         /// </summary>
         /// <typeparam name="T">对象类型</typeparam>
         /// <param name="json">json数组字符串(eg.[{"ID":"112","Name":"石子儿"}])</param>
@@ -69,6 +83,19 @@ namespace YUI.YUtil
         public static List<T> DeserializeToList<T>(string json, string dateTimeFormat = "yyyy-MM-dd HH:mm:ss") where T : class
         {
             return DeserializeObjectMethodInfo.MakeGenericMethod(typeof(List<T>)).Invoke(null, new object[] { json, GetIsoDateTimeConverterArray(dateTimeFormat) }) as List<T>;
+        }
+
+        /// <summary>
+        /// 从文件读取并反序列化为对象集合
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="filePath"></param>
+        /// <param name="dateTimeFormat"></param>
+        /// <returns></returns>
+        public static List<T> LoadFromFileToList<T>(string filePath, string dateTimeFormat = "yyyy-MM-dd HH:mm:ss") where T : class
+        {
+            var data = File.ReadAllText(filePath);
+            return DeserializeToList<T>(data, dateTimeFormat);
         }
 
         /// <summary>
