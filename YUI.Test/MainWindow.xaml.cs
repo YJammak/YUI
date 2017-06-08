@@ -51,10 +51,13 @@ namespace YUI.Test
             Data.Add(new DataGridTest {ID = "6", Name = "asdg", Phone = "1234125412", Address = "asdgbhiuas"});
         }
 
+        private bool s = false;
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
+            ygifImage.Source = new Uri($"Resources/GIF{(s ? "1" : "2")}.gif", UriKind.RelativeOrAbsolute);
+            s = !s;
             textBox.PopupToolTip("这是弹出信息");
-            YMessageBox.ShowWindow("这是测试信息", "这是测试标题", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            //YMessageBox.ShowWindow("这是测试信息", "这是测试标题", MessageBoxButton.OKCancel, MessageBoxImage.Information);
         }
     }
 }
