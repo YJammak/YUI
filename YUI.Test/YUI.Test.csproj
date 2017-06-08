@@ -105,5 +105,13 @@
   <ItemGroup>
     <Resource Include="BusSystem.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\GIF1.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GIF2.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
