@@ -19,8 +19,8 @@
     <SolidColorBrush x:Key="YTextBoxBackground" Color="White"/>
 
     <SolidColorBrush x:Key="YControlBorderBrush" Color="#AAAAAA"/>
-    <SolidColorBrush x:Key="YFocusBorderBrush" Color="DodgerBlue"/>
-    <SolidColorBrush x:Key="YMouseOverBorderBrush" Color="DodgerBlue"/>
+    <SolidColorBrush x:Key="YFocusBorderBrush" Color="#FF7EB4EA"/>
+    <SolidColorBrush x:Key="YMouseOverBorderBrush" Color="#FF569DE5"/>
     
     <SolidColorBrush x:Key="YCheckedForeground" Color="DodgerBlue"/>
     <SolidColorBrush x:Key="YCheckedMouseoverForeground" Color="DodgerBlue"/>

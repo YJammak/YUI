@@ -24,6 +24,8 @@ namespace YUI.Test
         public string Phone { get; set; }
         public string Address { get; set; }
 
+        public DateTime Date { get; set; } = DateTime.Now;
+
         public override string ToString()
         {
             return Name;
@@ -57,7 +59,7 @@ namespace YUI.Test
             ygifImage.Source = new Uri($"Resources/GIF{(s ? "1" : "2")}.gif", UriKind.RelativeOrAbsolute);
             s = !s;
             textBox.PopupToolTip("这是弹出信息");
-            //YMessageBox.ShowWindow("这是测试信息", "这是测试标题", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            YMessageBox.ShowWindow(yAutoCompleteBox.SelectSuggest?.ToString() ?? "没选中", "这是测试标题", MessageBoxButton.OKCancel, MessageBoxImage.Information);
         }
     }
 }
