@@ -12,18 +12,18 @@ using System.Windows.Input;
 namespace YUI.YControls
 {
     /// <summary>
-    /// YAutoCompleteBox.xaml 的交互逻辑
+    /// 自动完成控件，输入时显示建议列表
     /// </summary>
     public class YAutoCompleteBox : TextBox
     {
         /// <summary>
-        /// 
+        /// 存储所有建议的集合
         /// </summary>
         public static readonly DependencyProperty SuggestsProperty = DependencyProperty.Register(
             "Suggests", typeof(IEnumerable), typeof(YAutoCompleteBox), new PropertyMetadata(default(IEnumerable)));
 
         /// <summary>
-        /// 
+        /// 存储所有建议的集合
         /// </summary>
         public IEnumerable Suggests
         {
@@ -32,13 +32,13 @@ namespace YUI.YControls
         }
 
         /// <summary>
-        /// 
+        /// 当前建议列表
         /// </summary>
         public static readonly DependencyProperty CurrentSuggestsProperty = DependencyProperty.Register(
             "CurrentSuggests", typeof(ObservableCollection<object>), typeof(YAutoCompleteBox), new PropertyMetadata(new ObservableCollection<object>()));
 
         /// <summary>
-        /// 
+        /// 当前建议列表
         /// </summary>
         public ObservableCollection<object> CurrentSuggests
         {
@@ -47,7 +47,7 @@ namespace YUI.YControls
         }
 
         /// <summary>
-        /// 
+        /// 选择的建议项
         /// </summary>
         public static readonly DependencyProperty SelectSuggestProperty = DependencyProperty.Register(
             "SelectSuggest", typeof(object), typeof(YAutoCompleteBox), new PropertyMetadata(default(object),
@@ -62,7 +62,7 @@ namespace YUI.YControls
             }));
 
         /// <summary>
-        /// 
+        /// 选择的建议项
         /// </summary>
         public object SelectSuggest
         {
@@ -71,13 +71,13 @@ namespace YUI.YControls
         }
 
         /// <summary>
-        /// 
+        /// 输入内容到显示建议项的延时
         /// </summary>
         public static readonly DependencyProperty DelayTimeProperty = DependencyProperty.Register(
             "DelayTime", typeof(double), typeof(YAutoCompleteBox), new PropertyMetadata(500.0));
 
         /// <summary>
-        /// 
+        /// 输入内容到显示建议项的延时
         /// </summary>
         public double DelayTime
         {
@@ -86,13 +86,13 @@ namespace YUI.YControls
         }
 
         /// <summary>
-        /// 
+        /// 弹出建议项的最小输入字数
         /// </summary>
         public static readonly DependencyProperty ThresholdProperty = DependencyProperty.Register(
             "Threshold", typeof(uint), typeof(YAutoCompleteBox), new PropertyMetadata(1u));
 
         /// <summary>
-        /// 
+        /// 弹出建议项的最小输入字数
         /// </summary>
         public uint Threshold
         {
@@ -101,13 +101,13 @@ namespace YUI.YControls
         }
 
         /// <summary>
-        /// 
+        /// 当按下回车是是否默认选择第一项
         /// </summary>
         public static readonly DependencyProperty IsSelectFirstProperty = DependencyProperty.Register(
             "IsSelectFirst", typeof(bool), typeof(YAutoCompleteBox), new PropertyMetadata(true));
 
         /// <summary>
-        /// 
+        /// 当按下回车是是否默认选择第一项
         /// </summary>
         public bool IsSelectFirst
         {
@@ -116,13 +116,13 @@ namespace YUI.YControls
         }
 
         /// <summary>
-        /// 
+        /// 是否在获取焦点是显示建议项
         /// </summary>
         public static readonly DependencyProperty IsShowSeggestsOnFocusProperty = DependencyProperty.Register(
             "IsShowSeggestsOnFocus", typeof(bool), typeof(YAutoCompleteBox), new PropertyMetadata(false));
 
         /// <summary>
-        /// 
+        /// 是否在获取焦点是显示建议项
         /// </summary>
         public bool IsShowSeggestsOnFocus
         {
@@ -131,13 +131,13 @@ namespace YUI.YControls
         }
 
         /// <summary>
-        /// 
+        /// 显示建议项的模板
         /// </summary>
         public static readonly DependencyProperty SuggestTemplateProperty = DependencyProperty.Register(
             "SuggestTemplate", typeof(ControlTemplate), typeof(YAutoCompleteBox), new PropertyMetadata(default(ControlTemplate)));
 
         /// <summary>
-        /// 
+        /// 显示建议项的模板
         /// </summary>
         public ControlTemplate SuggestTemplate
         {
@@ -146,13 +146,13 @@ namespace YUI.YControls
         }
 
         /// <summary>
-        /// 
+        /// 下拉列表的最大高度
         /// </summary>
         public static readonly DependencyProperty MaxDropDownHeightProperty = DependencyProperty.Register(
             "MaxDropDownHeight", typeof(double), typeof(YAutoCompleteBox), new PropertyMetadata(200.0));
 
         /// <summary>
-        /// 
+        /// 下拉列表的最大高度
         /// </summary>
         public double MaxDropDownHeight
         {
@@ -256,7 +256,10 @@ namespace YUI.YControls
             if (Text.Length > 0)
                 StartChanged();
             else
+            {
+                SelectSuggest = null;
                 HidePopup();
+            }
         }
 
         private void StartChanged()
@@ -294,6 +297,10 @@ namespace YUI.YControls
                     var commonIgnore = new List<object>();
                     var start = new List<object>();
                     var startIgnore = new List<object>();
+                    var keyCommon = new List<object>();
+                    var keyCommonIgnore = new List<object>();
+                    var keyStart = new List<object>();
+                    var keyStartIgnore = new List<object>();
                     var contain = new List<object>();
                     var end = new List<object>();
                     var endIgnore = new List<object>();
@@ -325,6 +332,33 @@ namespace YUI.YControls
                             continue;
                         }
 
+                        if (entry is IYAutoCompleteBoxKeys keywords && keywords.Keywords?.Count() > 0)
+                        {
+                            if (keywords.Keywords.Contains(Text))
+                            {
+                                keyCommon.Add(entry);
+                                continue;
+                            }
+
+                            if (keywords.Keywords.Any(keyword => string.Equals(keyword, Text, StringComparison.CurrentCultureIgnoreCase)))
+                            {
+                                keyCommonIgnore.Add(entry);
+                                continue;
+                            }
+
+                            if (keywords.Keywords.Any(keyword => keyword.StartsWith(Text)))
+                            {
+                                keyStart.Add(entry);
+                                continue;
+                            }
+
+                            if (keywords.Keywords.Any(keyword => keyword.StartsWith(Text, StringComparison.CurrentCultureIgnoreCase)))
+                            {
+                                keyStartIgnore.Add(entry);
+                                continue;
+                            }
+                        }
+
                         if (entryString.Contains(Text) && !entryString.EndsWith(Text))
                         {
                             contain.Add(entry);
@@ -353,6 +387,10 @@ namespace YUI.YControls
                     commonIgnore.Sort(Comparison);
                     start.Sort(Comparison);
                     startIgnore.Sort(Comparison);
+                    keyCommon.Sort(Comparison);
+                    keyCommonIgnore.Sort(Comparison);
+                    keyStart.Sort(Comparison);
+                    keyStartIgnore.Sort(Comparison);
                     contain.Sort(Comparison);
                     end.Sort(Comparison);
                     endIgnore.Sort(Comparison);
@@ -361,6 +399,10 @@ namespace YUI.YControls
                     AddSuggest(commonIgnore);
                     AddSuggest(start);
                     AddSuggest(startIgnore);
+                    AddSuggest(keyCommon);
+                    AddSuggest(keyCommonIgnore);
+                    AddSuggest(keyStart);
+                    AddSuggest(keyStartIgnore);
                     AddSuggest(contain);
                     AddSuggest(end);
                     AddSuggest(endIgnore);
@@ -418,9 +460,6 @@ namespace YUI.YControls
             UpdateSelect();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
         private void UpdateSelect()
         {
             IsInnerChanged = true;

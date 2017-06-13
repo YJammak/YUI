@@ -17,7 +17,7 @@ using YUI.YUtil;
 
 namespace YUI.Test
 {
-    public class DataGridTest
+    public class DataGridTest : IYAutoCompleteBoxKeys
     {
         public string ID { get; set; }
         public string Name { get; set; }
@@ -25,6 +25,8 @@ namespace YUI.Test
         public string Address { get; set; }
 
         public DateTime Date { get; set; } = DateTime.Now;
+
+        public IEnumerable<string> Keywords { get; set; } = new List<string>();
 
         public override string ToString()
         {
@@ -51,6 +53,8 @@ namespace YUI.Test
             Data.Add(new DataGridTest {ID = "4", Name = "asdgas", Phone = "1234125412", Address = "asdgbhiuas"});
             Data.Add(new DataGridTest {ID = "5", Name = "dsg", Phone = "1234125412", Address = "asdgbhiuas"});
             Data.Add(new DataGridTest {ID = "6", Name = "asdg", Phone = "1234125412", Address = "asdgbhiuas"});
+
+            Data[1].Keywords = new[] {"Smith"};
         }
 
         private bool s = false;
