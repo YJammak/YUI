@@ -125,10 +125,8 @@ namespace YUI.YUtil
             if (JsonConverterType == null)
                 throw new Exception("未加载【Newtonsoft.Json.dll】,请确保添加了该动态库");
 
-            var instance = Activator.CreateInstance(IsoDateTimeConverterType);
-            var property = IsoDateTimeConverterType.GetProperty("DateTimeFormat");
-            // ReSharper disable once PossibleNullReferenceException
-            property.SetValue(instance, dateTimeFormat);
+            dynamic instance = Activator.CreateInstance(IsoDateTimeConverterType);
+            instance.DateTimeFormat = dateTimeFormat;
 
             var convertArray = Array.CreateInstance(JsonConverterType, 1);
             convertArray.SetValue(instance, 0);

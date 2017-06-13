@@ -92,6 +92,8 @@ namespace YUI.YControls
         {
             if (ResizeMode != ResizeMode.CanResize) return;
 
+            SizeToContent = SizeToContent.Manual;
+
             WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
             if (e != null)
                 e.Handled = true;

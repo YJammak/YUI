@@ -6,6 +6,7 @@
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YControls/YLoading.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YControls/YGIFImage.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YControls/YWindow.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI;component/YControls/YAutoCompleteBox.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YShare.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YIcon.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YButton.xaml"/>

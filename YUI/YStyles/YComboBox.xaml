@@ -13,8 +13,8 @@
         <Setter Property="RenderOptions.ClearTypeHint" Value="Enabled"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Height" Value="28"/>
-        <Setter Property="local:YAttachProperty.YItemSelectedBackground" Value="Transparent"/>
-        <Setter Property="local:YAttachProperty.YItemMouseOverBackground" Value="#3399FF"/>
+        <Setter Property="local:YAttachProperty.YItemSelectedBackground" Value="{StaticResource YItemSelectedBackground}"/>
+        <Setter Property="local:YAttachProperty.YItemMouseOverBackground" Value="{StaticResource YItemMouseOverForeground}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBoxItem">
@@ -138,7 +138,8 @@
                                         Height="Auto" BorderBrush="{TemplateBinding BorderBrush}"
                                         Background="{TemplateBinding local:YAttachProperty.YPopupBackground}">
                                     <Border.Effect>
-                                        <DropShadowEffect BlurRadius="2" ShadowDepth="0" Opacity="0.5"></DropShadowEffect>
+                                        <DropShadowEffect BlurRadius="2" ShadowDepth="0" Opacity="0.5"
+                                                          Color="{TemplateBinding BorderBrush}"/>
                                     </Border.Effect>
                                     <ScrollViewer x:Name="DropDownScrollViewer" BorderThickness="0" Margin="1">
                                         <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained"/>
