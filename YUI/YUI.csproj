@@ -92,6 +92,7 @@
     <Compile Include="YUtil\YDataGridHelper.cs" />
     <Compile Include="YUtil\YImagesHelper.cs" />
     <Compile Include="YUtil\YJsonHelper.cs" />
+    <Compile Include="YUtil\YNetworkMonitor.cs" />
     <Compile Include="YUtil\YPopUpToolTipHelper.cs" />
     <Compile Include="YUtil\YSingleton.cs" />
     <Compile Include="YUtil\YStaticMembersDynamicWrapper.cs" />
