@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Shell;
 using YUI.YUtil;
 
@@ -46,6 +47,8 @@ namespace YUI.YControls
         {
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
+            //this.SetWindowChrome();
+
             MaxHeight = SystemParameters.WorkArea.Height;
             MaxWidth = SystemParameters.WorkArea.Width;
 
@@ -65,8 +68,10 @@ namespace YUI.YControls
                 try
                 {
                     //设置窗口为 无边框 背景透明 模式
-                    //this.SetWindowNoBorder(true);
-                    //this.SetWindowTransparent();
+                    this.SetWindowNoBorder(true);
+                    this.SetWindowTransparent();
+
+                    WindowStyle = WindowStyle.None;
                 }
                 catch
                 {

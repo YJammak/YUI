@@ -45,17 +45,10 @@
     <Style x:Key="YWindowDefaultStyle" TargetType="{x:Type local:YWindow}">
         <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
         <Setter Property="yui:YAttachProperty.YCornerRadius" Value="3"/>
-        <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="yui:YAttachProperty.YHeaderBackground" Value="{StaticResource YControlBackground}"/>
         <Setter Property="yui:YAttachProperty.YHeaderForeground" Value="{StaticResource YTextForeground}"/>
-        <Setter Property="WindowChrome.WindowChrome">
-            <Setter.Value>
-                <WindowChrome CaptionHeight="0" ResizeBorderThickness="0" GlassFrameThickness="0"/>
-            </Setter.Value>
-        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:YWindow}">
