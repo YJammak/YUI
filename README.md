@@ -1,6 +1,6 @@
-# YUI - (WPF Controls And Utils library)
+# YUI - (WPF Controls And Toolkit library)
 
-This library contains `controls` `styles` and `utils`.<br />
+This library contains `controls` `styles` and `toolkit`.<br />
 More is being added...<br /><br />
 
 ## Examples
