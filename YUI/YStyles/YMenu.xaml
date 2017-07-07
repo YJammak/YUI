@@ -186,14 +186,17 @@
         <Border Name="Border" Background="{TemplateBinding Background}">
             <StackPanel Orientation="Horizontal" x:Name="border" VerticalAlignment="Center" 
                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                        Margin="{TemplateBinding Padding}"
-           >
+                        Margin="{TemplateBinding Padding}">
                 <!--icon-->
                 <TextBlock x:Name="PART_Icon" Text="{TemplateBinding Icon}" Foreground="{TemplateBinding Foreground}" 
                            FontSize="{TemplateBinding local:YAttachProperty.YIconSize}" Style="{StaticResource YIcon}"
                            FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}"
-                           Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"       
-               />
+                           Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"/>
+                <Border Name="Check" Visibility="Collapsed" Margin="3 0 5 0" 
+                        Background="Transparent" BorderThickness="0" VerticalAlignment="Center">
+                    <TextBlock x:Name="CheckMark" FontFamily="/YUI;component/Resources/Fonts/#FontAwesome" Text="&#xf00c;" Foreground="{StaticResource YCheckedForeground}"
+                               Background="Transparent" Visibility="Hidden" VerticalAlignment="Center"/>
+                </Border>
                 <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left" Name="HeaderHost"
                                   ContentSource="Header" RecognizesAccessKey="True"/>
             </StackPanel>
@@ -201,6 +204,13 @@
         <ControlTemplate.Triggers>
             <Trigger Property="IsHighlighted" Value="true">
                 <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource Self},Path=(local:YAttachProperty.YMouseOverBackground)}"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="true">
+                <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+            </Trigger>
+            <Trigger Property="IsCheckable" Value="true">
+                <Setter TargetName="Check" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="PART_Icon" Property="Visibility" Value="Collapsed"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(local:YAttachProperty.YDisenableBackground)}"/>

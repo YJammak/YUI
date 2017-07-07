@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Collections.Concurrent;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
@@ -52,6 +53,8 @@ namespace YUI.YUtil
             PopupToolTip(control, popText, duration);
         }
 
+        private static readonly ConcurrentDictionary<FrameworkElement, Popup> dictionary = new ConcurrentDictionary<FrameworkElement, Popup>();
+
         /// <summary>
         /// 在指定控件上弹出信息
         /// </summary>
@@ -97,12 +100,20 @@ namespace YUI.YUtil
             pop.Child = panel;
 
             pop.PlacementTarget = control;
-            pop.Placement = PlacementMode.Relative;
+            pop.Placement = PlacementMode.Bottom;
 
-            pop.VerticalOffset = control.ActualHeight - 6;
-            pop.HorizontalOffset = control.ActualWidth / 10;
+            pop.VerticalOffset = -5;
+            pop.HorizontalOffset = control.ActualWidth / 10 - 5;
+
+            if (dictionary.ContainsKey(control))
+            {
+                dictionary[control].IsOpen = false;
+                dictionary[control] = pop;
+            }
 
             pop.IsOpen = true;
+
+            dictionary.AddOrUpdate(control, pop, (element, popup) => pop);
 
             System.Timers.Timer t = new System.Timers.Timer { Interval = duration };
 
@@ -111,6 +122,10 @@ namespace YUI.YUtil
                 pop.Dispatcher.Invoke(() =>
                 {
                     pop.IsOpen = false;
+
+                    if (ReferenceEquals(dictionary[control], pop))
+                        dictionary.TryRemove(control, out _);
+
                     t.Stop();
                 });
             };

@@ -69,7 +69,8 @@ namespace YUI.YControls
                 {
                     //设置窗口为 无边框 背景透明 模式
                     this.SetWindowNoBorder(true);
-                    this.SetWindowTransparent();
+                    if (!AllowsTransparency)
+                        this.SetWindowTransparent();
 
                     WindowStyle = WindowStyle.None;
                 }
