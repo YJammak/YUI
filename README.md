@@ -1,9 +1,10 @@
-# YUI - (WPF控件工具库)
+# YUI - (WPF Controls And Toolkit library)
 
-一些常用可自定义控件样式及工具集，正在不断添加及完善中...<br /><br />
+This library contains `controls` `styles` and `toolkit`.<br />
+More is being added...<br /><br />
 
-## 示例
+## Examples
 ![示例图片](image.png)
 
-## 开发环境
+## Develop Environment
 `Visual Studio 2017` `.NET 4.5.2`<br />
