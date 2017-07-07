@@ -7,7 +7,7 @@
                xmlns:yui="clr-namespace:YUI.YProperties"
                mc:Ignorable="d"
                Title="YMessageBox" ResizeMode="NoResize" UseLayoutRounding="True" SizeToContent="WidthAndHeight"
-               SnapsToDevicePixels="True" MinWidth="300" Background="Transparent" WindowStyle="None"
+               SnapsToDevicePixels="True" MinWidth="300" Background="Transparent" WindowStyle="None" AllowsTransparency="True"
                yui:YAttachProperty.YIconForeground="DodgerBlue"
               >
     <local:YWindow.Resources>

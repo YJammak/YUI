@@ -11,7 +11,7 @@
         <Setter Property="Value" Value="0"/>
         <Setter Property="Height" Value="10"/>
         <Setter Property="IsTabStop" Value="False"/>
-        <Setter Property="Foreground" Value="{StaticResource YFocusBorderBrush}"/>
+        <Setter Property="Foreground" Value="DodgerBlue"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="local:YAttachProperty.YCornerRadius" Value="0"/>
         <Setter Property="Template">
