@@ -47,14 +47,10 @@ namespace YUI.Test
 
             Data = new List<DataGridTest>();
 
-            Data.Add(new DataGridTest {ID = "1", Name = "Smith", Phone = "1234125412", Address = "asdgbhiuas"});
-            Data.Add(new DataGridTest {ID = "2", Name = "Jion", Phone = "1234125412", Address = "asdgbhiuas"});
-            Data.Add(new DataGridTest {ID = "3", Name = "asdf", Phone = "1234125412", Address = "asdgbhiuas"});
-            Data.Add(new DataGridTest {ID = "4", Name = "asdgas", Phone = "1234125412", Address = "asdgbhiuas"});
-            Data.Add(new DataGridTest {ID = "5", Name = "dsg", Phone = "1234125412", Address = "asdgbhiuas"});
-            Data.Add(new DataGridTest {ID = "6", Name = "asdg", Phone = "1234125412", Address = "asdgbhiuas"});
-
-            Data[1].Keywords = new[] {"Smith"};
+            for (int i = 0; i < 10000; ++i)
+            {
+                Data.Add(new DataGridTest { ID = i.ToString(), Name = $"Test{i}", Phone = "1234125412", Address = "asdgbhiuas" });
+            }
         }
 
         private bool s = false;
