@@ -46,6 +46,8 @@
         <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
         <Setter Property="yui:YAttachProperty.YCornerRadius" Value="3"/>
         <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="yui:YAttachProperty.YHeaderBackground" Value="{StaticResource YControlBackground}"/>
         <Setter Property="yui:YAttachProperty.YHeaderForeground" Value="{StaticResource YTextForeground}"/>

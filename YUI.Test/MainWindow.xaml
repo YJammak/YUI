@@ -7,7 +7,7 @@
         xmlns:yui="clr-namespace:YUI.YProperties;assembly=YUI"
         xmlns:yctr="clr-namespace:YUI.YControls;assembly=YUI"
         mc:Ignorable="d" SizeToContent="Width" Height="800"
-        Title="MainWindow">
+        Title="MainWindow" ResizeMode="CanMinimize">
     <StackPanel DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
         <yctr:YAutoCompleteBox x:Name="yAutoCompleteBox" Margin="5" Suggests="{Binding Data}"
                                yui:YAttachProperty.YWatermark="选择一项" DelayTime="200"/>
@@ -59,7 +59,23 @@
             <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI;component/Resources/Fonts/#FontAwesome"
                            yui:YAttachProperty.YIcon="&#xf110;"/>
         </StackPanel>
-        <ProgressBar Value="0.4" Margin="10 3" Height="10" yui:YAttachProperty.YCornerRadius="5"></ProgressBar>
+        <ProgressBar Value="0.3" Margin="10 3" Height="10" yui:YAttachProperty.YCornerRadius="5">
+            <ProgressBar.Foreground>
+                <LinearGradientBrush StartPoint="0 0" EndPoint="1 0">
+                    <GradientStop Offset="0" Color="Yellow"/>
+                    <GradientStop Offset="0.1" Color="GreenYellow"/>
+                    <GradientStop Offset="0.2" Color="LawnGreen"/>
+                    <GradientStop Offset="0.3" Color="LightSeaGreen"/>
+                    <GradientStop Offset="0.4" Color="DeepSkyBlue"/>
+                    <GradientStop Offset="0.5" Color="SlateBlue"/>
+                    <GradientStop Offset="0.6" Color="BlueViolet"/>
+                    <GradientStop Offset="0.7" Color="MediumVioletRed"/>
+                    <GradientStop Offset="0.8" Color="OrangeRed"/>
+                    <GradientStop Offset="0.9" Color="Red"/>
+                    <GradientStop Offset="1" Color="DarkRed"/>
+                </LinearGradientBrush>
+            </ProgressBar.Foreground>
+        </ProgressBar>
         <Calendar Margin="10"/>
         <DatePicker SelectedDate="2017-06-06" Margin="10"/>
         <DataGrid Height="200" Width="300" ItemsSource="{Binding Data}" Margin="10">
