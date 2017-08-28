@@ -64,6 +64,7 @@
       <DependentUpon>YMessageBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="YControls\YPasswordBoxHelper.cs" />
+    <Compile Include="YControls\YPopup.cs" />
     <Compile Include="YControls\YProgressRing.xaml.cs">
       <DependentUpon>YProgressRing.xaml</DependentUpon>
     </Compile>
