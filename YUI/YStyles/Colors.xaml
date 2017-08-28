@@ -6,9 +6,7 @@
 
     <SolidColorBrush x:Key="YControlBackground" Color="White"/>
 
-    <SolidColorBrush x:Key="YButtonForeground" Color="#DDDDDD"/>
-    <SolidColorBrush x:Key="YButtonMouseOverForeground" Color="#DDDDDD"/>
-    <SolidColorBrush x:Key="YButtonPressedForeground" Color="#DDDDDD"/>
+    <SolidColorBrush x:Key="YButtonForeground" Color="White"/>
     <SolidColorBrush x:Key="YButtonBackground" Color="#00AA77"/>
     <SolidColorBrush x:Key="YButtonMouseOverBackground" Color="#01BA77"/>
     <SolidColorBrush x:Key="YButtonPressedBackground" Color="#047049"/>
