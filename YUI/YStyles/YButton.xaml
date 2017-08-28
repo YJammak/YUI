@@ -9,9 +9,9 @@
     <!--默认样式-->
     <Style x:Key="YButtonDefaultStyle" TargetType="{x:Type Button}">
         <Setter Property="local:YAttachProperty.YMouseOverBackground" Value="{StaticResource YButtonMouseOverBackground}"/>
-        <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YButtonMouseOverForeground}"/>
+        <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}"/>
         <Setter Property="local:YAttachProperty.YPressedBackground" Value="{StaticResource YButtonPressedBackground}"/>
-        <Setter Property="local:YAttachProperty.YPressedForeground" Value="{StaticResource YButtonPressedForeground}"/>
+        <Setter Property="local:YAttachProperty.YPressedForeground" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}"/>
         <Setter Property="local:YAttachProperty.YCornerRadius" Value="3"/>
         <Setter Property="local:YAttachProperty.YIconSize" Value="20"/>
         <Setter Property="local:YAttachProperty.YIcon" Value=""/>

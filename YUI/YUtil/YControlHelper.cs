@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -118,6 +119,49 @@ namespace YUI.YUtil
                     break;
             }
             return childContent;
+        }
+
+        /// <summary>
+        /// 获取控件是否未通过验证
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="errorMsg"></param>
+        /// <param name="errorElement"></param>
+        /// <returns></returns>
+        public static bool IsHasError(DependencyObject node, out string errorMsg, out IInputElement errorElement)
+        {
+            errorMsg = string.Empty;
+            errorElement = null;
+            if (node == null) return false;
+
+            var isValid = !Validation.GetHasError(node);
+            if (!isValid)
+            {
+                var element = node as IInputElement;
+                if (element != null)
+                {
+                    if (element.IsEnabled)
+                    {
+                        var ve = Validation.GetErrors(node).FirstOrDefault();
+                        if (ve != null)
+                        {
+                            errorMsg = ve.ErrorContent.ToString();
+                        }
+                        errorElement = element;
+                        Keyboard.Focus(element);
+                        return true;
+                    }
+                }
+            }
+
+            foreach (var subnode in LogicalTreeHelper.GetChildren(node))
+            {
+                if (!(subnode is DependencyObject)) continue;
+
+                if (IsHasError((DependencyObject)subnode, out errorMsg, out errorElement)) return true;
+            }
+
+            return false;
         }
     }
 }
