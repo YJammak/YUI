@@ -10,32 +10,51 @@ namespace YUI.YUtil
     /// </summary>
     public static class YJsonHelper
     {
-        private static readonly MethodInfo SerializeObjectMethodInfo;
-        private static readonly MethodInfo DeserializeObjectMethodInfo;
-        private static readonly MethodInfo JsonParseMethodInfo;
-        private static readonly MethodInfo JsonTostringMethodInfo;
-        private static readonly Type IsoDateTimeConverterType;
-        private static readonly Type JsonConverterType;
+        private static MethodInfo SerializeObjectMethodInfo;
+        private static MethodInfo DeserializeObjectMethodInfo;
+        private static MethodInfo JsonParseMethodInfo;
+        private static MethodInfo JsonTostringMethodInfo;
+        private static Type IsoDateTimeConverterType;
+        private static Type JsonConverterType;
 
         static YJsonHelper()
         {
-            var assembly = Assembly.LoadFrom("Newtonsoft.Json.dll");
-            if (assembly == null) return;
+            try
+            {
+                LoadAssembly("Newtonsoft.Json.dll");
+            }
+            catch
+            {
+               Console.WriteLine("未加载【Newtonsoft.Json.dll】");
+            }
+        }
+
+        /// <summary>
+        /// 加载Newtonsoft.Json.dll
+        /// </summary>
+        /// <param name="assemblyPath"></param>
+        /// <returns></returns>
+        public static bool LoadAssembly(string assemblyPath)
+        {
+            var assembly = Assembly.LoadFrom(assemblyPath);
+            if (assembly == null) return false;
             var type = assembly.GetType("Newtonsoft.Json.JsonConvert");
-            if (type == null) return;
+            if (type == null) return false;
             JsonConverterType = assembly.GetType("Newtonsoft.Json.JsonConverter");
             var jsonFormattingType = assembly.GetType("Newtonsoft.Json.Formatting");
-            SerializeObjectMethodInfo = type.GetMethod("SerializeObject", new[] {typeof(object), JsonConverterType.MakeArrayType()});
+            SerializeObjectMethodInfo = type.GetMethod("SerializeObject", new[] { typeof(object), JsonConverterType.MakeArrayType() });
             IsoDateTimeConverterType = assembly.GetType("Newtonsoft.Json.Converters.IsoDateTimeConverter");
 
-            DeserializeObjectMethodInfo = type.GetMethod("DeserializeObject", new[] {typeof(string), JsonConverterType.MakeArrayType()});
+            DeserializeObjectMethodInfo = type.GetMethod("DeserializeObject", new[] { typeof(string), JsonConverterType.MakeArrayType() });
 
             type = assembly.GetType("Newtonsoft.Json.Linq.JToken");
-            if (type == null) return;
-            JsonParseMethodInfo = type.GetMethod("Parse", new[] {typeof(string)});
-            JsonTostringMethodInfo = type.GetMethod("ToString", new[] {jsonFormattingType, JsonConverterType.MakeArrayType()});
+            if (type == null) return false;
+            JsonParseMethodInfo = type.GetMethod("Parse", new[] { typeof(string) });
+            JsonTostringMethodInfo = type.GetMethod("ToString", new[] { jsonFormattingType, JsonConverterType.MakeArrayType() });
+
+            return true;
         }
-        
+
         /// <summary>
         /// 将对象序列化为JSON格式
         /// </summary>
