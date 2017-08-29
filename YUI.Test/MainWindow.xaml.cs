@@ -51,6 +51,9 @@ namespace YUI.Test
             {
                 Data.Add(new DataGridTest { ID = i.ToString(), Name = $"Test{i}", Phone = "1234125412", Address = "asdgbhiuas" });
             }
+
+            //YJsonHelper.LoadAssembly("../Newtonsoft.Json.dll");
+            //Console.WriteLine(YJsonHelper.SerializeObject(Data));
         }
 
         private bool s = false;
