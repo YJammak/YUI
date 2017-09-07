@@ -46,6 +46,14 @@ namespace YUI.YUtil
         [DllImport("user32", EntryPoint = "GetWindowLong")]
         private static extern int GetWindowLong(IntPtr hwnd, int nIndex);
 
+        /// <summary>
+        /// 窗口从最小化恢复
+        /// </summary>
+        private const int SW_RESTORE = 9;
+
+        [DllImport("user32.dll")]
+        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
         /// <summary> 
         /// Sets the layered window attributes. 
         /// </summary> 
@@ -60,13 +68,15 @@ namespace YUI.YUtil
         /// <summary>
         /// 设置窗口边框用于拖拽改变大小
         /// </summary>
-        /// <param name="w"></param>
+        /// <param name="window"></param>
         /// <param name="wc"></param>
-        public static void SetWindowChrome(this Window w, WindowChrome wc = null)
+        public static void SetWindowChrome(this Window window, WindowChrome wc = null)
         {
+            if (window == null) return;
+
             if (wc == null)
             {
-                switch (w.ResizeMode)
+                switch (window.ResizeMode)
                 {
                     case ResizeMode.NoResize:
                     case ResizeMode.CanResizeWithGrip:
@@ -93,17 +103,19 @@ namespace YUI.YUtil
                 }
             }
 
-            WindowChrome.SetWindowChrome(w, wc);
+            WindowChrome.SetWindowChrome(window, wc);
         }
 
         /// <summary>
         /// 窗口穿透
         /// </summary>
-        /// <param name="w"></param>
+        /// <param name="window"></param>
         /// <param name="canPenetrate"></param>
-        public static void SetWindowCanPenetrate(this Window w, bool canPenetrate)
+        public static void SetWindowCanPenetrate(this Window window, bool canPenetrate)
         {
-            var hwnd = new WindowInteropHelper(w).Handle;
+            if (window == null) return;
+
+            var hwnd = new WindowInteropHelper(window).Handle;
             var extendedStyle = GetWindowLong(hwnd, GWL_EXSTYLE);
 
             if (canPenetrate)
@@ -115,12 +127,14 @@ namespace YUI.YUtil
         /// <summary>
         /// 设置窗口无边框
         /// </summary>
-        /// <param name="w"></param>
+        /// <param name="window"></param>
         /// <param name="isNoBorder"></param>
-        public static void SetWindowNoBorder(this Window w, bool isNoBorder)
+        public static void SetWindowNoBorder(this Window window, bool isNoBorder)
         {
+            if (window == null) return;
+
             // 获取窗体句柄 
-            var hwnd = new WindowInteropHelper(w).Handle;
+            var hwnd = new WindowInteropHelper(window).Handle;
 
             // 获得窗体的 样式 
             var oldstyle = GetWindowLong(hwnd, GWL_STYLE);
@@ -137,11 +151,13 @@ namespace YUI.YUtil
         /// <summary>
         /// 设置窗口背景透明
         /// </summary>
-        /// <param name="w"></param>
-        public static void SetWindowTransparent(this Window w)
+        /// <param name="window"></param>
+        public static void SetWindowTransparent(this Window window)
         {
+            if (window == null) return;
+
             // 获取窗体句柄 
-            var hwnd = new WindowInteropHelper(w).Handle;
+            var hwnd = new WindowInteropHelper(window).Handle;
 
             // 创建圆角窗体  12 这个值可以根据自身项目进行设置 
             //NativeMethods.SetWindowRgn(hwnd, NativeMethods.CreateRoundRectRgn(0, 0, Convert.ToInt32(this.ActualWidth), Convert.ToInt32(this.ActualHeight), 12, 12), true);
@@ -155,11 +171,24 @@ namespace YUI.YUtil
         /// <param name="window"></param>
         public static void SetWindowToolWindow(this Window window)
         {
+            if (window == null) return;
+
             var hWnd = new WindowInteropHelper(window).Handle;
 
             var extendedStyle = GetWindowLong(hWnd, GWL_EXSTYLE);
 
             SetWindowLong(hWnd, GWL_EXSTYLE, extendedStyle | WS_EX_TOOLWINDOW);
+        }
+
+        /// <summary>
+        /// 设置窗口从最小化恢复
+        /// </summary>
+        /// <param name="window"></param>
+        public static void SetWindowRestore(this Window window)
+        {
+            if (window == null || window.WindowState != WindowState.Minimized) return;
+
+            ShowWindow(new WindowInteropHelper(window).Handle, SW_RESTORE);
         }
     }
 }
