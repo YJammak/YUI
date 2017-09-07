@@ -72,6 +72,7 @@
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding MessageBoxButton}" Value="YesNo">
                                 <Setter Property="Visibility" Value="Visible"/>
+                                <Setter Property="IsDefault" Value="True"/>
                             </DataTrigger>
                             <DataTrigger Binding="{Binding MessageBoxButton}" Value="YesNoCancel">
                                 <Setter Property="Visibility" Value="Visible"/>
@@ -87,6 +88,7 @@
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding MessageBoxButton}" Value="OK">
                                 <Setter Property="Visibility" Value="Visible"/>
+                                <Setter Property="IsDefault" Value="True"/>
                             </DataTrigger>
                             <DataTrigger Binding="{Binding MessageBoxButton}" Value="OKCancel">
                                 <Setter Property="Visibility" Value="Visible"/>
@@ -102,9 +104,11 @@
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding MessageBoxButton}" Value="YesNoCancel">
                                 <Setter Property="Visibility" Value="Visible"/>
+                                <Setter Property="IsDefault" Value="True"/>
                             </DataTrigger>
                             <DataTrigger Binding="{Binding MessageBoxButton}" Value="OKCancel">
                                 <Setter Property="Visibility" Value="Visible"/>
+                                <Setter Property="IsDefault" Value="True"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
