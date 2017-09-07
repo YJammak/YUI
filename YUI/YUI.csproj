@@ -34,6 +34,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -96,6 +97,7 @@
     <Compile Include="YUtil\YMD5Helper.cs" />
     <Compile Include="YUtil\YNetworkMonitor.cs" />
     <Compile Include="YUtil\YPopUpToolTipHelper.cs" />
+    <Compile Include="YUtil\YSingleInstanceManager.cs" />
     <Compile Include="YUtil\YSingleton.cs" />
     <Compile Include="YUtil\YStaticMembersDynamicWrapper.cs" />
     <Compile Include="YUtil\YSystemHelper.cs" />
