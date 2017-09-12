@@ -97,6 +97,7 @@
     <Compile Include="YUtil\YMD5Helper.cs" />
     <Compile Include="YUtil\YNetworkMonitor.cs" />
     <Compile Include="YUtil\YPopUpToolTipHelper.cs" />
+    <Compile Include="YUtil\YShortcutHelper.cs" />
     <Compile Include="YUtil\YSingleInstanceManager.cs" />
     <Compile Include="YUtil\YSingleton.cs" />
     <Compile Include="YUtil\YStaticMembersDynamicWrapper.cs" />
@@ -240,6 +241,17 @@
   <ItemGroup>
     <Resource Include="Resources\Fonts\FontAwesome.otf" />
     <Resource Include="Resources\Fonts\SF2015.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

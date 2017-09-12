@@ -67,6 +67,17 @@ namespace YUI.YUtil
         }
 
         /// <summary>
+        /// 将对象序列化为格式化的JSON
+        /// </summary>
+        /// <param name="o"></param>
+        /// <param name="dateTimeFormat"></param>
+        /// <returns></returns>
+        public static string SerializeObjectToFormatJson(object o, string dateTimeFormat = "yyyy-MM-dd HH:mm:ss")
+        {
+            return FormatJson(SerializeObject(o, dateTimeFormat));
+        }
+
+        /// <summary>
         /// 反序列化为对象
         /// </summary>
         /// <typeparam name="T">对象类型</typeparam>
