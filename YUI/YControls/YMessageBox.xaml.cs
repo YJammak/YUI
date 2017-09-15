@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace YUI.YControls
 {
@@ -101,6 +102,8 @@ namespace YUI.YControls
                     MessageBoxButton = button,
                 };
 
+                PlaySound(image);
+
                 return window.ShowDialog();
             }
 
@@ -116,10 +119,37 @@ namespace YUI.YControls
                     MessageBoxButton = button
                 };
 
+                PlaySound(image);
+
                 result = window.ShowDialog();
             });
 
             return result;
+        }
+
+        /// <summary>
+        /// 播放相关声音
+        /// </summary>
+        /// <param name="image"></param>
+        public static void PlaySound(MessageBoxImage image)
+        {
+            switch (image)
+            {
+                case MessageBoxImage.None:
+                    break;
+                case MessageBoxImage.Hand:
+                    System.Media.SystemSounds.Hand.Play();
+                    break;
+                case MessageBoxImage.Question:
+                    System.Media.SystemSounds.Question.Play();
+                    break;
+                case MessageBoxImage.Exclamation:
+                    System.Media.SystemSounds.Exclamation.Play();
+                    break;
+                case MessageBoxImage.Asterisk:
+                    System.Media.SystemSounds.Asterisk.Play();
+                    break;
+            }
         }
 
         /// <summary>
