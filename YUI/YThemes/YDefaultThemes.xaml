@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:yui="clr-namespace:YUI.YProperties">
+                    xmlns:yui="clr-namespace:YUI.YProperties"
+                    xmlns:yctr="clr-namespace:YUI.YControls">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YThemes/YStyles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
@@ -181,4 +182,11 @@
     </Style>
 
     <Style TargetType="DataGrid" BasedOn="{StaticResource DataGridStyle}"/>
+    
+    <Style TargetType="yctr:YMessageBox">
+        <Setter Property="ButtonBackground" Value="{StaticResource YButtonBackground}"/>
+        <Setter Property="MouseOverButtonBackground" Value="{StaticResource YButtonMouseOverBackground}"/>
+        <Setter Property="PressedButtonBackground" Value="{StaticResource YButtonPressedBackground}"/>
+        <Setter Property="ButtonForeground" Value="White"/>
+    </Style>
 </ResourceDictionary>

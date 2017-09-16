@@ -3,12 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:YUI.Test"
              xmlns:yui="clr-namespace:YUI.YProperties;assembly=YUI"
+             xmlns:yctr="clr-namespace:YUI.YControls;assembly=YUI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/YUI;component/YThemes/YDefaultThemes.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="yctr:YMessageBox">
+                <Setter Property="ButtonBackground" Value="Red"/>
+                <Setter Property="MouseOverButtonBackground" Value="{StaticResource YButtonMouseOverBackground}"/>
+                <Setter Property="PressedButtonBackground" Value="{StaticResource YButtonPressedBackground}"/>
+                <Setter Property="ButtonForeground" Value="White"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
