@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Media;
 
 namespace YUI.YControls
 {
@@ -51,6 +52,81 @@ namespace YUI.YControls
         {
             get => (MessageBoxButton)GetValue(MessageBoxButtonProperty);
             set => SetValue(MessageBoxButtonProperty, value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static readonly DependencyProperty ButtonBackgroundProperty = DependencyProperty.Register(
+            "ButtonBackground", typeof(Brush), typeof(YMessageBox), new PropertyMetadata(Brushes.DodgerBlue));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Brush ButtonBackground
+        {
+            get => (Brush) GetValue(ButtonBackgroundProperty);
+            set => SetValue(ButtonBackgroundProperty, value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static readonly DependencyProperty MouseOverButtonBackgroundProperty = DependencyProperty.Register(
+            "MouseOverButtonBackground", typeof(Brush), typeof(YMessageBox), new PropertyMetadata(Brushes.DodgerBlue));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Brush MouseOverButtonBackground
+        {
+            get => (Brush) GetValue(MouseOverButtonBackgroundProperty);
+            set => SetValue(MouseOverButtonBackgroundProperty, value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static readonly DependencyProperty PressedButtonBackgroundProperty = DependencyProperty.Register(
+            "PressedButtonBackground", typeof(Brush), typeof(YMessageBox), new PropertyMetadata(Brushes.DodgerBlue));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Brush PressedButtonBackground
+        {
+            get => (Brush) GetValue(PressedButtonBackgroundProperty);
+            set => SetValue(PressedButtonBackgroundProperty, value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static readonly DependencyProperty ButtonForegroundProperty = DependencyProperty.Register(
+            "ButtonForeground", typeof(Brush), typeof(YMessageBox), new PropertyMetadata(Brushes.White));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Brush ButtonForeground
+        {
+            get => (Brush) GetValue(ButtonForegroundProperty);
+            set => SetValue(ButtonForegroundProperty, value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static readonly DependencyProperty IconForegroundProperty = DependencyProperty.Register(
+            "IconForeground", typeof(Brush), typeof(YMessageBox), new PropertyMetadata(Brushes.DodgerBlue));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Brush IconForeground
+        {
+            get => (Brush) GetValue(IconForegroundProperty);
+            set => SetValue(IconForegroundProperty, value);
         }
 
         /// <summary>

@@ -54,7 +54,7 @@ namespace YUI.Test
 
             //YJsonHelper.LoadAssembly("../Newtonsoft.Json.dll");
             //Console.WriteLine(YJsonHelper.SerializeObject(Data));
-            var md5 = YMD5Helper.GetFileMD5("D:\\HKVideoCtrl.ocx");
+            //var md5 = YMD5Helper.GetFileMD5("D:\\HKVideoCtrl.ocx");
         }
 
         private bool s = false;
