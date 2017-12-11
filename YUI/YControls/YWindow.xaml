@@ -7,6 +7,8 @@
         <ResourceDictionary Source="pack://application:,,,/YUI;component/YStyles/YButton.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
+    <local:WindowCornerRadiusToCloseButton x:Key="WindowCornerRadiusToCloseButton"/>
+
     <ControlTemplate x:Key="WindowTemplateKey" TargetType="{x:Type local:YWindow}">
         <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
             <Grid>
@@ -164,7 +166,7 @@
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding Path=WindowState,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:YWindow}}}"
                                                                  Value="Normal">
-                                                        <Setter Property="yui:YAttachProperty.YCornerRadius" Value="0 3 0 0"/>
+                                                        <Setter Property="yui:YAttachProperty.YCornerRadius" Value="{Binding Path=(yui:YAttachProperty.YCornerRadius),RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type local:YWindow}}, Converter={StaticResource WindowCornerRadiusToCloseButton}}"/>
                                                     </DataTrigger>
                                                 </Style.Triggers>
                                             </Style>
@@ -177,14 +179,24 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome CaptionHeight="0" ResizeBorderThickness="0" GlassFrameThickness="0"/>
+            </Setter.Value>
+        </Setter>
         <Style.Triggers>
-            <Trigger Property="WindowState" Value="Maximized">
-                <Setter Property="yui:YAttachProperty.YCornerRadius" Value="0"/>
-            </Trigger>
             <Trigger Property="ResizeMode" Value="CanResize">
                 <Setter Property="WindowChrome.WindowChrome">
                     <Setter.Value>
                         <WindowChrome CaptionHeight="0" ResizeBorderThickness="6" GlassFrameThickness="7"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="WindowState" Value="Maximized">
+                <Setter Property="yui:YAttachProperty.YCornerRadius" Value="0"/>
+                <Setter Property="WindowChrome.WindowChrome">
+                    <Setter.Value>
+                        <WindowChrome CaptionHeight="0" ResizeBorderThickness="0" GlassFrameThickness="0"/>
                     </Setter.Value>
                 </Setter>
             </Trigger>

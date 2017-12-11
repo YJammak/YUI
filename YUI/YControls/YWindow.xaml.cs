@@ -2,8 +2,10 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shell;
@@ -157,6 +159,31 @@ namespace YUI.YControls
         {
             if (e.ClickCount == 2)
                 MaximizeWindowCommandExecute(null, null);
+        }
+    }
+
+    /// <summary>
+    /// 窗口圆角转右上角关闭按钮圆角
+    /// </summary>
+    public class WindowCornerRadiusToCloseButton : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            try
+            {
+                var tk = (CornerRadius)value;
+
+                return new CornerRadius(0, tk.TopRight, 0, 0);
+            }
+            catch
+            {
+                return new CornerRadius(0);
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
 }
