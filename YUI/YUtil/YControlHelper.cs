@@ -16,20 +16,20 @@ namespace YUI.YUtil
         /// <summary>
         /// 绑定命令和命令事件到宿主UI
         /// </summary>
-        public static void BindCommand(this UIElement @ui, ICommand com, Action<object, ExecutedRoutedEventArgs> call)
+        public static void BindCommand(this UIElement ui, ICommand com, Action<object, ExecutedRoutedEventArgs> call)
         {
             var bind = new CommandBinding(com);
             bind.Executed += new ExecutedRoutedEventHandler(call);
-            @ui.CommandBindings.Add(bind);
+            ui.CommandBindings.Add(bind);
         }
 
         /// <summary>
         /// 绑定RelayCommand命令到宿主UI
         /// </summary>
-        public static void BindCommand(this UIElement @ui, ICommand com)
+        public static void BindCommand(this UIElement ui, ICommand com)
         {
             var bind = new CommandBinding(com);
-            @ui.CommandBindings.Add(bind);
+            ui.CommandBindings.Add(bind);
         }
 
         /// <summary>
@@ -78,8 +78,7 @@ namespace YUI.YUtil
             var parent = element;
             while (parent != null)
             {
-                var correctlyTyped = parent as T;
-                if (correctlyTyped != null)
+                if (parent is T correctlyTyped)
                 {
                     return correctlyTyped;
                 }
@@ -137,8 +136,7 @@ namespace YUI.YUtil
             var isValid = !Validation.GetHasError(node);
             if (!isValid)
             {
-                var element = node as IInputElement;
-                if (element != null)
+                if (node is IInputElement element)
                 {
                     if (element.IsEnabled)
                     {

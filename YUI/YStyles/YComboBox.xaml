@@ -51,6 +51,9 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="{StaticResource YControlBorderBrush}"/>
         <Setter Property="local:YAttachProperty.YCornerRadius" Value="3"/>
+        <Setter Property="local:YAttachProperty.YIconForeground" Value="{StaticResource YTextForeground}"/>
+        <Setter Property="local:YAttachProperty.YIconMouseOverForeground" Value="{StaticResource YComboBoxArrowMouseOverForeground}"/>
+        <Setter Property="local:YAttachProperty.YIconPressedForeground" Value="{StaticResource YComboBoxArrowPressedForeground}"/>
         <Setter Property="local:YAttachProperty.YFocusBackground" Value="Transparent"/>
         <Setter Property="local:YAttachProperty.YFocusBorderBrush" Value="{StaticResource YFocusBorderBrush}"/>
         <Setter Property="local:YAttachProperty.YMouseOverBorderBrush" Value="{StaticResource YMouseOverBorderBrush}"/>
@@ -97,6 +100,7 @@
                                               IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
                                               Margin="2 1 2 1"
                                               Grid.Column="1"  Grid.ColumnSpan="3" 
+                                              Foreground="{TemplateBinding local:YAttachProperty.YIconForeground}"
                                               IsEnabled="{Binding Path=IsReadOnly,RelativeSource={RelativeSource TemplatedParent},
                                                          Converter={x:Static cvt:YConverters.YBooleanReverseConverter},Mode=OneWay}"
                                               Background="{TemplateBinding local:YAttachProperty.YFocusBackground}"/>
@@ -166,9 +170,11 @@
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="local:YAttachProperty.YIconForeground" Value="{Binding Path=(local:YAttachProperty.YIconMouseOverForeground),RelativeSource={RelativeSource Self}}"/>
                             <Setter Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YMouseOverBorderBrush),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="local:YAttachProperty.YIconForeground" Value="{Binding Path=(local:YAttachProperty.YIconMouseOverForeground),RelativeSource={RelativeSource Self}}"/>
                             <Setter  Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YFocusBorderBrush),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <Trigger Property="IsKeyboardFocusWithin" Value="True">
