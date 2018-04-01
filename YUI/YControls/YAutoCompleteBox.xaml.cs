@@ -134,14 +134,14 @@ namespace YUI.YControls
         /// 显示建议项的模板
         /// </summary>
         public static readonly DependencyProperty SuggestTemplateProperty = DependencyProperty.Register(
-            "SuggestTemplate", typeof(ControlTemplate), typeof(YAutoCompleteBox), new PropertyMetadata(default(ControlTemplate)));
+            "SuggestTemplate", typeof(DataTemplate), typeof(YAutoCompleteBox), new PropertyMetadata(default(ControlTemplate)));
 
         /// <summary>
         /// 显示建议项的模板
         /// </summary>
-        public ControlTemplate SuggestTemplate
+        public DataTemplate SuggestTemplate
         {
-            get => (ControlTemplate) GetValue(SuggestTemplateProperty);
+            get => (DataTemplate) GetValue(SuggestTemplateProperty);
             set => SetValue(SuggestTemplateProperty, value);
         }
 
@@ -288,7 +288,8 @@ namespace YUI.YControls
         {
             try
             {
-                SelectSuggest = Suggests.Cast<object>().FirstOrDefault(suggest => suggest.ToString() == Text);
+                if (!IsInnerChanged)
+                    SelectSuggest = Suggests.Cast<object>().FirstOrDefault(suggest => suggest.ToString() == Text);
 
                 if (Text.Length >= Threshold && !IsInnerChanged && IsFocused)
                 {

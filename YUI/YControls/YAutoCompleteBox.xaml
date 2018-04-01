@@ -91,7 +91,7 @@
                                     <ListBox x:Name="PART_PopupContent" Style="{StaticResource YListBoxDefaultStyle}"
                                              BorderThickness="0"
                                              ItemsSource="{TemplateBinding CurrentSuggests}" 
-                                             ItemTemplate="{TemplateBinding SuggestTemplate}"/>
+                                             ItemTemplate="{Binding SuggestTemplate, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:YAutoCompleteBox}}"/>
                                 </Border>
                             </Grid>
                         </Popup>
