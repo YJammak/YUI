@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
+// ReSharper disable InconsistentNaming
+
 namespace YUI.YUtil
 {
     /// <summary>
@@ -36,8 +38,18 @@ namespace YUI.YUtil
         /// <returns></returns>
         public static bool LoadAssembly(string assemblyPath)
         {
-            var assembly = Assembly.LoadFrom(assemblyPath);
+            Assembly assembly;
+            try
+            {
+                assembly = Assembly.Load("Newtonsoft.Json");
+            }
+            catch
+            {
+                assembly = Assembly.LoadFrom(assemblyPath);
+            }
+
             if (assembly == null) return false;
+
             var type = assembly.GetType("Newtonsoft.Json.JsonConvert");
             if (type == null) return false;
             JsonConverterType = assembly.GetType("Newtonsoft.Json.JsonConverter");
