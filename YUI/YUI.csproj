@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YControls\IYAutoCompleteBoxKeys.cs" />
+    <Compile Include="YControls\YTailBorder.cs" />
     <Compile Include="YControls\YAutoCompleteBox.xaml.cs">
       <DependentUpon>YAutoCompleteBox.xaml</DependentUpon>
     </Compile>
