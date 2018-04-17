@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
-using System.Windows.Shapes;
+using YUI.YControls;
 
 namespace YUI.YUtil
 {
@@ -68,36 +68,30 @@ namespace YUI.YUtil
 
             var pop = new Popup { AllowsTransparency = true };
 
-            var popBorder = new Border
+            var border = new YTailBorder
             {
+                Background = Brushes.White,
+                Child = content,
+                Placement = Placement.TopLeft,
+                TailWidth = 8,
+                TailHeight = 6,
+                TailHorizontalOffset = 6,
+                Effect = new DropShadowEffect
+                {
+                    BlurRadius = 3,
+                    Color = Colors.Black,
+                    ShadowDepth = 0,
+                    Opacity = 0.5
+                },
+                Margin = new Thickness(5),
                 CornerRadius = new CornerRadius(2),
-                Background = new SolidColorBrush(Colors.WhiteSmoke),
-                Margin = new Thickness(5, 0, 5, 5),
-                Child = content
+                Padding = new Thickness(0)
             };
 
-            var polygon = new Polygon();
-            polygon.Points.Add(new Point(4, 0));
-            polygon.Points.Add(new Point(8, 6));
-            polygon.Points.Add(new Point(0, 6));
-            polygon.Fill = new SolidColorBrush(Colors.WhiteSmoke);
+            var grid = new Grid();
+            grid.Children.Add(border);
 
-            polygon.Margin = new Thickness(8, 5, 0, 0);
-
-            var panel = new StackPanel();
-            panel.Children.Add(polygon);
-            panel.Children.Add(popBorder);
-
-            var dropShadow = new DropShadowEffect
-            {
-                BlurRadius = 3,
-                Color = Colors.Black,
-                ShadowDepth = 0
-            };
-
-            panel.Effect = dropShadow;
-
-            pop.Child = panel;
+            pop.Child = grid;
 
             pop.PlacementTarget = control;
             pop.Placement = PlacementMode.Bottom;
@@ -115,7 +109,7 @@ namespace YUI.YUtil
 
             dictionary.AddOrUpdate(control, pop, (element, popup) => pop);
 
-            System.Timers.Timer t = new System.Timers.Timer { Interval = duration };
+            var t = new System.Timers.Timer { Interval = duration };
 
             t.Elapsed += (x, y) =>
             {
