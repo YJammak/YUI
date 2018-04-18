@@ -63,7 +63,7 @@ namespace YUI.Test
             ygifImage.Source = new Uri($"Resources/GIF{(s ? "1" : "2")}.gif", UriKind.RelativeOrAbsolute);
             s = !s;
             textBox.PopupToolTip("这是弹出信息");
-            YMessageBox.ShowWindow(yAutoCompleteBox.SelectSuggest?.ToString() ?? "没选中", "这是测试标题", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            YMessageBox.ShowWindow(yAutoCompleteBox.SelectSuggest?.ToString() ?? "没选中", "这是测试标题", MessageBoxButton.OKCancel, MessageBoxImage.Information, false);
         }
     }
 }

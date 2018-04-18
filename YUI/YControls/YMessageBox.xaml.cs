@@ -141,10 +141,11 @@ namespace YUI.YControls
         /// 
         /// </summary>
         /// <param name="message"></param>
+        /// <param name="showTitleIcon"></param>
         /// <returns></returns>
-        public static bool? ShowWindow(string message)
+        public static bool? ShowWindow(string message, bool showTitleIcon = true)
         {
-            return ShowWindow(message, "", MessageBoxButton.OK, MessageBoxImage.Information);
+            return ShowWindow(message, "", MessageBoxButton.OK, MessageBoxImage.Information, showTitleIcon);
         }
 
         /// <summary>
@@ -152,10 +153,11 @@ namespace YUI.YControls
         /// </summary>
         /// <param name="message"></param>
         /// <param name="title"></param>
+        /// <param name="showTitleIcon"></param>
         /// <returns></returns>
-        public static bool? ShowWindow(string message, string title)
+        public static bool? ShowWindow(string message, string title, bool showTitleIcon = true)
         {
-            return ShowWindow(message, title, MessageBoxButton.OK, MessageBoxImage.Information);
+            return ShowWindow(message, title, MessageBoxButton.OK, MessageBoxImage.Information, showTitleIcon);
         }
 
         /// <summary>
@@ -165,8 +167,9 @@ namespace YUI.YControls
         /// <param name="title"></param>
         /// <param name="button"></param>
         /// <param name="image"></param>
+        /// <param name="showTitleIcon"></param>
         /// <returns></returns>
-        public static bool? ShowWindow(string message, string title, MessageBoxButton button, MessageBoxImage image)
+        public static bool? ShowWindow(string message, string title, MessageBoxButton button, MessageBoxImage image, bool showTitleIcon = true)
         {
             if (Application.Current.Dispatcher.CheckAccess())
             {
@@ -177,6 +180,9 @@ namespace YUI.YControls
                     MessageBoxImage = image,
                     MessageBoxButton = button,
                 };
+
+                if (!showTitleIcon)
+                    window.Icon = null;
 
                 PlaySound(image);
 
@@ -233,11 +239,37 @@ namespace YUI.YControls
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="message"></param>
+        /// <param name="showTitleIcon"></param>
+        /// <returns></returns>
+        public static bool? ShowWindow(Window owner, string message, bool showTitleIcon = true)
+        {
+            return ShowWindow(owner, message, "", MessageBoxButton.OK, MessageBoxImage.Information, showTitleIcon);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="message"></param>
+        /// <param name="title"></param>
+        /// <param name="showTitleIcon"></param>
+        /// <returns></returns>
+        public static bool? ShowWindow(Window owner, string message, string title, bool showTitleIcon = true)
+        {
+            return ShowWindow(owner, message, title, MessageBoxButton.OK, MessageBoxImage.Information, showTitleIcon);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="message"></param>
         /// <param name="title"></param>
         /// <param name="button"></param>
         /// <param name="image"></param>
+        /// <param name="showTitleIcon"></param>
         /// <returns></returns>
-        public static bool? ShowWindow(Window owner, string message, string title, MessageBoxButton button, MessageBoxImage image)
+        public static bool? ShowWindow(Window owner, string message, string title, MessageBoxButton button, MessageBoxImage image, bool showTitleIcon = true)
         {
             if (Application.Current.Dispatcher.CheckAccess())
             {
@@ -250,6 +282,9 @@ namespace YUI.YControls
                     MessageBoxButton = button,
                     WindowStartupLocation = WindowStartupLocation.CenterOwner
                 };
+
+                if (!showTitleIcon)
+                    window.Icon = null;
 
                 return window.ShowDialog();
             }

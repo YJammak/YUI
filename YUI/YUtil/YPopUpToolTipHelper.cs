@@ -44,7 +44,7 @@ namespace YUI.YUtil
                 Text = message,
                 Foreground = foreground ?? new SolidColorBrush(Color.FromRgb(0x55, 0x55, 0x55)),
                 FontSize = fontSize,
-                Margin = new Thickness(10, 3, 10, 3),
+                Margin = new Thickness(10, 5, 10, 5),
                 FontFamily = fontFamily,
                 TextAlignment = TextAlignment.Left,
                 HorizontalAlignment = HorizontalAlignment.Left
@@ -70,7 +70,7 @@ namespace YUI.YUtil
 
             var border = new YTailBorder
             {
-                Background = Brushes.White,
+                Background = Brushes.WhiteSmoke,
                 Child = content,
                 Placement = Placement.TopLeft,
                 TailWidth = 8,
@@ -93,6 +93,8 @@ namespace YUI.YUtil
 
             pop.Child = grid;
 
+            pop.UseLayoutRounding = true;
+            pop.SnapsToDevicePixels = true;
             pop.PlacementTarget = control;
             pop.Placement = PlacementMode.Bottom;
 

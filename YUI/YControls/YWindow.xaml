@@ -92,7 +92,18 @@
                                         </Style>
                                     </Border.Style>
                                     <StackPanel Orientation="Horizontal" Margin="5">
-                                        <Image Width="20" Height="20" Source="{TemplateBinding Icon}" VerticalAlignment="Center"/>
+                                        <Image Width="20" Height="20" Source="{TemplateBinding Icon}" VerticalAlignment="Center">
+                                            <Image.Style>
+                                                <Style TargetType="Image">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Icon, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:YWindow}}}"
+                                                                     Value="{x:Null}">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
                                         <TextBlock Margin="6 0 0 0" VerticalAlignment="Center" Text="{TemplateBinding Title}"
                                                    Foreground="{TemplateBinding yui:YAttachProperty.YHeaderForeground}"/>
                                     </StackPanel>
