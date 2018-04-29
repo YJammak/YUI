@@ -171,7 +171,7 @@ namespace YUI.YControls
         /// <returns></returns>
         public static bool? ShowWindow(string message, string title, MessageBoxButton button, MessageBoxImage image, bool showTitleIcon = true)
         {
-            if (Application.Current.Dispatcher.CheckAccess())
+            var func = new Func<bool?>(() =>
             {
                 var window = new YMessageBox()
                 {
@@ -187,26 +187,9 @@ namespace YUI.YControls
                 PlaySound(image);
 
                 return window.ShowDialog();
-            }
-
-            bool? result = null;
-
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                var window = new YMessageBox()
-                {
-                    Message = message,
-                    Title = title,
-                    MessageBoxImage = image,
-                    MessageBoxButton = button
-                };
-
-                PlaySound(image);
-
-                result = window.ShowDialog();
             });
 
-            return result;
+            return Application.Current.Dispatcher.CheckAccess() ? func() : Application.Current.Dispatcher.Invoke(func);
         }
 
         /// <summary>
@@ -271,7 +254,7 @@ namespace YUI.YControls
         /// <returns></returns>
         public static bool? ShowWindow(Window owner, string message, string title, MessageBoxButton button, MessageBoxImage image, bool showTitleIcon = true)
         {
-            if (Application.Current.Dispatcher.CheckAccess())
+            var func = new Func<bool?>(() =>
             {
                 var window = new YMessageBox()
                 {
@@ -286,26 +269,12 @@ namespace YUI.YControls
                 if (!showTitleIcon)
                     window.Icon = null;
 
+                PlaySound(image);
+
                 return window.ShowDialog();
-            }
-
-            bool? result = null;
-
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                var window = new YMessageBox()
-                {
-                    Owner = owner,
-                    Message = message,
-                    Title = title,
-                    MessageBoxImage = image,
-                    MessageBoxButton = button
-                };
-
-                result = window.ShowDialog();
             });
 
-            return result;
+            return Application.Current.Dispatcher.CheckAccess() ? func() : Application.Current.Dispatcher.Invoke(func);
         }
 
 
