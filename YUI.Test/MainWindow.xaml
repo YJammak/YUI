@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:YUI.Test"
         xmlns:yui="clr-namespace:YUI.YProperties;assembly=YUI"
         xmlns:yctr="clr-namespace:YUI.YControls;assembly=YUI"
-        mc:Ignorable="d" Height="1000"
+        mc:Ignorable="d" Height="1000" ContentRendered="MainWindow_OnContentRendered"
         Title="MainWindow" yui:YAttachProperty.YCornerRadius="3">
     <StackPanel DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" 
                 Margin="10">

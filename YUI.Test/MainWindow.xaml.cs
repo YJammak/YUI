@@ -65,5 +65,16 @@ namespace YUI.Test
             textBox.PopupToolTip("这是弹出信息");
             YMessageBox.ShowWindow(yAutoCompleteBox.SelectSuggest?.ToString() ?? "没选中", "这是测试标题", MessageBoxButton.OKCancel, MessageBoxImage.Information, false);
         }
+
+        private void MainWindow_OnContentRendered(object sender, EventArgs e)
+        {
+            YHotKey.HotKeyPressed += key =>
+            {
+                Console.WriteLine(key);
+                Close();
+            };
+
+            var hotkey = new YHotKey(ModifierKeys.Alt | ModifierKeys.Control | ModifierKeys.Shift, YKeys.B, this);
+        }
     }
 }
