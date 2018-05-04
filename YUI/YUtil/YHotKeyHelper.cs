@@ -210,11 +210,10 @@ namespace YUI.YUtil
         Alt = 262144,
     }
 
-    /// <inheritdoc />
     /// <summary>
     /// 热键注册帮助
     /// </summary>
-    public sealed class YHotKey : IDisposable
+    public sealed class YHotKey : IDisposable, IEquatable<YHotKey>
     {
         /// <summary>
         /// 
@@ -338,6 +337,28 @@ namespace YUI.YUtil
         {
             ComponentDispatcher.ThreadPreprocessMessage -= ThreadPreprocessMessageMethod;
             UnregisterHotKey();
+        }
+
+        public bool Equals(YHotKey other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return Key == other.Key && KeyModifier == other.KeyModifier;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            return obj is YHotKey key && Equals(key);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((int) Key * 397) ^ (int) KeyModifier;
+            }
         }
     }
 }
