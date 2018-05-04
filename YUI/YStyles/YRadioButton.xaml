@@ -72,10 +72,11 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
-                    <Grid x:Name="grid" VerticalAlignment="Center">
+                    <Grid x:Name="grid" VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                          HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
                         <Border x:Name="border" BorderThickness="{TemplateBinding BorderThickness}" 
                                 BorderBrush="{TemplateBinding BorderBrush}"  
-                                Height="{TemplateBinding Height}" HorizontalAlignment="Center"
+                                Height="{TemplateBinding Height}"
                                 Background="{TemplateBinding Background}" Width="{TemplateBinding Width}">
                             <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" 
                                               Margin="{TemplateBinding Padding}" 
