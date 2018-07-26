@@ -269,6 +269,16 @@ namespace YUI.YUtil
         }
 
         /// <summary>
+        /// 转换为ImageSource
+        /// </summary>
+        /// <param name="image"></param>
+        /// <returns></returns>
+        public static ImageSource ToImageSource(this Bitmap image)
+        {
+            return CreateImageSourceFromImage(image);
+        }
+
+        /// <summary>
         /// 从文件读取ImageSource
         /// </summary>
         /// <param name="filePath"></param>
