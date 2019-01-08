@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:yui="clr-namespace:YUI.YProperties"
-                    xmlns:yctr="clr-namespace:YUI.YControls">
+                    xmlns:yControls="clr-namespace:YUI.WPF.YControls"
+                    xmlns:yProperties="clr-namespace:YUI.WPF.YProperties">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/YUI;component/YThemes/YStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI.WPF;component/YThemes/YStyles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="Button" BasedOn="{StaticResource YButtonDefaultStyle}"/>
@@ -21,10 +21,10 @@
 
     <Style x:Key="TreeViewItemStyle" TargetType="TreeViewItem" BasedOn="{StaticResource YTreeViewItemDefaultStyle}">
         <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
-        <Setter Property="yui:YAttachProperty.YMouseOverForeground" Value="{StaticResource YItemMouseOverForeground}"/>
-        <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="{StaticResource YItemMouseOverBackground}"/>
-        <Setter Property="yui:YAttachProperty.YItemSelectedForeground" Value="{StaticResource YControlBackground}"/>
-        <Setter Property="yui:YAttachProperty.YItemSelectedBackground" Value="{StaticResource YItemSelectedBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverForeground" Value="{StaticResource YItemMouseOverForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="{StaticResource YItemMouseOverBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemSelectedForeground" Value="{StaticResource YControlBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemSelectedBackground" Value="{StaticResource YItemSelectedBackground}"/>
     </Style>
 
     <Style TargetType="TreeViewItem" BasedOn="{StaticResource TreeViewItemStyle}"/>
@@ -42,67 +42,67 @@
     <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource SeparatorStyle}"/>
 
     <Style x:Key="MenuItemStyle" TargetType="MenuItem" BasedOn="{StaticResource YMenuItemNoBorderStyle}">
-        <Setter Property="yui:YAttachProperty.YCornerRadius" Value="2"/>
-        <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="#22FFFFFF"/>
-        <Setter Property="yui:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#fontawesome"/>
-        <Setter Property="yui:YAttachProperty.YIconMargin" Value="0 0 15 0"/>
-        <Setter Property="yui:YAttachProperty.YIconSize" Value="13"/>
+        <Setter Property="yProperties:YAttachProperty.YCornerRadius" Value="2"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="#22FFFFFF"/>
+        <Setter Property="yProperties:YAttachProperty.YIconFontFamily" Value="/YUI.WPF;component/Resources/Fonts/#fontawesome"/>
+        <Setter Property="yProperties:YAttachProperty.YIconMargin" Value="0 0 15 0"/>
+        <Setter Property="yProperties:YAttachProperty.YIconSize" Value="13"/>
     </Style>
 
     <Style x:Key="ContextMenuItem" TargetType="MenuItem" BasedOn="{StaticResource MenuItemStyle}">
         <Setter Property="MinWidth" Value="80"/>
-        <Setter Property="yui:YAttachProperty.YMenuPopupBackground" Value="{StaticResource YControlBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YMenuPopupBackground" Value="{StaticResource YControlBackground}"/>
         <Setter Property="Background" Value="{StaticResource YControlBackground}"/>
         <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
-        <Setter Property="yui:YAttachProperty.YDisenableBackground" Value="{StaticResource YControlBackground}"/>
-        <Setter Property="yui:YAttachProperty.YDisenableForeground" Value="#88555555"/>
-        <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="#E0E0E0"/>
+        <Setter Property="yProperties:YAttachProperty.YDisenableBackground" Value="{StaticResource YControlBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YDisenableForeground" Value="#88555555"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="#E0E0E0"/>
     </Style>
 
     <Style TargetType="MenuItem" BasedOn="{StaticResource ContextMenuItem}"/>
 
     <Style TargetType="Menu" BasedOn="{StaticResource YMenuDefaultStyle}">
-        <Setter Property="yui:YAttachProperty.YMenuPopupCornerRadius" Value="0"/>
+        <Setter Property="yProperties:YAttachProperty.YMenuPopupCornerRadius" Value="0"/>
         <Setter Property="Background" Value="{StaticResource YControlBackground}"/>
         <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
-        <Setter Property="yui:YAttachProperty.YCornerRadius" Value="0"/>
-        <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="#EEEEEE"/>
-        <Setter Property="yui:YAttachProperty.YMouseOverForeground" Value="White"/>
-        <Setter Property="yui:YAttachProperty.YPressedBackground" Value="#E0E0E0"/>
+        <Setter Property="yProperties:YAttachProperty.YCornerRadius" Value="0"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="#EEEEEE"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverForeground" Value="White"/>
+        <Setter Property="yProperties:YAttachProperty.YPressedBackground" Value="#E0E0E0"/>
     </Style>
 
     <Style TargetType="ContextMenu" BasedOn="{StaticResource YContextMenuDefaultStyle}">
         <Setter Property="Background" Value="{StaticResource YControlBackground}"/>
-        <Setter Property="yui:YAttachProperty.YCornerRadius" Value="0"/>
-        <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="#22FFFFFF"/>
+        <Setter Property="yProperties:YAttachProperty.YCornerRadius" Value="0"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="#22FFFFFF"/>
         <Setter Property="ItemContainerStyle" Value="{x:Null}"/>
     </Style>
 
     <Style x:Key="DatePickerCalendarDayButtonStyle" TargetType="CalendarDayButton" BasedOn="{StaticResource YCalendarDayButtonDefaultStyle}">
         <Setter Property="Background" Value="{StaticResource YControlBackground}"/>
-        <Setter Property="yui:YAttachProperty.YItemCurrentBackground" Value="#11000000"/>
-        <Setter Property="yui:YAttachProperty.YItemCurrentForeground" Value="{StaticResource YTextForeground}"/>
-        <Setter Property="yui:YAttachProperty.YItemSelectedForeground" Value="{StaticResource YControlBackground}"/>
-        <Setter Property="yui:YAttachProperty.YItemMouseOverBackground" Value="{StaticResource YControlBackground}"/>
-        <Setter Property="yui:YAttachProperty.YItemMouseOverForeground" Value="{StaticResource YItemSelectedBackground}"/>
-        <Setter Property="yui:YAttachProperty.YCornerRadius" Value="2"/>
+        <Setter Property="yProperties:YAttachProperty.YItemCurrentBackground" Value="#11000000"/>
+        <Setter Property="yProperties:YAttachProperty.YItemCurrentForeground" Value="{StaticResource YTextForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemSelectedForeground" Value="{StaticResource YControlBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemMouseOverBackground" Value="{StaticResource YControlBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemMouseOverForeground" Value="{StaticResource YItemSelectedBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YCornerRadius" Value="2"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
     </Style>
 
     <Style x:Key="DatePickerCalendarItemStyle" TargetType="CalendarItem" BasedOn="{StaticResource YCalendarItemDefaultStyle}">
-        <Setter Property="yui:YAttachProperty.YHeaderForeground" Value="{StaticResource YTextForeground}"/>
-        <Setter Property="yui:YAttachProperty.YContentStyle">
+        <Setter Property="yProperties:YAttachProperty.YHeaderForeground" Value="{StaticResource YTextForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YContentStyle">
             <Setter.Value>
                 <Style TargetType="Button" BasedOn="{StaticResource YButtonDefaultStyle}">
                     <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
                     <Setter Property="Background" Value="{StaticResource YControlBackground}"/>
                     <Setter Property="Foreground" Value="#777777"/>
-                    <Setter Property="yui:YAttachProperty.YIconForeground" Value="#777777"/>
-                    <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="{StaticResource YControlBackground}"/>
-                    <Setter Property="yui:YAttachProperty.YMouseOverForeground" Value="{StaticResource YItemSelectedBackground}"/>
-                    <Setter Property="yui:YAttachProperty.YPressedBackground" Value="{StaticResource YControlBackground}"/>
-                    <Setter Property="yui:YAttachProperty.YPressedForeground" Value="CornflowerBlue"/>
-                    <Setter Property="yui:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#fontawesome"/>
+                    <Setter Property="yProperties:YAttachProperty.YIconForeground" Value="#777777"/>
+                    <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="{StaticResource YControlBackground}"/>
+                    <Setter Property="yProperties:YAttachProperty.YMouseOverForeground" Value="{StaticResource YItemSelectedBackground}"/>
+                    <Setter Property="yProperties:YAttachProperty.YPressedBackground" Value="{StaticResource YControlBackground}"/>
+                    <Setter Property="yProperties:YAttachProperty.YPressedForeground" Value="CornflowerBlue"/>
+                    <Setter Property="yProperties:YAttachProperty.YIconFontFamily" Value="/YUI.WPF;component/Resources/Fonts/#fontawesome"/>
                     <Setter Property="FontSize" Value="14"/>
                 </Style>
             </Setter.Value>
@@ -114,9 +114,9 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
         <Setter Property="Background" Value="{StaticResource YControlBackground}"/>
-        <Setter Property="yui:YAttachProperty.YItemSelectedForeground" Value="{StaticResource YControlBackground}"/>
-        <Setter Property="yui:YAttachProperty.YItemMouseOverBackground" Value="{StaticResource YControlBackground}"/>
-        <Setter Property="yui:YAttachProperty.YItemMouseOverForeground" Value="{StaticResource YItemSelectedBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemSelectedForeground" Value="{StaticResource YControlBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemMouseOverBackground" Value="{StaticResource YControlBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemMouseOverForeground" Value="{StaticResource YItemSelectedBackground}"/>
     </Style>
 
     <Style x:Key="DatePickerCalendarStyle" TargetType="Calendar" BasedOn="{StaticResource YCalendarDefaultStyle}">
@@ -136,7 +136,7 @@
         <Setter Property="MinHeight" Value="20"/>
         <Setter Property="Height" Value="24"/>
         <Setter Property="Width" Value="120"/>
-        <Setter Property="yui:YAttachProperty.YCornerRadius" Value="2"/>
+        <Setter Property="yProperties:YAttachProperty.YCornerRadius" Value="2"/>
         <Setter Property="CalendarStyle" Value="{StaticResource DatePickerCalendarStyle}"/>
     </Style>
 
@@ -175,7 +175,7 @@
         <Setter Property="Background" Value="White"/>
         <Setter Property="ColumnHeaderStyle" Value="{StaticResource DataGridColumnHeaderStyle}"/>
         <Setter Property="RowStyle" Value="{StaticResource DataGridRowStyle}"/>
-        <Setter Property="yui:YAttachProperty.YGridTopRightBorderThickness" Value="0 0 0 1"/>
+        <Setter Property="yProperties:YAttachProperty.YGridTopRightBorderThickness" Value="0 0 0 1"/>
         <Setter Property="CanUserAddRows" Value="False"/>
         <Setter Property="CanUserResizeRows" Value="False"/>
         <Setter Property="CanUserDeleteRows" Value="False"/>
@@ -183,7 +183,7 @@
 
     <Style TargetType="DataGrid" BasedOn="{StaticResource DataGridStyle}"/>
     
-    <Style TargetType="yctr:YMessageBox">
+    <Style TargetType="yControls:YMessageBox">
         <Setter Property="ButtonBackground" Value="{StaticResource YButtonBackground}"/>
         <Setter Property="MouseOverButtonBackground" Value="{StaticResource YButtonMouseOverBackground}"/>
         <Setter Property="PressedButtonBackground" Value="{StaticResource YButtonPressedBackground}"/>

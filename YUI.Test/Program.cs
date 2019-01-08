@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Animation;
-using YUI.YUtil;
+using YUI.WPF.YUtil;
 
 namespace YUI.Test
 {

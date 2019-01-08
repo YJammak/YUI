@@ -4,9 +4,9 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
-using YUI.YControls;
+using YUI.WPF.YControls;
 
-namespace YUI.YUtil
+namespace YUI.WPF.YUtil
 {
     /// <summary>
     /// Popup辅助类

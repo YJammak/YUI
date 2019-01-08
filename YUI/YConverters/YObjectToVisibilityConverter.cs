@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace YUI.YConverters
+namespace YUI.WPF.YConverters
 {
     /// <summary>
     /// 对象转换为是否显示

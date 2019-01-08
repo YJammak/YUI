@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using IWshRuntimeLibrary;
 
-namespace YUI.YUtil
+namespace YUI.WPF.YUtil
 {
     /// <summary>
     /// 快捷方式辅助类

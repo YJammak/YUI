@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
-namespace YUI.YUtil
+namespace YUI.WPF.YUtil
 {
     /// <summary>
     /// DataGrid辅助类

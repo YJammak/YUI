@@ -1,19 +1,19 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:YUI.YProperties">
+                    xmlns:yProperties="clr-namespace:YUI.WPF.YProperties">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Colors.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type ToggleButton}" x:Key="YComboToggleButton">
         <Setter Property="Foreground" Value="{StaticResource YComboBoxArrowForeground}"/>
-        <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#FontAwesome"/>
-        <Setter Property="local:YAttachProperty.YIconSize" Value="20"/>
-        <Setter Property="local:YAttachProperty.YIconMargin" Value="0,1,5,1"/>
-        <Setter Property="local:YAttachProperty.YIcon" Value="&#xf0d7;"/>
+        <Setter Property="yProperties:YAttachProperty.YIconFontFamily" Value="/YUI.WPF;component/Resources/Fonts/#FontAwesome"/>
+        <Setter Property="yProperties:YAttachProperty.YIconSize" Value="20"/>
+        <Setter Property="yProperties:YAttachProperty.YIconMargin" Value="0,1,5,1"/>
+        <Setter Property="yProperties:YAttachProperty.YIcon" Value="&#xf0d7;"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
-        <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YComboBoxArrowMouseOverForeground}"/>
-        <Setter Property="local:YAttachProperty.YPressedForeground" Value="{StaticResource YComboBoxArrowPressedForeground}"/>
-        <Setter Property="local:YAttachProperty.YCheckedForeground" Value="{StaticResource YComboBoxArrowCheckedForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverForeground" Value="{StaticResource YComboBoxArrowMouseOverForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YPressedForeground" Value="{StaticResource YComboBoxArrowPressedForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YCheckedForeground" Value="{StaticResource YComboBoxArrowCheckedForeground}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
@@ -27,28 +27,28 @@
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  
                                 Opacity="0.3"/>
                         <TextBlock Grid.Column="1" x:Name="iccon" 
-                                   Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"
+                                   Margin="{TemplateBinding yProperties:YAttachProperty.YIconMargin}"
                                    RenderTransformOrigin="0.5,0.5"
                                    TextAlignment="Center"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
-                                   FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}"
-                                   Text="{TemplateBinding local:YAttachProperty.YIcon}"
-                                   FontSize="{TemplateBinding local:YAttachProperty.YIconSize}" 
+                                   FontFamily="{TemplateBinding yProperties:YAttachProperty.YIconFontFamily}"
+                                   Text="{TemplateBinding yProperties:YAttachProperty.YIcon}"
+                                   FontSize="{TemplateBinding yProperties:YAttachProperty.YIconSize}" 
                                    Foreground="{TemplateBinding Foreground}"/>
                     </Grid>
                     <!--z触发器-->
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="Foreground" Value="{Binding Path=(yProperties:YAttachProperty.YMouseOverForeground),RelativeSource={RelativeSource Self}}"/>
                             <Setter Property="Opacity" TargetName="Bg" Value="0.55"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YPressedForeground),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="Foreground" Value="{Binding Path=(yProperties:YAttachProperty.YPressedForeground),RelativeSource={RelativeSource Self}}"/>
                             <Setter Property="Opacity" TargetName="Bg" Value="0.6"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YCheckedForeground),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="Foreground" Value="{Binding Path=(yProperties:YAttachProperty.YCheckedForeground),RelativeSource={RelativeSource Self}}"/>
                             <Setter Property="Opacity" TargetName="Bg" Value="0.6"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">

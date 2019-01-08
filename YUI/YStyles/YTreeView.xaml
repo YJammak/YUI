@@ -1,15 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:YUI.YProperties"
-                    xmlns:ycvt="clr-namespace:YUI.YConverters">
+                    xmlns:yProperties="clr-namespace:YUI.WPF.YProperties"
+                    xmlns:yConverters="clr-namespace:YUI.WPF.YConverters">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Colors.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="YExpandCollapseToggleStyle" TargetType="ToggleButton">
         <Setter Property="Focusable" Value="False"/>
-        <Setter Property="local:YAttachProperty.YMouseOverBackground" Value="#555555"/>
-        <Setter Property="local:YAttachProperty.YCheckedBackground" Value="#555555"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="#555555"/>
+        <Setter Property="yProperties:YAttachProperty.YCheckedBackground" Value="#555555"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
@@ -31,23 +31,23 @@
                         <Trigger Property="IsChecked"
                                  Value="True">
                             <Setter Property="Data" TargetName="ExpandPath" Value="M 0 4 L 8 4 L 4 8 Z"/>
-                            <Setter Property="Fill" TargetName="ExpandPath" Value="{Binding Path=(local:YAttachProperty.YCheckedBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
-                            <Setter Property="Stroke" TargetName="ExpandPath" Value="{Binding Path=(local:YAttachProperty.YCheckedBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                            <Setter Property="Fill" TargetName="ExpandPath" Value="{Binding Path=(yProperties:YAttachProperty.YCheckedBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                            <Setter Property="Stroke" TargetName="ExpandPath" Value="{Binding Path=(yProperties:YAttachProperty.YCheckedBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsChecked" Value="True"/>
                                 <Condition Property="IsMouseOver" Value="True"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Stroke" TargetName="ExpandPath" Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
-                            <Setter Property="Fill" TargetName="ExpandPath" Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                            <Setter Property="Stroke" TargetName="ExpandPath" Value="{Binding Path=(yProperties:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                            <Setter Property="Fill" TargetName="ExpandPath" Value="{Binding Path=(yProperties:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsChecked" Value="False"/>
                                 <Condition Property="IsMouseOver" Value="True"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Stroke" TargetName="ExpandPath" Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                            <Setter Property="Stroke" TargetName="ExpandPath" Value="{Binding Path=(yProperties:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -77,18 +77,18 @@
         <Setter Property="Padding" Value="1,0,0,0"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="FocusVisualStyle" Value="{StaticResource TreeViewItemFocusVisual}"/>
-        <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
-        <Setter Property="local:YAttachProperty.YMouseOverBackground" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-        <Setter Property="local:YAttachProperty.YItemSelectedBackground" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-        <Setter Property="local:YAttachProperty.YItemSelectedForeground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
-        <Setter Property="local:YAttachProperty.YItemSelectedUnActivedBackground" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-        <Setter Property="local:YAttachProperty.YItemSelectedUnActivedForeground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
-        <Setter Property="local:YAttachProperty.YContentStyle" Value="{StaticResource YExpandCollapseToggleStyle}"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverForeground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemSelectedBackground" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemSelectedForeground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemSelectedUnActivedBackground" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemSelectedUnActivedForeground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+        <Setter Property="yProperties:YAttachProperty.YContentStyle" Value="{StaticResource YExpandCollapseToggleStyle}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TreeViewItem}">
                     <ControlTemplate.Resources>
-                        <ycvt:YTreeViewItemLeftMarginMultiplierConverter Length="19" x:Key="LengthConverter"/>
+                        <yConverters:YTreeViewItemLeftMarginMultiplierConverter Length="19" x:Key="LengthConverter"/>
                     </ControlTemplate.Resources>
                     <StackPanel>
                         <Border Name="Bd"
@@ -102,7 +102,7 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <ToggleButton x:Name="Expander"
-                                              Style="{TemplateBinding local:YAttachProperty.YContentStyle}"
+                                              Style="{TemplateBinding yProperties:YAttachProperty.YContentStyle}"
                                               IsChecked="{Binding Path=IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
                                               ClickMode="Press"/>
                                 <ContentPresenter x:Name="PART_Header" Grid.Column="1" ContentSource="Header" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
@@ -132,20 +132,20 @@
                             <Setter TargetName="PART_Header" Property="MinHeight" Value="19"/>
                         </MultiTrigger>
                         <Trigger SourceName="Bd" Property="IsMouseOver" Value="true">
-                            <Setter TargetName="Bd" Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=(local:YAttachProperty.YMouseOverBackground)}"/>
-                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=(local:YAttachProperty.YMouseOverForeground)}"/>
+                            <Setter TargetName="Bd" Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=(yProperties:YAttachProperty.YMouseOverBackground)}"/>
+                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=(yProperties:YAttachProperty.YMouseOverForeground)}"/>
                         </Trigger>
                         <Trigger Property="IsSelected" Value="true">
-                            <Setter TargetName="Bd" Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=(local:YAttachProperty.YItemSelectedBackground)}"/>
-                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=(local:YAttachProperty.YItemSelectedForeground)}"/>
+                            <Setter TargetName="Bd" Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=(yProperties:YAttachProperty.YItemSelectedBackground)}"/>
+                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=(yProperties:YAttachProperty.YItemSelectedForeground)}"/>
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsSelected" Value="true"/>
                                 <Condition Property="IsSelectionActive" Value="false"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Bd" Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=(local:YAttachProperty.YItemSelectedUnActivedBackground)}"/>
-                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=(local:YAttachProperty.YItemSelectedUnActivedForeground)}"/>
+                            <Setter TargetName="Bd" Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=(yProperties:YAttachProperty.YItemSelectedUnActivedBackground)}"/>
+                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=(yProperties:YAttachProperty.YItemSelectedUnActivedForeground)}"/>
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>

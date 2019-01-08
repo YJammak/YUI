@@ -5,7 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace YUI.YConverters
+namespace YUI.WPF.YConverters
 {
     internal static class TreeViewItemExtensions
     {
@@ -24,7 +24,8 @@ namespace YUI.YConverters
             var parent = VisualTreeHelper.GetParent(item);
             while (!(parent is TreeViewItem || parent is TreeView))
             {
-                parent = VisualTreeHelper.GetParent(parent);
+                if (parent != null)
+                    parent = VisualTreeHelper.GetParent(parent);
             }
             return parent as TreeViewItem;
         }

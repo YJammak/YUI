@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Input;
 
-namespace YUI.YUtil
+namespace YUI.WPF.YUtil
 {
     /// <summary>
     /// 热键管理器

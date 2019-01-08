@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace YUI.YControls
+namespace YUI.WPF.YControls
 {
     /// <summary>
     /// 加载控件

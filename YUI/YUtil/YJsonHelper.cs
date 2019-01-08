@@ -5,7 +5,7 @@ using System.Reflection;
 
 // ReSharper disable InconsistentNaming
 
-namespace YUI.YUtil
+namespace YUI.WPF.YUtil
 {
     /// <summary>
     /// Json辅助类（此类依赖Newtonsoft.Json库）

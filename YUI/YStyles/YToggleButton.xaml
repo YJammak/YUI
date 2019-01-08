@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:YUI.YProperties">
+                    xmlns:yProperties="clr-namespace:YUI.WPF.YProperties">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Colors.xaml"/>
     </ResourceDictionary.MergedDictionaries>
@@ -8,12 +8,12 @@
     <Style TargetType="{x:Type ToggleButton}" x:Key="YToggleButtonDefaultStyle">
         <Setter Property="Foreground" Value="{StaticResource YButtonForeground}"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
-        <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YButtonMouseOverForeground}"/>
-        <Setter Property="local:YAttachProperty.YPressedForeground" Value="{StaticResource YButtonMouseOverForeground}"/>
-        <Setter Property="local:YAttachProperty.YCheckedForeground" Value="{StaticResource YButtonMouseOverForeground}"/>
-        <Setter Property="local:YAttachProperty.YMouseOverBackground" Value="{StaticResource YButtonMouseOverBackground}"/>
-        <Setter Property="local:YAttachProperty.YPressedBackground" Value="{StaticResource YButtonPressedBackground}"/>
-        <Setter Property="local:YAttachProperty.YCheckedBackground" Value="{StaticResource YButtonPressedBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverForeground" Value="{StaticResource YButtonMouseOverForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YPressedForeground" Value="{StaticResource YButtonMouseOverForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YCheckedForeground" Value="{StaticResource YButtonMouseOverForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="{StaticResource YButtonMouseOverBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YPressedBackground" Value="{StaticResource YButtonPressedBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YCheckedBackground" Value="{StaticResource YButtonPressedBackground}"/>
         <Setter Property="Background" Value="{StaticResource YButtonBackground}"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -25,21 +25,21 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Foreground" 
-                                    Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                                    Value="{Binding Path=(yProperties:YAttachProperty.YMouseOverForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
                             <Setter Property="Background" 
-                                    Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                                    Value="{Binding Path=(yProperties:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Foreground" 
-                                    Value="{Binding Path=(local:YAttachProperty.YPressedForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                                    Value="{Binding Path=(yProperties:YAttachProperty.YPressedForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
                             <Setter Property="Background" 
-                                    Value="{Binding Path=(local:YAttachProperty.YPressedBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                                    Value="{Binding Path=(yProperties:YAttachProperty.YPressedBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="Foreground" 
-                                    Value="{Binding Path=(local:YAttachProperty.YCheckedForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                                    Value="{Binding Path=(yProperties:YAttachProperty.YCheckedForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
                             <Setter Property="Background" 
-                                    Value="{Binding Path=(local:YAttachProperty.YCheckedBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                                    Value="{Binding Path=(yProperties:YAttachProperty.YCheckedBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Opacity" Value="{StaticResource YDisableOpacity}" TargetName="Grid"/>
@@ -52,12 +52,12 @@
 
     <Style TargetType="{x:Type ToggleButton}" x:Key="YToggleButtonIconStyle">
         <Setter Property="Foreground" Value="{StaticResource YButtonForeground}"/>
-        <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YButtonForeground}"/>
-        <Setter Property="local:YAttachProperty.YPressedForeground" Value="{StaticResource YButtonForeground}"/>
-        <Setter Property="local:YAttachProperty.YCheckedForeground" Value="{StaticResource YButtonForeground}"/>
-        <Setter Property="local:YAttachProperty.YIconSize" Value="20"/>
-        <Setter Property="local:YAttachProperty.YIconMargin" Value="1"/>
-        <Setter Property="local:YAttachProperty.YIcon" Value="&#xe664;"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverForeground" Value="{StaticResource YButtonForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YPressedForeground" Value="{StaticResource YButtonForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YCheckedForeground" Value="{StaticResource YButtonForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YIconSize" Value="20"/>
+        <Setter Property="yProperties:YAttachProperty.YIconMargin" Value="1"/>
+        <Setter Property="yProperties:YAttachProperty.YIcon" Value="&#xe664;"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Template">
@@ -65,26 +65,26 @@
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Grid x:Name="Grid" Margin="{TemplateBinding Padding}">
                         <TextBlock x:Name="icon" 
-                                   FontSize="{TemplateBinding local:YAttachProperty.YIconSize}"
-                                   Text="{TemplateBinding local:YAttachProperty.YIcon}" 
+                                   FontSize="{TemplateBinding yProperties:YAttachProperty.YIconSize}"
+                                   Text="{TemplateBinding yProperties:YAttachProperty.YIcon}" 
                                    Foreground="{TemplateBinding Foreground}"
-                                   Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"
-                                   FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}"
+                                   Margin="{TemplateBinding yProperties:YAttachProperty.YIconMargin}"
+                                   FontFamily="{TemplateBinding yProperties:YAttachProperty.YIconFontFamily}"
                        />
                     </Grid>
                     <!--z触发器-->
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Foreground" TargetName="icon"
-                                    Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                                    Value="{Binding Path=(yProperties:YAttachProperty.YMouseOverForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Foreground"  TargetName="icon"
-                                    Value="{Binding Path=(local:YAttachProperty.YPressedForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                                    Value="{Binding Path=(yProperties:YAttachProperty.YPressedForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="Foreground"  TargetName="icon"
-                                    Value="{Binding Path=(local:YAttachProperty.YCheckedForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
+                                    Value="{Binding Path=(yProperties:YAttachProperty.YCheckedForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ToggleButton}}}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Opacity" Value="{StaticResource YDisableOpacity}" TargetName="Grid"/>

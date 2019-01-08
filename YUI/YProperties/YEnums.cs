@@ -1,4 +1,4 @@
-﻿namespace YUI.YProperties
+﻿namespace YUI.WPF.YProperties
 {
 
     /// <summary>

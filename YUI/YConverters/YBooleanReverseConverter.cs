@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace YUI.YConverters
+namespace YUI.WPF.YConverters
 {
     /// <summary>
     /// bool对调转换

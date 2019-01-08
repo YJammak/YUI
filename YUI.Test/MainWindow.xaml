@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YUI.Test"
-        xmlns:yui="clr-namespace:YUI.YProperties;assembly=YUI"
-        xmlns:yctr="clr-namespace:YUI.YControls;assembly=YUI"
+        xmlns:yui="clr-namespace:YUI.WPF.YProperties;assembly=YUI.WPF"
+        xmlns:yctr="clr-namespace:YUI.WPF.YControls;assembly=YUI.WPF"
         mc:Ignorable="d" Height="1000" ContentRendered="MainWindow_OnContentRendered"
         Title="MainWindow" yui:YAttachProperty.YCornerRadius="3">
     <StackPanel DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" 
@@ -66,15 +66,15 @@
         </ComboBox>
         <StackPanel Orientation="Horizontal">
             <yctr:YProgressRing Width="50" Height="50" Margin="5"></yctr:YProgressRing>
-            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI;component/Resources/Fonts/#FontAwesome"
+            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI.WPF;component/Resources/Fonts/#FontAwesome"
                            yui:YAttachProperty.YIcon="&#xf1ce;"/>
-            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI;component/Resources/Fonts/#FontAwesome"
+            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI.WPF;component/Resources/Fonts/#FontAwesome"
                            yui:YAttachProperty.YIcon="&#xf013;"/>
-            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI;component/Resources/Fonts/#FontAwesome"
+            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI.WPF;component/Resources/Fonts/#FontAwesome"
                            yui:YAttachProperty.YIcon="&#xf0a3;"/>
-            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI;component/Resources/Fonts/#FontAwesome"
+            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI.WPF;component/Resources/Fonts/#FontAwesome"
                            yui:YAttachProperty.YIcon="&#xf01e;"/>
-            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI;component/Resources/Fonts/#FontAwesome"
+            <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI.WPF;component/Resources/Fonts/#FontAwesome"
                            yui:YAttachProperty.YIcon="&#xf110;"/>
         </StackPanel>
         <ProgressBar Value="0.3" Margin="10 3" Height="10" yui:YAttachProperty.YCornerRadius="5">

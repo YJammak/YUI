@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace YUI.YControls
+namespace YUI.WPF.YControls
 {
     /// <summary>   
     /// 为PasswordBox控件的Password增加绑定功能   

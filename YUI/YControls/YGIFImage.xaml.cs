@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace YUI.YControls
+namespace YUI.WPF.YControls
 {
     /// <summary>
     /// YGIFImage.xaml 的交互逻辑

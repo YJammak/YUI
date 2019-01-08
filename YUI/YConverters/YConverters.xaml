@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:ycvt="clr-namespace:YUI.YConverters">
-    <ycvt:YBooleanReverseConverter x:Key="YBooleanReverseConverter"/>
-    <ycvt:YBooleanToVisibilityConverter x:Key="YBooleanToVisibilityConverter"/>
-    <ycvt:YBooleanToVisibilityReverseConverter x:Key="YBooleanToVisibilityReverseConverter"/>
-    <ycvt:YStringToVisibilitiyConverter x:Key="YStringToVisibilitiyConverter"/>
-    <ycvt:YObjectToVisibilityConverter x:Key="YObjectToVisibilityConverter"/>
+                    xmlns:yConverters="clr-namespace:YUI.WPF.YConverters">
+    <yConverters:YBooleanReverseConverter x:Key="YBooleanReverseConverter"/>
+    <yConverters:YBooleanToVisibilityConverter x:Key="YBooleanToVisibilityConverter"/>
+    <yConverters:YBooleanToVisibilityReverseConverter x:Key="YBooleanToVisibilityReverseConverter"/>
+    <yConverters:YStringToVisibilityConverter x:Key="YStringToVisibilityConverter"/>
+    <yConverters:YObjectToVisibilityConverter x:Key="YObjectToVisibilityConverter"/>
 </ResourceDictionary>

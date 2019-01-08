@@ -6,7 +6,7 @@ using System.Windows.Interop;
 
 #pragma warning disable 1591
 
-namespace YUI.YUtil
+namespace YUI.WPF.YUtil
 {
     /// <summary>
     /// 自定义按键枚举

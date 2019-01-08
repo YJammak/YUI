@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:YUI.YProperties">
+                    xmlns:yProperties="clr-namespace:YUI.WPF.YProperties">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Colors.xaml"/>
     </ResourceDictionary.MergedDictionaries>
@@ -13,16 +13,16 @@
         <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="Foreground" Value="DodgerBlue"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
-        <Setter Property="local:YAttachProperty.YCornerRadius" Value="0"/>
+        <Setter Property="yProperties:YAttachProperty.YCornerRadius" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ProgressBar">
                     <Grid x:Name="Root">
                         <Border x:Name="PART_Track" Background="{TemplateBinding Background}" 
-                                CornerRadius="{TemplateBinding local:YAttachProperty.YCornerRadius}"
+                                CornerRadius="{TemplateBinding yProperties:YAttachProperty.YCornerRadius}"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                         <Border  x:Name="PART_Indicator" HorizontalAlignment="Left" Background="{TemplateBinding Foreground}" 
-                                CornerRadius="{TemplateBinding local:YAttachProperty.YCornerRadius}"
+                                CornerRadius="{TemplateBinding yProperties:YAttachProperty.YCornerRadius}"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     </Grid>
                     <ControlTemplate.Triggers>

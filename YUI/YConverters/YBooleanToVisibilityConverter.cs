@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace YUI.YConverters
+namespace YUI.WPF.YConverters
 {
     /// <summary>
     /// bool转换成Visibility

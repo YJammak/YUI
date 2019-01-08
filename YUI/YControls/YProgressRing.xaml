@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:YUI.YControls">
+                    xmlns:yControls="clr-namespace:YUI.WPF.YControls">
 
-    <Style x:Key="YProgressRingDefaultStyle" TargetType="local:YProgressRing">
+    <Style x:Key="YProgressRingDefaultStyle" TargetType="yControls:YProgressRing">
         <Setter Property="Foreground" Value="DodgerBlue"/>
         <Setter Property="IsHitTestVisible" Value="False"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -16,7 +16,7 @@
         <Setter Property="IsLarge" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="local:YProgressRing">
+                <ControlTemplate TargetType="yControls:YProgressRing">
                     <Border Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}"
                             BorderBrush="{TemplateBinding BorderBrush}">
                         <Border.Resources>
@@ -240,5 +240,5 @@
         </Setter>
     </Style>
 
-    <Style TargetType="local:YProgressRing" BasedOn="{StaticResource YProgressRingDefaultStyle}"/>
+    <Style TargetType="yControls:YProgressRing" BasedOn="{StaticResource YProgressRingDefaultStyle}"/>
 </ResourceDictionary>

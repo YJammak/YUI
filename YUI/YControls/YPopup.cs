@@ -2,7 +2,7 @@
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
-namespace YUI.YControls
+namespace YUI.WPF.YControls
 {
     /// <summary>
     /// YPopup

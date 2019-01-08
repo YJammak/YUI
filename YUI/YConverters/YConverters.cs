@@ -1,6 +1,6 @@
-﻿using YUI.YUtil;
+﻿using YUI.WPF.YUtil;
 
-namespace YUI.YConverters
+namespace YUI.WPF.YConverters
 {
 
     /// <summary>
@@ -28,8 +28,8 @@ namespace YUI.YConverters
         /// <summary>
         /// 字符串转显示（为空或nulll隐藏）
         /// </summary>
-        public static YStringToVisibilitiyConverter YStringToVisibilitiyConverter =>
-            YSingleton<YStringToVisibilitiyConverter>.GetInstance();
+        public static YStringToVisibilityConverter YStringToVisibilityConverter =>
+            YSingleton<YStringToVisibilityConverter>.GetInstance();
 
         /// <summary>
         /// 对象转显示（为null隐藏）

@@ -2,9 +2,9 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using YUI.YUtil;
+using YUI.WPF.YUtil;
 
-namespace YUI.YControls
+namespace YUI.WPF.YControls
 {
     /// <summary>
     /// 

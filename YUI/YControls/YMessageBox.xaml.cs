@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Media;
 
-namespace YUI.YControls
+namespace YUI.WPF.YControls
 {
     /// <summary>
     /// YMessageBox.xaml 的交互逻辑

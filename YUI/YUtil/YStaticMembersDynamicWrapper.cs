@@ -2,7 +2,7 @@
 using System.Dynamic;
 using System.Reflection;
 
-namespace YUI.YUtil
+namespace YUI.WPF.YUtil
 {
     /// <summary>
     /// 

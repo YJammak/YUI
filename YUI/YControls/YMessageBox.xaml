@@ -1,20 +1,20 @@
-﻿<local:YWindow x:Class="YUI.YControls.YMessageBox"
+﻿<yControls:YWindow x:Class="YUI.WPF.YControls.YMessageBox"
                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-               xmlns:local="clr-namespace:YUI.YControls"
-               xmlns:yui="clr-namespace:YUI.YProperties"
+               xmlns:yControls="clr-namespace:YUI.WPF.YControls"
+               xmlns:yProperties="clr-namespace:YUI.WPF.YProperties"
                mc:Ignorable="d"
                Title="YMessageBox" ResizeMode="NoResize" UseLayoutRounding="True" SizeToContent="WidthAndHeight"
                SnapsToDevicePixels="True" MinWidth="300" Background="Transparent" WindowStyle="None" AllowsTransparency="True">
-    <local:YWindow.Resources>
+    <yControls:YWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../YStyles/YButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-    </local:YWindow.Resources>
+    </yControls:YWindow.Resources>
     <Grid DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80"/>
@@ -53,8 +53,8 @@
                     <Style TargetType="Button" BasedOn="{StaticResource YButtonDefaultStyle}">
                         <Setter Property="Background" Value="{Binding ButtonBackground}"/>
                         <Setter Property="Foreground" Value="{Binding ButtonForeground}"/>
-                        <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="{Binding MouseOverButtonBackground}"/>
-                        <Setter Property="yui:YAttachProperty.YPressedBackground" Value="{Binding PressedButtonBackground}"/>
+                        <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="{Binding MouseOverButtonBackground}"/>
+                        <Setter Property="yProperties:YAttachProperty.YPressedBackground" Value="{Binding PressedButtonBackground}"/>
                         <Setter Property="Visibility" Value="Collapsed"/>
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding MessageBoxButton}" Value="YesNo">
@@ -72,8 +72,8 @@
                     <Style TargetType="Button" BasedOn="{StaticResource YButtonDefaultStyle}">
                         <Setter Property="Background" Value="{Binding ButtonBackground}"/>
                         <Setter Property="Foreground" Value="{Binding ButtonForeground}"/>
-                        <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="{Binding MouseOverButtonBackground}"/>
-                        <Setter Property="yui:YAttachProperty.YPressedBackground" Value="{Binding PressedButtonBackground}"/>
+                        <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="{Binding MouseOverButtonBackground}"/>
+                        <Setter Property="yProperties:YAttachProperty.YPressedBackground" Value="{Binding PressedButtonBackground}"/>
                         <Setter Property="Visibility" Value="Collapsed"/>
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding MessageBoxButton}" Value="YesNo">
@@ -92,8 +92,8 @@
                     <Style TargetType="Button" BasedOn="{StaticResource YButtonDefaultStyle}">
                         <Setter Property="Background" Value="{Binding ButtonBackground}"/>
                         <Setter Property="Foreground" Value="{Binding ButtonForeground}"/>
-                        <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="{Binding MouseOverButtonBackground}"/>
-                        <Setter Property="yui:YAttachProperty.YPressedBackground" Value="{Binding PressedButtonBackground}"/>
+                        <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="{Binding MouseOverButtonBackground}"/>
+                        <Setter Property="yProperties:YAttachProperty.YPressedBackground" Value="{Binding PressedButtonBackground}"/>
                         <Setter Property="Visibility" Value="Collapsed"/>
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding MessageBoxButton}" Value="OK">
@@ -112,8 +112,8 @@
                     <Style TargetType="Button" BasedOn="{StaticResource YButtonDefaultStyle}">
                         <Setter Property="Background" Value="{Binding ButtonBackground}"/>
                         <Setter Property="Foreground" Value="{Binding ButtonForeground}"/>
-                        <Setter Property="yui:YAttachProperty.YMouseOverBackground" Value="{Binding MouseOverButtonBackground}"/>
-                        <Setter Property="yui:YAttachProperty.YPressedBackground" Value="{Binding PressedButtonBackground}"/>
+                        <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="{Binding MouseOverButtonBackground}"/>
+                        <Setter Property="yProperties:YAttachProperty.YPressedBackground" Value="{Binding PressedButtonBackground}"/>
                         <Setter Property="Visibility" Value="Collapsed"/>
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding MessageBoxButton}" Value="YesNoCancel">
@@ -130,4 +130,4 @@
             </Button>
         </StackPanel>
     </Grid>
-</local:YWindow>
+</yControls:YWindow>

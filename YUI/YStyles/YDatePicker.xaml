@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:YUI.YProperties">
+                    xmlns:yProperties="clr-namespace:YUI.WPF.YProperties">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Colors.xaml"/>
         <ResourceDictionary Source="YToggleButton.xaml"/>
@@ -10,12 +10,12 @@
 
     <Style x:Key="YDatePickerToggleButtonDefaultStyle" TargetType="ToggleButton" BasedOn="{StaticResource YToggleButtonIconStyle}">
         <Setter Property="Foreground" Value="#999999"/>
-        <Setter Property="local:YAttachProperty.YMouseOverForeground" Value="{StaticResource YMouseOverBorderBrush}"/>
-        <Setter Property="local:YAttachProperty.YPressedForeground" Value="{StaticResource YFocusBorderBrush}"/>
-        <Setter Property="local:YAttachProperty.YCheckedForeground" Value="{StaticResource YFocusBorderBrush}"/>
-        <Setter Property="local:YAttachProperty.YIconFontFamily" Value="/YUI;component/Resources/Fonts/#SF2015"/>
-        <Setter Property="local:YAttachProperty.YIconSize" Value="14"/>
-        <Setter Property="local:YAttachProperty.YIconMargin" Value="2"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverForeground" Value="{StaticResource YMouseOverBorderBrush}"/>
+        <Setter Property="yProperties:YAttachProperty.YPressedForeground" Value="{StaticResource YFocusBorderBrush}"/>
+        <Setter Property="yProperties:YAttachProperty.YCheckedForeground" Value="{StaticResource YFocusBorderBrush}"/>
+        <Setter Property="yProperties:YAttachProperty.YIconFontFamily" Value="/YUI.WPF;component/Resources/Fonts/#SF2015"/>
+        <Setter Property="yProperties:YAttachProperty.YIconSize" Value="14"/>
+        <Setter Property="yProperties:YAttachProperty.YIconMargin" Value="2"/>
     </Style>
 
     <Style x:Key="YDatePickerDefaultStyle" TargetType="{x:Type DatePicker}">
@@ -23,8 +23,8 @@
         <Setter Property="Background" Value="{StaticResource YControlBackground}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="{StaticResource YControlBorderBrush}"/>
-        <Setter Property="local:YAttachProperty.YFocusBorderBrush" Value="{StaticResource YFocusBorderBrush}"/>
-        <Setter Property="local:YAttachProperty.YMouseOverBorderBrush" Value="{StaticResource YMouseOverBorderBrush}"/>
+        <Setter Property="yProperties:YAttachProperty.YFocusBorderBrush" Value="{StaticResource YFocusBorderBrush}"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverBorderBrush" Value="{StaticResource YMouseOverBorderBrush}"/>
         <Setter Property="FontFamily" Value="{StaticResource YFontFamily}"/>
         <Setter Property="FontSize" Value="{StaticResource YFontSize}"/>
         <Setter Property="MinHeight" Value="26"/>
@@ -37,14 +37,14 @@
         <Setter Property="SelectedDate" Value="{x:Null}"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="CalendarStyle" Value="{StaticResource YCalendarDefaultStyle}"/>
-        <Setter Property="local:YAttachProperty.YContentStyle" Value="{StaticResource YDatePickerToggleButtonDefaultStyle}"/>
+        <Setter Property="yProperties:YAttachProperty.YContentStyle" Value="{StaticResource YDatePickerToggleButtonDefaultStyle}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DatePicker}">
                     <Grid x:Name="PART_Root">
                         <Border x:Name="Bg" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                 BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
-                                Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding local:YAttachProperty.YCornerRadius}">
+                                Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding yProperties:YAttachProperty.YCornerRadius}">
                             <Grid x:Name="PART_InnerGrid" Margin="0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
@@ -53,21 +53,21 @@
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <!--Label区域-->
-                                <ContentControl x:Name="Label" Template="{TemplateBinding local:YAttachProperty.YLabelTemplate}" IsTabStop="False" IsHitTestVisible="False"
-                                                Content="{TemplateBinding local:YAttachProperty.YLabel}" Margin="1,1,0,1"/>
+                                <ContentControl x:Name="Label" Template="{TemplateBinding yProperties:YAttachProperty.YLabelTemplate}" IsTabStop="False" IsHitTestVisible="False"
+                                                Content="{TemplateBinding yProperties:YAttachProperty.YLabel}" Margin="1,1,0,1"/>
                                 <!--附加内容区域-->
                                 <Border x:Name="PART_AttachContent" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <ContentControl VerticalAlignment="Center" VerticalContentAlignment="Center" Template="{TemplateBinding local:YAttachProperty.YAttachContent}"/>
+                                    <ContentControl VerticalAlignment="Center" VerticalContentAlignment="Center" Template="{TemplateBinding yProperties:YAttachProperty.YAttachContent}"/>
                                 </Border>
                                 <!--下拉按钮-->
                                 <ToggleButton x:Name="PART_DropDownToggle" IsTabStop="False" Grid.Column="3"
-                                              Style="{TemplateBinding local:YAttachProperty.YContentStyle}" 
+                                              Style="{TemplateBinding yProperties:YAttachProperty.YContentStyle}" 
                                               IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
                                               VerticalAlignment="Center" 
                                />
                                 <!--水印-->
                                 <Border Grid.Column="1">
-                                    <TextBlock x:Name="Message"  Padding="0" Visibility="Collapsed" Text="{TemplateBinding local:YAttachProperty.YWatermark}" 
+                                    <TextBlock x:Name="Message"  Padding="0" Visibility="Collapsed" Text="{TemplateBinding yProperties:YAttachProperty.YWatermark}" 
                                                Foreground="{TemplateBinding Foreground}" IsHitTestVisible="False" Opacity="{StaticResource YWatermarkOpacity}" HorizontalAlignment="Left" TextAlignment="Center" 
                                                VerticalAlignment="Center" Margin="5,2,5,2"/>
                                 </Border>
@@ -90,13 +90,13 @@
                             <Setter TargetName="Message" Property="Visibility" Value="Visible"/>
                         </DataTrigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YMouseOverBorderBrush),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="BorderBrush" Value="{Binding Path=(yProperties:YAttachProperty.YMouseOverBorderBrush),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter  Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YFocusBorderBrush),RelativeSource={RelativeSource Self}}"/>
+                            <Setter  Property="BorderBrush" Value="{Binding Path=(yProperties:YAttachProperty.YFocusBorderBrush),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <Trigger Property="IsKeyboardFocusWithin" Value="True">
-                            <Setter  Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YFocusBorderBrush),RelativeSource={RelativeSource Self}}"/>
+                            <Setter  Property="BorderBrush" Value="{Binding Path=(yProperties:YAttachProperty.YFocusBorderBrush),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="PART_Root" Property="Opacity" Value="{StaticResource YDisableOpacity}"/>

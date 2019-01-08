@@ -1,11 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:YUI.YProperties">
+                    xmlns:yProperties="clr-namespace:YUI.WPF.YProperties">
     <!--YButton模板-->
     <ControlTemplate x:Key="YButtonTemplate" TargetType="{x:Type Button}">
         <Border x:Name="border" Background="{TemplateBinding Background}" 
                 Height="{TemplateBinding Height}" 
-                CornerRadius="{TemplateBinding local:YAttachProperty.YCornerRadius}" 
+                CornerRadius="{TemplateBinding yProperties:YAttachProperty.YCornerRadius}" 
                 BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
                 Width="{TemplateBinding Width}"
                 SnapsToDevicePixels="true">
@@ -22,50 +22,50 @@
                     <ColumnDefinition x:Name="gridC1"/>
                     <ColumnDefinition x:Name="gridC2"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" x:Name="icon" Margin="{TemplateBinding local:YAttachProperty.YIconMargin}" 
+                <TextBlock Grid.Row="0" Grid.Column="0" x:Name="icon" Margin="{TemplateBinding yProperties:YAttachProperty.YIconMargin}" 
                            RenderTransformOrigin="0.5,0.5"
                            TextAlignment="Center"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontFamily="{TemplateBinding local:YAttachProperty.YIconFontFamily}"
-                           Text="{TemplateBinding local:YAttachProperty.YIcon}"
-                           FontSize="{TemplateBinding local:YAttachProperty.YIconSize}" 
-                           Foreground="{TemplateBinding local:YAttachProperty.YIconForeground}">
+                           FontFamily="{TemplateBinding yProperties:YAttachProperty.YIconFontFamily}"
+                           Text="{TemplateBinding yProperties:YAttachProperty.YIcon}"
+                           FontSize="{TemplateBinding yProperties:YAttachProperty.YIconSize}" 
+                           Foreground="{TemplateBinding yProperties:YAttachProperty.YIconForeground}">
                     <TextBlock.RenderTransform>
                         <RotateTransform x:Name="transIcon" Angle="0"/>
                     </TextBlock.RenderTransform>
                 </TextBlock>
 
-                <Image Grid.Row="0" Grid.Column="0" x:Name="image" Margin="{TemplateBinding local:YAttachProperty.YIconMargin}"
+                <Image Grid.Row="0" Grid.Column="0" x:Name="image" Margin="{TemplateBinding yProperties:YAttachProperty.YIconMargin}"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
-                       Source="{TemplateBinding local:YAttachProperty.YImageSource}"
-                       Stretch="{TemplateBinding local:YAttachProperty.YStretch}"
+                       Source="{TemplateBinding yProperties:YAttachProperty.YImageSource}"
+                       Stretch="{TemplateBinding yProperties:YAttachProperty.YStretch}"
                        Visibility="Visible"
                />
 
                 <TextBlock Grid.Row="0" Grid.Column="1" 
                            VerticalAlignment="Center"  
                            x:Name="txt" 
-                           TextDecorations="{TemplateBinding local:YAttachProperty.YContentDecorations}" 
+                           TextDecorations="{TemplateBinding yProperties:YAttachProperty.YContentDecorations}" 
                            Text="{TemplateBinding Content}" 
                            FontSize="{TemplateBinding FontSize}" 
                            Foreground="{TemplateBinding Foreground}"
-                           TextTrimming="{TemplateBinding local:YAttachProperty.YTextTrimming}"
+                           TextTrimming="{TemplateBinding yProperties:YAttachProperty.YTextTrimming}"
                />
             </Grid>
         </Border>
         <!--触发器-->
         <ControlTemplate.Triggers>
-            <Trigger Property="local:YAttachProperty.YButtonIconType" Value="Font">
+            <Trigger Property="yProperties:YAttachProperty.YButtonIconType" Value="Font">
                 <Setter TargetName="icon" Property="Visibility" Value="Visible"/>
                 <Setter TargetName="image" Property="Visibility" Value="Collapsed"/>
             </Trigger>
-            <Trigger Property="local:YAttachProperty.YButtonIconType" Value="Image">
+            <Trigger Property="yProperties:YAttachProperty.YButtonIconType" Value="Image">
                 <Setter TargetName="icon" Property="Visibility" Value="Collapsed"/>
                 <Setter TargetName="image" Property="Visibility" Value="Visible"/>
             </Trigger>
-            <Trigger Property="local:YAttachProperty.YButtonIconAlignment" Value="Left">
+            <Trigger Property="yProperties:YAttachProperty.YButtonIconAlignment" Value="Left">
                 <Setter TargetName="icon" Property="Grid.Row" Value="0"/>
                 <Setter TargetName="icon" Property="Grid.Column" Value="0"/>
                 <Setter TargetName="image" Property="Grid.Row" Value="0"/>
@@ -75,7 +75,7 @@
                 <Setter TargetName="gridC1" Property="Width" Value="auto"/>
                 <Setter TargetName="gridR1" Property="Height" Value="*"/>
             </Trigger>
-            <Trigger Property="local:YAttachProperty.YButtonIconAlignment" Value="Top">
+            <Trigger Property="yProperties:YAttachProperty.YButtonIconAlignment" Value="Top">
                 <Setter TargetName="icon" Property="Grid.Row" Value="0"/>
                 <Setter TargetName="icon" Property="Grid.Column" Value="0"/>
                 <Setter TargetName="image" Property="Grid.Row" Value="0"/>
@@ -84,7 +84,7 @@
                 <Setter TargetName="txt" Property="Grid.Column" Value="0"/>
                 <Setter TargetName="gridC2" Property="Width" Value="auto"/>
             </Trigger>
-            <Trigger Property="local:YAttachProperty.YButtonIconAlignment" Value="Right">
+            <Trigger Property="yProperties:YAttachProperty.YButtonIconAlignment" Value="Right">
                 <Setter TargetName="icon" Property="Grid.Row" Value="0"/>
                 <Setter TargetName="icon" Property="Grid.Column" Value="1"/>
                 <Setter TargetName="image" Property="Grid.Row" Value="0"/>
@@ -94,7 +94,7 @@
                 <Setter TargetName="gridC2" Property="Width" Value="auto"/>
                 <Setter TargetName="gridR1" Property="Height" Value="*"/>
             </Trigger>
-            <Trigger Property="local:YAttachProperty.YButtonIconAlignment" Value="Bottom">
+            <Trigger Property="yProperties:YAttachProperty.YButtonIconAlignment" Value="Bottom">
                 <Setter TargetName="icon" Property="Grid.Row" Value="1"/>
                 <Setter TargetName="icon" Property="Grid.Column" Value="0"/>
                 <Setter TargetName="image" Property="Grid.Row" Value="1"/>
@@ -105,17 +105,17 @@
             </Trigger>
             <!--设置鼠标进入时的背景、前景样式-->
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YMouseOverBackground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>
-                <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YIconMouseOverForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="icon"/>
-                <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YMouseOverForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="txt"/>
-                <Setter Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YMouseOverBorderBrush),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>
+                <Setter Property="Background" Value="{Binding Path=(yProperties:YAttachProperty.YMouseOverBackground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>
+                <Setter Property="Foreground" Value="{Binding Path=(yProperties:YAttachProperty.YIconMouseOverForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="icon"/>
+                <Setter Property="Foreground" Value="{Binding Path=(yProperties:YAttachProperty.YMouseOverForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="txt"/>
+                <Setter Property="BorderBrush" Value="{Binding Path=(yProperties:YAttachProperty.YMouseOverBorderBrush),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>
             </Trigger>
             <!--鼠标按下时的前景、背景样式-->
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="{Binding Path=(local:YAttachProperty.YPressedBackground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>
-                <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YIconPressedForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="icon"/>
-                <Setter Property="Foreground" Value="{Binding Path=(local:YAttachProperty.YPressedForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="txt"/>
-                <Setter Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YPressedBorderBrush),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>
+                <Setter Property="Background" Value="{Binding Path=(yProperties:YAttachProperty.YPressedBackground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>
+                <Setter Property="Foreground" Value="{Binding Path=(yProperties:YAttachProperty.YIconPressedForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="icon"/>
+                <Setter Property="Foreground" Value="{Binding Path=(yProperties:YAttachProperty.YPressedForeground),RelativeSource={RelativeSource TemplatedParent}}" TargetName="txt"/>
+                <Setter Property="BorderBrush" Value="{Binding Path=(yProperties:YAttachProperty.YPressedBorderBrush),RelativeSource={RelativeSource TemplatedParent}}" TargetName="border"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
                 <Setter Property="Opacity" Value="0.5" TargetName="border"/>

@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Media;
 
-namespace YUI.YProperties
+namespace YUI.WPF.YProperties
 {
     /// <summary>
     /// 附加属性类

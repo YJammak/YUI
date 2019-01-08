@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace YUI.YProperties
+namespace YUI.WPF.YProperties
 {
     public static partial class YAttachProperty
     {

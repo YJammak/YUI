@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace YUI.YProperties
+namespace YUI.WPF.YProperties
 {
     public static partial class YAttachProperty
     {

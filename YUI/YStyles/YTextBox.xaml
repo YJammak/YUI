@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:YUI.YProperties">
+                    xmlns:yProperties="clr-namespace:YUI.WPF.YProperties">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Colors.xaml"/>
     </ResourceDictionary.MergedDictionaries>
@@ -17,9 +17,9 @@
         <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="BorderBrush" Value="{StaticResource YControlBorderBrush}"/>
-        <Setter Property="local:YAttachProperty.YFocusBorderBrush" Value="{StaticResource YFocusBorderBrush}"/>
-        <Setter Property="local:YAttachProperty.YMouseOverBorderBrush" Value="{StaticResource YMouseOverBorderBrush}"/>
-        <Setter Property="local:YAttachProperty.YCornerRadius" Value="3"/>
+        <Setter Property="yProperties:YAttachProperty.YFocusBorderBrush" Value="{StaticResource YFocusBorderBrush}"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverBorderBrush" Value="{StaticResource YMouseOverBorderBrush}"/>
+        <Setter Property="yProperties:YAttachProperty.YCornerRadius" Value="3"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Template">
@@ -27,7 +27,7 @@
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Grid x:Name="PART_Root">
                         <Border x:Name="Bg" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                CornerRadius="{TemplateBinding local:YAttachProperty.YCornerRadius}"
+                                CornerRadius="{TemplateBinding yProperties:YAttachProperty.YCornerRadius}"
                                 BorderBrush="{TemplateBinding BorderBrush}" 
                                 BorderThickness="{TemplateBinding BorderThickness}" 
                                 Background="{TemplateBinding Background}" ClipToBounds="True">
@@ -37,7 +37,7 @@
                                           VerticalAlignment="Stretch" Background="{x:Null}"/>
                             <!--水印-->
                             <TextBlock x:Name="Message"  Padding="{TemplateBinding Padding}" Visibility="Collapsed"
-                                       Text="{TemplateBinding local:YAttachProperty.YWatermark}"
+                                       Text="{TemplateBinding yProperties:YAttachProperty.YWatermark}"
                                        Foreground="{TemplateBinding Foreground}" IsHitTestVisible="False" 
                                        Opacity="{StaticResource YWatermarkOpacity}"
                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -51,10 +51,10 @@
                             <Setter TargetName="Message" Property="Visibility" Value="Visible"/>
                         </DataTrigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YMouseOverBorderBrush),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="BorderBrush" Value="{Binding Path=(yProperties:YAttachProperty.YMouseOverBorderBrush),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter  Property="BorderBrush" Value="{Binding Path=(local:YAttachProperty.YFocusBorderBrush),RelativeSource={RelativeSource Self}}"/>
+                            <Setter  Property="BorderBrush" Value="{Binding Path=(yProperties:YAttachProperty.YFocusBorderBrush),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <!--不可用-->
                         <Trigger Property="IsEnabled" Value="False">

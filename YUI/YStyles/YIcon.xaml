@@ -5,7 +5,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="TextBlock" x:Key="YIcon">
-        <Setter Property="FontFamily" Value="/YUI;component/Resources/Fonts/#FontAwesome"/>
+        <Setter Property="FontFamily" Value="/YUI.WPF;component/Resources/Fonts/#FontAwesome"/>
         <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
         <Setter Property="TextAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>

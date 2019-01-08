@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:YUI.YControls" 
-                    xmlns:yui="clr-namespace:YUI.YProperties">
+                    xmlns:local="clr-namespace:YUI.WPF.YControls"
+                    xmlns:yProperties="clr-namespace:YUI.WPF.YProperties">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../YStyles/Colors.xaml"/>
         <ResourceDictionary Source="../YStyles/YListBox.xaml"/>
@@ -35,8 +35,8 @@
     <Style x:Key="YAutoCompleteBoxDefaultStyle" TargetType="{x:Type local:YAutoCompleteBox}">
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
         <Setter Property="BorderBrush" Value="{StaticResource YControlBorderBrush}"/>
-        <Setter Property="yui:YAttachProperty.YMouseOverBorderBrush" Value="{StaticResource YMouseOverBorderBrush}"/>
-        <Setter Property="yui:YAttachProperty.YFocusBorderBrush" Value="{StaticResource YFocusBorderBrush}"/>
+        <Setter Property="yProperties:YAttachProperty.YMouseOverBorderBrush" Value="{StaticResource YMouseOverBorderBrush}"/>
+        <Setter Property="yProperties:YAttachProperty.YFocusBorderBrush" Value="{StaticResource YFocusBorderBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
@@ -44,19 +44,19 @@
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-        <Setter Property="yui:YAttachProperty.YCornerRadius" Value="3"/>
+        <Setter Property="yProperties:YAttachProperty.YCornerRadius" Value="3"/>
         <Setter Property="Padding" Value="1"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="yui:YAttachProperty.YContentStyle" Value="{StaticResource YListBoxDefaultStyle}"/>
+        <Setter Property="yProperties:YAttachProperty.YContentStyle" Value="{StaticResource YListBoxDefaultStyle}"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="SuggestTemplate" Value="{StaticResource YAutoCompleteBoxSuggestItemDefaultTemplate}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:YAutoCompleteBox}">
                     <Grid>
-                        <Border x:Name="border" Padding="{TemplateBinding Padding}" CornerRadius="{TemplateBinding yui:YAttachProperty.YCornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                        <Border x:Name="border" Padding="{TemplateBinding Padding}" CornerRadius="{TemplateBinding yProperties:YAttachProperty.YCornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                             <Grid>
                                 <StackPanel VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
                                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
@@ -66,7 +66,7 @@
                                                   VerticalScrollBarVisibility="Hidden"/>
                                 </StackPanel>
                                 <TextBlock x:Name="Message" Visibility="Hidden"
-                                           Text="{TemplateBinding yui:YAttachProperty.YWatermark}"
+                                           Text="{TemplateBinding yProperties:YAttachProperty.YWatermark}"
                                            Foreground="{TemplateBinding Foreground}" IsHitTestVisible="False" 
                                            Opacity="{StaticResource YWatermarkOpacity}"
                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -83,7 +83,7 @@
                                 <Border x:Name="PopupBorder" BorderThickness="{TemplateBinding BorderThickness}" 
                                         HorizontalAlignment="Stretch"
                                         Height="Auto" BorderBrush="{TemplateBinding BorderBrush}"
-                                        Background="{TemplateBinding yui:YAttachProperty.YPopupBackground}">
+                                        Background="{TemplateBinding yProperties:YAttachProperty.YPopupBackground}">
                                     <Border.Effect>
                                         <DropShadowEffect BlurRadius="2" ShadowDepth="0" Opacity="0.5"
                                                           Color="{TemplateBinding BorderBrush}"/>
@@ -109,10 +109,10 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="BorderBrush" Value="{Binding  RelativeSource={RelativeSource Self}, Path=(yui:YAttachProperty.YMouseOverBorderBrush)}"/>
+                <Setter Property="BorderBrush" Value="{Binding  RelativeSource={RelativeSource Self}, Path=(yProperties:YAttachProperty.YMouseOverBorderBrush)}"/>
             </Trigger>
             <Trigger Property="IsKeyboardFocused" Value="true">
-                <Setter Property="BorderBrush" Value="{Binding  RelativeSource={RelativeSource Self}, Path=(yui:YAttachProperty.YFocusBorderBrush)}"/>
+                <Setter Property="BorderBrush" Value="{Binding  RelativeSource={RelativeSource Self}, Path=(yProperties:YAttachProperty.YFocusBorderBrush)}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
