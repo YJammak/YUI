@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>YJK</authors>
+    <owners>YJK</owners>
+    <licenseUrl>https://github.com/yjk282/YUI/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/yjk282/YUI</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>WPF Tool</tags>
+  </metadata>
+</package>

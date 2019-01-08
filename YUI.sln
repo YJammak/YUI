@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YUI", "YUI\YUI.csproj", "{85316835-3F20-460E-A20D-918566B5CD43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YUI.WPF", "YUI\YUI.WPF.csproj", "{85316835-3F20-460E-A20D-918566B5CD43}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YUI.Test", "YUI.Test\YUI.Test.csproj", "{1CFD9A33-3235-4386-AE9D-6F49A9C1D19E}"
 EndProject
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBA34B5E-F635-4D4B-9FE5-4E285595FF1B}
 	EndGlobalSection
 EndGlobal

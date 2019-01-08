@@ -5,11 +5,11 @@ using System.Windows;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("YUI")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("YUI.WPF")]
+[assembly: AssemblyDescription("WPF样式工具类")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("YUI")]
+[assembly: AssemblyProduct("YUI.WPF")]
 [assembly: AssemblyCopyright("Copyright ©YJK  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

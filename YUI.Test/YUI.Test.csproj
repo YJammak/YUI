@@ -101,9 +101,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\YUI\YUI.csproj">
+    <ProjectReference Include="..\YUI\YUI.WPF.csproj">
       <Project>{85316835-3f20-460e-a20d-918566b5cd43}</Project>
-      <Name>YUI</Name>
+      <Name>YUI.WPF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
