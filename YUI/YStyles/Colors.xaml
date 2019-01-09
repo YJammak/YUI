@@ -1,6 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <SolidColorBrush x:Key="YLoadingIndicatorAccentColorBrush" Color="#CC119EDA"/>
+
     <!--文本前景色-->
     <SolidColorBrush x:Key="YTextForeground" Color="#555555"/>
 
@@ -40,13 +43,13 @@
     <SolidColorBrush x:Key="YItemSelectedForeground" Color="#555555"/>
     <SolidColorBrush x:Key="YItemMouseOverBackground" Color="White"/>
     <SolidColorBrush x:Key="YItemMouseOverForeground" Color="DodgerBlue"/>
-    <SolidColorBrush x:Key="YItemHighlighteBackground" Color="LightSkyBlue"/>
-    <SolidColorBrush x:Key="YItemHighlighteForeground" Color="#555555"/>
+    <SolidColorBrush x:Key="YItemHighlightBackground" Color="LightSkyBlue"/>
+    <SolidColorBrush x:Key="YItemHighlightForeground" Color="#555555"/>
     
     <SolidColorBrush x:Key="YDataGridHeaderBorderBrush" Color="#DDDDDD"/>
     <SolidColorBrush x:Key="YDataGridLinesBrush" Color="#E8E8E8"/>
 
-    <SolidColorBrush x:Key="YScrollBarForeround" Color="#22000000"></SolidColorBrush>
+    <SolidColorBrush x:Key="YScrollBarForeground" Color="#22000000"></SolidColorBrush>
     <SolidColorBrush x:Key="YScrollBarBackground" Color="#11000000"></SolidColorBrush>
     <SolidColorBrush x:Key="YScrollBarMouseOverForeground" Color="#55000000"></SolidColorBrush>
     <SolidColorBrush x:Key="YScrollBarMouseOverBackground" Color="#11000000"></SolidColorBrush>

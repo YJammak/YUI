@@ -6,6 +6,16 @@
         <ResourceDictionary Source="pack://application:,,,/YUI.WPF;component/YThemes/YStyles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
+    <Style x:Key="YLoadingIndicatorArcsStyle" TargetType="{x:Type yControls:YLoadingIndicator}" BasedOn="{StaticResource YLoadingIndicatorArcsStyleKey}"/>
+    <Style x:Key="YLoadingIndicatorArcsRingStyle" TargetType="{x:Type yControls:YLoadingIndicator}" BasedOn="{StaticResource YLoadingIndicatorArcsRingStyleKey}"/>
+    <Style x:Key="YLoadingIndicatorDoubleBounceStyle" TargetType="{x:Type yControls:YLoadingIndicator}" BasedOn="{StaticResource YLoadingIndicatorDoubleBounceStyleKey}"/>
+    <Style x:Key="YLoadingIndicatorFlipPlaneStyle" TargetType="{x:Type yControls:YLoadingIndicator}" BasedOn="{StaticResource YLoadingIndicatorFlipPlaneStyleKey}"/>
+    <Style x:Key="YLoadingIndicatorPulseStyle" TargetType="{x:Type yControls:YLoadingIndicator}" BasedOn="{StaticResource YLoadingIndicatorPulseStyleKey}"/>
+    <Style x:Key="YLoadingIndicatorRingStyle" TargetType="{x:Type yControls:YLoadingIndicator}" BasedOn="{StaticResource YLoadingIndicatorRingStyleKey}"/>
+    <Style x:Key="YLoadingIndicatorThreeDotsStyle" TargetType="{x:Type yControls:YLoadingIndicator}" BasedOn="{StaticResource YLoadingIndicatorThreeDotsStyleKey}"/>
+    <Style x:Key="YLoadingIndicatorWaveStyle" TargetType="{x:Type yControls:YLoadingIndicator}" BasedOn="{StaticResource YLoadingIndicatorWaveStyleKey}"/>
+    <Style TargetType="{x:Type yControls:YLoadingIndicator}" BasedOn="{StaticResource YLoadingIndicatorWaveStyleKey}"/>
+
     <Style TargetType="Button" BasedOn="{StaticResource YButtonDefaultStyle}"/>
     <Style TargetType="TextBox" BasedOn="{StaticResource YTextBoxDefaultStyle}"/>
     <Style TargetType="ToggleButton" BasedOn="{StaticResource YToggleButtonDefaultStyle}"/>

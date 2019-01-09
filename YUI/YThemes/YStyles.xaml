@@ -26,5 +26,13 @@
         <ResourceDictionary Source="pack://application:,,,/YUI.WPF;component/YStyles/YListBox.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI.WPF;component/YStyles/YTreeView.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/YUI.WPF;component/YStyles/YToolTip.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI.WPF;component/YStyles/YLoadingIndicator/YLoadingArcs.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI.WPF;component/YStyles/YLoadingIndicator/YLoadingArcsRing.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI.WPF;component/YStyles/YLoadingIndicator/YLoadingDoubleBounce.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI.WPF;component/YStyles/YLoadingIndicator/YLoadingFlipPlane.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI.WPF;component/YStyles/YLoadingIndicator/YLoadingPulse.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI.WPF;component/YStyles/YLoadingIndicator/YLoadingRing.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI.WPF;component/YStyles/YLoadingIndicator/YLoadingThreeDots.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/YUI.WPF;component/YStyles/YLoadingIndicator/YLoadingWave.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

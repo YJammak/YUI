@@ -11,7 +11,7 @@
     <iconUrl>https://icon</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>修复命名空间问题</releaseNotes>
+    <releaseNotes>添加加载控件YLoadingIndicator</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>WPF Tool</tags>
   </metadata>

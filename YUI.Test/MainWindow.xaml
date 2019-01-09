@@ -76,6 +76,21 @@
                            yui:YAttachProperty.YIcon="&#xf01e;"/>
             <yctr:YLoading Width="50" Height="50" Margin="5" FontFamily="pack://application:,,,/YUI.WPF;component/Resources/Fonts/#FontAwesome"
                            yui:YAttachProperty.YIcon="&#xf110;"/>
+            <yctr:YLoadingIndicator Margin="5" SpeedRatio="1" IsActive="True">
+                <yctr:YLoadingIndicator.Style>
+                    <Style TargetType="yctr:YLoadingIndicator" BasedOn="{StaticResource YLoadingIndicatorArcsStyle}">
+                        <Setter Property="Foreground" Value="#1BA1E2"/>
+                    </Style>
+                </yctr:YLoadingIndicator.Style>
+            </yctr:YLoadingIndicator>
+            <yctr:YLoadingIndicator Margin="5" SpeedRatio="1" IsActive="True" Style="{DynamicResource YLoadingIndicatorArcsStyle}"/>
+            <yctr:YLoadingIndicator Margin="5" SpeedRatio="1" IsActive="True" Style="{DynamicResource YLoadingIndicatorArcsRingStyle}"/>
+            <yctr:YLoadingIndicator Margin="5" SpeedRatio="1" IsActive="True" Style="{DynamicResource YLoadingIndicatorDoubleBounceStyle}"/>
+            <yctr:YLoadingIndicator Margin="5" SpeedRatio="1" IsActive="True" Style="{DynamicResource YLoadingIndicatorFlipPlaneStyle}"/>
+            <yctr:YLoadingIndicator Margin="5" SpeedRatio="1" IsActive="True" Style="{DynamicResource YLoadingIndicatorPulseStyle}"/>
+            <yctr:YLoadingIndicator Margin="5" SpeedRatio="1" IsActive="True" Style="{DynamicResource YLoadingIndicatorRingStyle}"/>
+            <yctr:YLoadingIndicator Margin="5" SpeedRatio="1" IsActive="True" Style="{DynamicResource YLoadingIndicatorThreeDotsStyle}"/>
+            <yctr:YLoadingIndicator Margin="5" SpeedRatio="1" IsActive="True" Style="{DynamicResource YLoadingIndicatorWaveStyle}"/>
         </StackPanel>
         <ProgressBar Value="0.3" Margin="10 3" Height="10" yui:YAttachProperty.YCornerRadius="5">
             <ProgressBar.Foreground>

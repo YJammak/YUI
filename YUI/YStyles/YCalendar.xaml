@@ -20,8 +20,8 @@
         <Setter Property="yProperties:YAttachProperty.YItemSelectedForeground" Value="{StaticResource YItemSelectedForeground}"/>
         <Setter Property="yProperties:YAttachProperty.YItemMouseOverBackground" Value="{StaticResource YItemMouseOverBackground}"/>
         <Setter Property="yProperties:YAttachProperty.YItemMouseOverForeground" Value="{StaticResource YItemMouseOverForeground}"/>
-        <Setter Property="yProperties:YAttachProperty.YItemCurrentBackground" Value="{StaticResource YItemHighlighteBackground}"/>
-        <Setter Property="yProperties:YAttachProperty.YItemCurrentForeground" Value="{StaticResource YItemHighlighteForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemCurrentBackground" Value="{StaticResource YItemHighlightBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemCurrentForeground" Value="{StaticResource YItemHighlightForeground}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CalendarDayButton}">
