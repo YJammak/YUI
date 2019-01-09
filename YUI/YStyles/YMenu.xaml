@@ -175,8 +175,8 @@
                 <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource Self},Path=(yProperties:YAttachProperty.YMouseOverBackground)}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisenableBackground)}"/>
-                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisenableForeground)}"/>
+                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisableBackground)}"/>
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisableForeground)}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -213,8 +213,8 @@
                 <Setter TargetName="PART_Icon" Property="Visibility" Value="Collapsed"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisenableBackground)}"/>
-                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisenableForeground)}"/>
+                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisableBackground)}"/>
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisableForeground)}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -261,8 +261,8 @@
                />
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisenableBackground)}"/>
-                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisenableForeground)}"/>
+                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisableBackground)}"/>
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisableForeground)}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -313,8 +313,8 @@
                         Value="{Binding Path=(yProperties:YAttachProperty.YMouseOverBackground), RelativeSource={RelativeSource Self}}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisenableBackground)}"/>
-                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisenableForeground)}"/>
+                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisableBackground)}"/>
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=Self},Path=(yProperties:YAttachProperty.YDisableForeground)}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>

@@ -64,8 +64,8 @@
         <Setter Property="yProperties:YAttachProperty.YMenuPopupBackground" Value="{StaticResource YControlBackground}"/>
         <Setter Property="Background" Value="{StaticResource YControlBackground}"/>
         <Setter Property="Foreground" Value="{StaticResource YTextForeground}"/>
-        <Setter Property="yProperties:YAttachProperty.YDisenableBackground" Value="{StaticResource YControlBackground}"/>
-        <Setter Property="yProperties:YAttachProperty.YDisenableForeground" Value="#88555555"/>
+        <Setter Property="yProperties:YAttachProperty.YDisableBackground" Value="{StaticResource YControlBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YDisableForeground" Value="#88555555"/>
         <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="#E0E0E0"/>
     </Style>
 

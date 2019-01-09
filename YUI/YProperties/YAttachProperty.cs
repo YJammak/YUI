@@ -38,12 +38,12 @@ namespace YUI.WPF.YProperties
 
         #endregion
 
-        #region YDisenableBackground 背景色
+        #region YDisableBackground 背景色
         /// <summary>
         /// 背景色附加属性
         /// </summary>
-        public static readonly DependencyProperty YDisenableBackgroundProperty = DependencyProperty.RegisterAttached(
-            "YDisenableBackground", typeof(Brush), typeof(YAttachProperty), new FrameworkPropertyMetadata(Brushes.Transparent,
+        public static readonly DependencyProperty YDisableBackgroundProperty = DependencyProperty.RegisterAttached(
+            "YDisableBackground", typeof(Brush), typeof(YAttachProperty), new FrameworkPropertyMetadata(Brushes.Transparent,
                 FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.Inherits));
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace YUI.WPF.YProperties
         /// </summary>
         /// <param name="element"></param>
         /// <param name="value"></param>
-        public static void SetYDisenableBackground(DependencyObject element, Brush value)
+        public static void SetYDisableBackground(DependencyObject element, Brush value)
         {
-            element.SetValue(YDisenableBackgroundProperty, value);
+            element.SetValue(YDisableBackgroundProperty, value);
         }
 
         /// <summary>
@@ -61,9 +61,9 @@ namespace YUI.WPF.YProperties
         /// </summary>
         /// <param name="element"></param>
         /// <returns></returns>
-        public static Brush GetYDisenableBackground(DependencyObject element)
+        public static Brush GetYDisableBackground(DependencyObject element)
         {
-            return (Brush)element.GetValue(YDisenableBackgroundProperty);
+            return (Brush)element.GetValue(YDisableBackgroundProperty);
         }
 
         #endregion
@@ -154,31 +154,31 @@ namespace YUI.WPF.YProperties
 
         #endregion
 
-        #region YDisenableForeground 获得焦点前景颜色
+        #region YDisableForeground 获得焦点前景颜色
 
         /// <summary>
         /// 获得焦点前景颜色附加属性
         /// </summary>
-        public static readonly DependencyProperty YDisenableForegroundProperty = DependencyProperty.RegisterAttached(
-            "YDisenableForeground", typeof(Brush), typeof(YAttachProperty), new FrameworkPropertyMetadata(Brushes.Transparent,
+        public static readonly DependencyProperty YDisableForegroundProperty = DependencyProperty.RegisterAttached(
+            "YDisableForeground", typeof(Brush), typeof(YAttachProperty), new FrameworkPropertyMetadata(Brushes.Transparent,
                 FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.Inherits));
         /// <summary>
         /// 设置获得焦点前景颜色
         /// </summary>
         /// <param name="element"></param>
         /// <param name="value"></param>
-        public static void SetYDisenableForeground(DependencyObject element, Brush value)
+        public static void SetYDisableForeground(DependencyObject element, Brush value)
         {
-            element.SetValue(YDisenableForegroundProperty, value);
+            element.SetValue(YDisableForegroundProperty, value);
         }
         /// <summary>
         /// 获取获得焦点前景颜色
         /// </summary>
         /// <param name="element"></param>
         /// <returns></returns>
-        public static Brush GetYDisenableForeground(DependencyObject element)
+        public static Brush GetYDisableForeground(DependencyObject element)
         {
-            return (Brush)element.GetValue(YDisenableForegroundProperty);
+            return (Brush)element.GetValue(YDisableForegroundProperty);
         }
 
         #endregion

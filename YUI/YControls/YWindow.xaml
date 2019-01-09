@@ -33,12 +33,6 @@
         <Setter Property="Width" Value="26"/>
         <Setter Property="Height" Value="26"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="yProperties:YAttachProperty.YIconForeground" Value="#CC000000"/>
-        <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="#11000000"/>
-        <Setter Property="yProperties:YAttachProperty.YPressedBackground" Value="#33000000"/>
-        <Setter Property="yProperties:YAttachProperty.YIconMouseOverForeground" Value="LightSkyBlue"/>
-        <Setter Property="yProperties:YAttachProperty.YIconPressedForeground" Value="LightSkyBlue"/>
         <Setter Property="yProperties:YAttachProperty.YCornerRadius" Value="0"/>
         <Setter Property="yProperties:YAttachProperty.YIconSize" Value="14"/>
         <Setter Property="yProperties:YAttachProperty.YIconFontFamily" Value="../Resources/Fonts/#iconfont"/>
@@ -53,13 +47,20 @@
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="yProperties:YAttachProperty.YHeaderBackground" Value="{StaticResource YControlBackground}"/>
         <Setter Property="yProperties:YAttachProperty.YHeaderForeground" Value="{StaticResource YTextForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YButtonBackground" Value="Transparent"/>
+        <Setter Property="yProperties:YAttachProperty.YButtonForeground" Value="White"/>
+        <Setter Property="yProperties:YAttachProperty.YButtonMouseOverBackground" Value="#55FFFFFF"/>
+        <Setter Property="yProperties:YAttachProperty.YButtonMouseOverForeground" Value="White"/>
+        <Setter Property="yProperties:YAttachProperty.YButtonPressedBackground" Value="#11FFFFFF"/>
+        <Setter Property="yProperties:YAttachProperty.YButtonPressedForeground" Value="White"/>
+        <Setter Property="yProperties:YAttachProperty.YBackground" Value="White"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type yControls:YWindow}">
                     <Grid>
                         <Border BorderBrush="{TemplateBinding BorderBrush}" 
                                 BorderThickness="{TemplateBinding BorderThickness}" 
-                                Background="White"
+                                Background="{TemplateBinding yProperties:YAttachProperty.YBackground}"
                                 CornerRadius="{TemplateBinding yProperties:YAttachProperty.YCornerRadius}"
                                 x:Name="MainBorder">
                             <Border.Style>
@@ -121,6 +122,13 @@
                                             yProperties:YAttachProperty.YIconMargin="0 0 0 -7">
                                         <Button.Style>
                                             <Style BasedOn="{StaticResource WindowButton}" TargetType="Button">
+                                                <Setter Property="Background" Value="{Binding Path=(yProperties:YAttachProperty.YButtonBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="Foreground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonForeground)}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YIconForeground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonMouseOverBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YPressedBackground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonPressedBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YIconMouseOverForeground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonMouseOverForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YIconPressedForeground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonPressedForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding Path=ResizeMode,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type yControls:YWindow}}}"
                                                                  Value="NoResize">
@@ -137,6 +145,13 @@
                                     <Button Command="{Binding MaximizeWindowCommand, RelativeSource={RelativeSource TemplatedParent}}">
                                         <Button.Style>
                                             <Style BasedOn="{StaticResource WindowButton}" TargetType="Button">
+                                                <Setter Property="Background" Value="{Binding Path=(yProperties:YAttachProperty.YButtonBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="Foreground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonForeground)}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YIconForeground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonMouseOverBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YPressedBackground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonPressedBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YIconMouseOverForeground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonMouseOverForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YIconPressedForeground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonPressedForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
                                                 <Setter Property="yProperties:YAttachProperty.YIcon" Value="&#xe611;"/>
                                                 <Setter Property="yProperties:YAttachProperty.YIconSize" Value="16"/>
                                                 <Setter Property="yProperties:YAttachProperty.YIconMargin" Value="0"/>
@@ -165,15 +180,18 @@
                                             </Style>
                                         </Button.Style>
                                     </Button>
-                                    <Button yProperties:YAttachProperty.YIcon="&#xe60c;" 
-                                            yProperties:YAttachProperty.YMouseOverBackground="#DD0000"
-                                            yProperties:YAttachProperty.YPressedBackground="DarkRed"
-                                            yProperties:YAttachProperty.YIconMouseOverForeground="{StaticResource YControlBackground}"
-                                            yProperties:YAttachProperty.YIconPressedForeground="{StaticResource YControlBackground}"
+                                    <Button yProperties:YAttachProperty.YIcon="&#xe60c;"
                                             Command="{Binding CloseWindowCommand, RelativeSource={RelativeSource TemplatedParent}}"
                                             ToolTip="关闭">
                                         <Button.Style>
                                             <Style BasedOn="{StaticResource WindowButton}" TargetType="Button">
+                                                <Setter Property="Background" Value="{Binding Path=(yProperties:YAttachProperty.YButtonBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="Foreground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonForeground)}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YIconForeground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YMouseOverBackground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonMouseOverBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YPressedBackground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonPressedBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YIconMouseOverForeground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonMouseOverForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                <Setter Property="yProperties:YAttachProperty.YIconPressedForeground" Value="{Binding Path=(yProperties:YAttachProperty.YButtonPressedForeground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding Path=WindowState,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type yControls:YWindow}}}"
                                                                  Value="Normal">
