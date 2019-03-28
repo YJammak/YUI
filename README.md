@@ -3,6 +3,9 @@
 This library contains `controls` `styles` and `toolkit`.<br />
 More is being added...<br /><br />
 
+NuGet
+https://www.nuget.org/packages/YUI.WPF
+
 ## Examples
 ![示例图片](image.png)
 
