@@ -13,6 +13,7 @@
               >
     <StackPanel DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" 
                 Margin="10">
+        <yctr:YTextBlock Text="字间距测试" Foreground="BlueViolet"  Orientation="Horizontal" Stroke="Aqua" StrokeThickness="2" FontSize="50" FontWeight="Bold"/>
         <yctr:YTailBorder Background="#2A60B0" Placement="LeftCenter"
                           HorizontalAlignment="Center" CornerRadius="3" 
                           TailHeight="20" TailWidth="10" Margin="10"
