@@ -11,7 +11,7 @@
     <iconUrl>https://icon</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>添加YTextBlock</releaseNotes>
+    <releaseNotes>YTextBlock添加换行支持，添加行距设置，添加Padding支持</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>WPF Tool</tags>
   </metadata>
