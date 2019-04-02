@@ -13,7 +13,9 @@
               >
     <StackPanel DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" 
                 Margin="10">
-        <yctr:YTextBlock Padding="10" Text="保持车距&#13;谨慎驾驶&#13;注意安全" LineSpacing="50" CharacterSpacing="10" Foreground="BlueViolet"  Orientation="Horizontal" Stroke="Aqua" StrokeThickness="2" FontSize="50" FontWeight="Bold"/>
+        <Grid Height="400" Width="200" Background="Red">
+            <yctr:YTextBlock TextWrapping="True" Padding="10" Text="保持车距&#13;谨慎驾驶&#13;注意安全" LineSpacing="10" CharacterSpacing="10" Foreground="BlueViolet" Stroke="Aqua" StrokeThickness="2" FontSize="50" FontWeight="Bold"/>
+        </Grid>
         <yctr:YTailBorder Background="#2A60B0" Placement="LeftCenter"
                           HorizontalAlignment="Center" CornerRadius="3"
                           TailHeight="20" TailWidth="10" Margin="10"
