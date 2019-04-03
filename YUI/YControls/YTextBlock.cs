@@ -128,8 +128,6 @@ namespace YUI.WPF.YControls
             set => SetValue(TextProperty, value);
         }
 
-        private FormattedText FormattedText { get; set; }
-
         private List<YFormattedTextInfo> FormattedTexts { get; set; }
 
         /// <inheritdoc />
@@ -399,60 +397,49 @@ namespace YUI.WPF.YControls
 
         private Size GetHorizontalFormattedText(string str)
         {
-            // ReSharper disable once CompareOfFloatsByEqualityOperator
-            if (CharacterSpacing == 0.0 || str == "")
+            var lines = str.Split(new[] {"\n", "\r", "\r\n"}, StringSplitOptions.None);
+
+            var width = 0.0;
+            var height = 0.0;
+            var y = 0.0;
+
+            FormattedTexts = new List<YFormattedTextInfo>();
+
+            for (var i = 0; i < lines.Length; i++)
             {
-                FormattedText = new FormattedText(str, CultureInfo.CurrentCulture, FlowDirection.LeftToRight,
-                    new Typeface(FontFamily, FontStyle, FontWeight, FontStretch), FontSize, Brushes.Black);
+                var lineWidth = 0.0;
+                var currentLine = lines[i];
 
-                return new Size(FormattedText.Width + Padding.Left + Padding.Right, FormattedText.Height + Padding.Top + Padding.Bottom);
-            }
-            else
-            {
-                var lines = str.Split(new[] {"\n", "\r", "\r\n"}, StringSplitOptions.None);
-
-                var width = 0.0;
-                var height = 0.0;
-                var y = 0.0;
-
-                FormattedTexts = new List<YFormattedTextInfo>();
-
-                for (var i = 0; i < lines.Length; i++)
+                for (var j = 0; j < currentLine.Length; j++)
                 {
-                    var lineWidth = 0.0;
-                    var currentLine = lines[i];
+                    var character = currentLine[j].ToString();
 
-                    for (var j = 0; j < currentLine.Length; j++)
+                    var formattedText = new FormattedText(character, CultureInfo.CurrentCulture, FlowDirection.LeftToRight,
+                        new Typeface(FontFamily, FontStyle, FontWeight, FontStretch), FontSize, Brushes.Black);
+
+                    if (j == 0 && i != 0)
+                        y = height + LineSpacing;
+
+                    var x = j == 0 ? 0.0 : lineWidth + CharacterSpacing;
+
+                    lineWidth = x + formattedText.Width;
+                    width = Math.Max(width, lineWidth);
+                    height = Math.Max(height, formattedText.Height + y);
+
+                    var point = new Point(x, y);
+
+                    var formattedInfo = new YFormattedTextInfo
                     {
-                        var character = currentLine[j].ToString();
+                        FormattedText = formattedText,
+                        Point = point,
+                        Text = character,
+                    };
 
-                        var formattedText = new FormattedText(character, CultureInfo.CurrentCulture, FlowDirection.LeftToRight,
-                            new Typeface(FontFamily, FontStyle, FontWeight, FontStretch), FontSize, Brushes.Black);
-
-                        if (j == 0 && i != 0)
-                            y = height + LineSpacing;
-
-                        var x = j == 0 ? 0.0 : lineWidth + CharacterSpacing;
-
-                        lineWidth = x + formattedText.Width;
-                        width = Math.Max(width, lineWidth);
-                        height = Math.Max(height, formattedText.Height + y);
-
-                        var point = new Point(x, y);
-
-                        var formattedInfo = new YFormattedTextInfo
-                        {
-                            FormattedText = formattedText,
-                            Point = point,
-                            Text = character,
-                        };
-
-                        FormattedTexts.Add(formattedInfo);
-                    }
+                    FormattedTexts.Add(formattedInfo);
                 }
-
-                return new Size(width + Padding.Left + Padding.Right, height + Padding.Top + Padding.Bottom);
             }
+
+            return new Size(width + Padding.Left + Padding.Right, height + Padding.Top + Padding.Bottom);
         }
 
         /// <inheritdoc />
@@ -464,21 +451,11 @@ namespace YUI.WPF.YControls
         {
             base.OnRender(drawingContext);
 
-            // ReSharper disable once CompareOfFloatsByEqualityOperator
-            if (CharacterSpacing == 0.0 && Orientation == Orientation.Horizontal)
+            foreach (var info in FormattedTexts)
             {
-                var point = new Point(Padding.Left, Padding.Top);
-                drawingContext.DrawText(FormattedText, point);
-                drawingContext.DrawGeometry(Foreground, new Pen(Stroke, StrokeThickness), FormattedText.BuildGeometry(point));
-            }
-            else
-            {
-                foreach (var info in FormattedTexts)
-                {
-                    var point = new Point(Padding.Left + info.Point.X, Padding.Top + info.Point.Y);
-                    drawingContext.DrawText(info.FormattedText, point);
-                    drawingContext.DrawGeometry(Foreground, new Pen(Stroke, StrokeThickness), info.FormattedText.BuildGeometry(point));
-                }
+                var point = new Point(Padding.Left + info.Point.X, Padding.Top + info.Point.Y);
+                drawingContext.DrawText(info.FormattedText, point);
+                drawingContext.DrawGeometry(Foreground, new Pen(Stroke, StrokeThickness), info.FormattedText.BuildGeometry(point));
             }
         }
     }

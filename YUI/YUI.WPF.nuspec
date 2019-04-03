@@ -11,7 +11,7 @@
     <iconUrl>https://icon</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>YTextBlock添加TextWrapping</releaseNotes>
+    <releaseNotes>YTextBlock修复BUG</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>WPF Tool</tags>
   </metadata>
