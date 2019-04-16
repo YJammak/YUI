@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -39,6 +40,15 @@ namespace YUI.Test
     /// </summary>
     public partial class MainWindow : YWindow
     {
+        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
+            "Text", typeof(string), typeof(MainWindow), new PropertyMetadata(default(string)));
+
+        public string Text
+        {
+            get => (string) GetValue(TextProperty);
+            set => SetValue(TextProperty, value);
+        }
+
         public List<DataGridTest> Data { get; set; }
 
         public MainWindow()
@@ -55,6 +65,18 @@ namespace YUI.Test
             //YJsonHelper.LoadAssembly("../Newtonsoft.Json.dll");
             //Console.WriteLine(YJsonHelper.SerializeObject(Data));
             //var md5 = YMD5Helper.GetFileMD5("D:\\HKVideoCtrl.ocx");
+
+            Text = "测试";
+            var tt = 0;
+            var timer = new Timer(2000);
+            timer.Elapsed += (sender, args) =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    Text = $"{tt++}";
+                });
+            };
+            timer.Start();
         }
 
         private bool s = false;

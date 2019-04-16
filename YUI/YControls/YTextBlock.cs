@@ -158,15 +158,6 @@ namespace YUI.WPF.YControls
         /// <inheritdoc />
         protected override Size ArrangeOverride(Size arrangeBounds)
         {
-            if (!TextWrapping)
-                return base.ArrangeOverride(arrangeBounds);
-
-            if (Orientation == Orientation.Horizontal && arrangeBounds.Width >= MeasureSize.Width)
-                return base.ArrangeOverride(arrangeBounds);
-
-            if (Orientation == Orientation.Vertical && arrangeBounds.Height >= MeasureSize.Height)
-                return base.ArrangeOverride(arrangeBounds);
-
             return Arrange(arrangeBounds);
         }
 
