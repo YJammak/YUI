@@ -17,6 +17,11 @@ namespace YUI.WPF.YControls
     public class YAutoCompleteBox : TextBox
     {
         /// <summary>
+        /// 选择项改变事件
+        /// </summary>
+        public event EventHandler<object> SuggestChanged;
+
+        /// <summary>
         /// 存储所有建议的集合
         /// </summary>
         public static readonly DependencyProperty SuggestsProperty = DependencyProperty.Register(
@@ -27,7 +32,7 @@ namespace YUI.WPF.YControls
         /// </summary>
         public IEnumerable Suggests
         {
-            get => (IEnumerable) GetValue(SuggestsProperty);
+            get => (IEnumerable)GetValue(SuggestsProperty);
             set => SetValue(SuggestsProperty, value);
         }
 
@@ -42,7 +47,7 @@ namespace YUI.WPF.YControls
         /// </summary>
         public ObservableCollection<object> CurrentSuggests
         {
-            get => (ObservableCollection<object>) GetValue(CurrentSuggestsProperty);
+            get => (ObservableCollection<object>)GetValue(CurrentSuggestsProperty);
             set => SetValue(CurrentSuggestsProperty, value);
         }
 
@@ -50,15 +55,17 @@ namespace YUI.WPF.YControls
         /// 选择的建议项
         /// </summary>
         public static readonly DependencyProperty SelectSuggestProperty = DependencyProperty.Register(
-            "SelectSuggest", typeof(object), typeof(YAutoCompleteBox), new PropertyMetadata(default(object),
+            "SelectSuggest", typeof(object), typeof(YAutoCompleteBox), new PropertyMetadata(default,
             (o, args) =>
             {
                 var newValue = args.NewValue;
-                var control = o as YAutoCompleteBox;
-                if (control == null || newValue == null)
+                if (!(o is YAutoCompleteBox control))
                     return;
 
-                control.SetText(newValue.ToString());
+                if (newValue != null)
+                    control.SetText(newValue.ToString());
+
+                control.SuggestChanged?.Invoke(control, newValue);
             }));
 
         /// <summary>
@@ -81,7 +88,7 @@ namespace YUI.WPF.YControls
         /// </summary>
         public double DelayTime
         {
-            get => (double) GetValue(DelayTimeProperty);
+            get => (double)GetValue(DelayTimeProperty);
             set => SetValue(DelayTimeProperty, value);
         }
 
@@ -96,7 +103,7 @@ namespace YUI.WPF.YControls
         /// </summary>
         public uint Threshold
         {
-            get => (uint) GetValue(ThresholdProperty);
+            get => (uint)GetValue(ThresholdProperty);
             set => SetValue(ThresholdProperty, value);
         }
 
@@ -111,23 +118,23 @@ namespace YUI.WPF.YControls
         /// </summary>
         public bool IsSelectFirst
         {
-            get => (bool) GetValue(IsSelectFirstProperty);
+            get => (bool)GetValue(IsSelectFirstProperty);
             set => SetValue(IsSelectFirstProperty, value);
         }
 
         /// <summary>
         /// 是否在获取焦点是显示建议项
         /// </summary>
-        public static readonly DependencyProperty IsShowSeggestsOnFocusProperty = DependencyProperty.Register(
-            "IsShowSeggestsOnFocus", typeof(bool), typeof(YAutoCompleteBox), new PropertyMetadata(false));
+        public static readonly DependencyProperty IsShowSuggestsOnFocusProperty = DependencyProperty.Register(
+            "IsShowSuggestsOnFocus", typeof(bool), typeof(YAutoCompleteBox), new PropertyMetadata(false));
 
         /// <summary>
         /// 是否在获取焦点是显示建议项
         /// </summary>
-        public bool IsShowSeggestsOnFocus
+        public bool IsShowSuggestsOnFocus
         {
-            get => (bool) GetValue(IsShowSeggestsOnFocusProperty);
-            set => SetValue(IsShowSeggestsOnFocusProperty, value);
+            get => (bool)GetValue(IsShowSuggestsOnFocusProperty);
+            set => SetValue(IsShowSuggestsOnFocusProperty, value);
         }
 
         /// <summary>
@@ -141,7 +148,7 @@ namespace YUI.WPF.YControls
         /// </summary>
         public DataTemplate SuggestTemplate
         {
-            get => (DataTemplate) GetValue(SuggestTemplateProperty);
+            get => (DataTemplate)GetValue(SuggestTemplateProperty);
             set => SetValue(SuggestTemplateProperty, value);
         }
 
@@ -156,13 +163,13 @@ namespace YUI.WPF.YControls
         /// </summary>
         public double MaxDropDownHeight
         {
-            get => (double) GetValue(MaxDropDownHeightProperty);
+            get => (double)GetValue(MaxDropDownHeightProperty);
             set => SetValue(MaxDropDownHeightProperty, value);
         }
 
         private bool IsInnerChanged { get; set; }
 
-        private bool IsInnerSlected { get; set; }
+        private bool IsInnerSelected { get; set; }
 
         static YAutoCompleteBox()
         {
@@ -170,9 +177,9 @@ namespace YUI.WPF.YControls
                 new FrameworkPropertyMetadata(typeof(YAutoCompleteBox)));
         }
 
-        private Popup part_Popup;
-        private ListBox part_ListBox;
-        private readonly Timer delayTimer;
+        private Popup _partPopup;
+        private ListBox _partListBox;
+        private readonly Timer _delayTimer;
 
         private delegate void TextChangedCallback();
 
@@ -181,33 +188,33 @@ namespace YUI.WPF.YControls
         /// </summary>
         public YAutoCompleteBox()
         {
-            delayTimer = new Timer { Interval = DelayTime };
-            delayTimer.Elapsed += DelayTimer_Elapsed;
-            TextChanged += YAutoCompleteTextbox_TextChanged;
+            _delayTimer = new Timer { Interval = DelayTime };
+            _delayTimer.Elapsed += DelayTimer_Elapsed;
+            TextChanged += YAutoCompleteTextBox_TextChanged;
             PreviewKeyDown += (sender, args) =>
             {
                 switch (args.Key)
                 {
                     case Key.Down:
-                        IsInnerSlected = true;
+                        IsInnerSelected = true;
 
-                        if (part_ListBox.SelectedIndex == part_ListBox.Items.Count - 1)
-                            part_ListBox.SelectedIndex = 0;
-                        if (part_ListBox.SelectedIndex < part_ListBox.Items.Count)
-                            part_ListBox.SelectedIndex++;
+                        if (_partListBox.SelectedIndex == _partListBox.Items.Count - 1)
+                            _partListBox.SelectedIndex = 0;
+                        if (_partListBox.SelectedIndex < _partListBox.Items.Count)
+                            _partListBox.SelectedIndex++;
 
-                        part_ListBox.ScrollIntoView(part_ListBox.SelectedItem);
+                        _partListBox.ScrollIntoView(_partListBox.SelectedItem);
 
                         break;
                     case Key.Up:
-                        IsInnerSlected = true;
+                        IsInnerSelected = true;
 
-                        if (part_ListBox.SelectedIndex > 0)
-                            part_ListBox.SelectedIndex--;
+                        if (_partListBox.SelectedIndex > 0)
+                            _partListBox.SelectedIndex--;
                         else
-                            part_ListBox.SelectedIndex = part_ListBox.Items.Count - 1;
+                            _partListBox.SelectedIndex = _partListBox.Items.Count - 1;
 
-                        part_ListBox.ScrollIntoView(part_ListBox.SelectedItem);
+                        _partListBox.ScrollIntoView(_partListBox.SelectedItem);
 
                         break;
                     case Key.Return:
@@ -218,7 +225,7 @@ namespace YUI.WPF.YControls
 
             GotFocus += (sender, args) =>
             {
-                if (IsShowSeggestsOnFocus)
+                if (IsShowSuggestsOnFocus)
                     StartChanged();
             };
 
@@ -233,25 +240,25 @@ namespace YUI.WPF.YControls
 
         private void ShowPopup()
         {
-            if (part_Popup != null && !part_Popup.IsOpen)
-                part_Popup.IsOpen = true;
+            if (_partPopup != null && !_partPopup.IsOpen)
+                _partPopup.IsOpen = true;
         }
 
         private void HidePopup()
         {
-            if (part_Popup != null && part_Popup.IsOpen)
-                part_Popup.IsOpen = false;
+            if (_partPopup != null && _partPopup.IsOpen)
+                _partPopup.IsOpen = false;
         }
 
         private void DelayTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            delayTimer.Stop();
-            Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal,
-                new TextChangedCallback(CurrenTextChanged));
+            _delayTimer.Stop();
+            Dispatcher?.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal,
+                new TextChangedCallback(CurrentTextChanged));
         }
 
 
-        private void YAutoCompleteTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        private void YAutoCompleteTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (Text.Length > 0)
                 StartChanged();
@@ -266,13 +273,13 @@ namespace YUI.WPF.YControls
         {
             if (DelayTime > 10)
             {
-                delayTimer.Interval = DelayTime;
-                delayTimer.Start();
+                _delayTimer.Interval = DelayTime;
+                _delayTimer.Start();
             }
             else
             {
-                delayTimer.Interval = 10;
-                delayTimer.Start();
+                _delayTimer.Interval = 10;
+                _delayTimer.Start();
             }
         }
 
@@ -284,7 +291,7 @@ namespace YUI.WPF.YControls
             }
         }
 
-        private void CurrenTextChanged()
+        private void CurrentTextChanged()
         {
             try
             {
@@ -442,20 +449,20 @@ namespace YUI.WPF.YControls
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            part_Popup = (GetTemplateChild("PART_Popup") as Popup);
-            part_ListBox = (GetTemplateChild("PART_PopupContent") as ListBox);
+            _partPopup = (GetTemplateChild("PART_Popup") as Popup);
+            _partListBox = (GetTemplateChild("PART_PopupContent") as ListBox);
 
-            if (part_ListBox != null)
+            if (_partListBox != null)
             {
-                part_ListBox.SelectionChanged += Part_ListBox_SelectionChanged;
+                _partListBox.SelectionChanged += Part_ListBox_SelectionChanged;
             }
         }
 
         private void Part_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (IsInnerSlected)
+            if (IsInnerSelected)
             {
-                IsInnerSlected = false;
+                IsInnerSelected = false;
                 return;
             }
             UpdateSelect();
@@ -465,16 +472,16 @@ namespace YUI.WPF.YControls
         {
             IsInnerChanged = true;
             HidePopup();
-            var select = part_ListBox.SelectedItem;
+            var select = _partListBox.SelectedItem;
             if (select != null)
                 SelectSuggest = select;
             else
             {
                 if (!IsSelectFirst) return;
 
-                if (part_ListBox.Items.Count <= 0) return;
+                if (_partListBox.Items.Count <= 0) return;
 
-                SelectSuggest = part_ListBox.Items[0];
+                SelectSuggest = _partListBox.Items[0];
 
                 if (SelectSuggest != null)
                     SetText(SelectSuggest.ToString());
