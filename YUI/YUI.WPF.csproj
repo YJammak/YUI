@@ -98,6 +98,7 @@
     <Compile Include="YProperties\YTextProperties.cs" />
     <Compile Include="YUtil\YControlHelper.cs" />
     <Compile Include="YUtil\YDataGridHelper.cs" />
+    <Compile Include="YUtil\YGps.cs" />
     <Compile Include="YUtil\YHotKeyHelper.cs" />
     <Compile Include="YUtil\YHotKeyManager.cs" />
     <Compile Include="YUtil\YImagesHelper.cs" />
