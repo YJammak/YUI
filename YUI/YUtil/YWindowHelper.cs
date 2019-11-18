@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
@@ -40,10 +41,12 @@ namespace YUI.WPF.YUtil
         /// </summary> 
         private const int GWL_EXSTYLE = -20;
 
-        [DllImport("user32", EntryPoint = "SetWindowLong")]
+        [DllImport("user32", EntryPoint = "SetWindowLong", SetLastError = true)]
+        [HandleProcessCorruptedStateExceptions]
         private static extern int SetWindowLong(IntPtr hwnd, int nIndex, int dwNewLong);
 
-        [DllImport("user32", EntryPoint = "GetWindowLong")]
+        [DllImport("user32", EntryPoint = "GetWindowLong", SetLastError = true)]
+        [HandleProcessCorruptedStateExceptions]
         private static extern int GetWindowLong(IntPtr hwnd, int nIndex);
 
         /// <summary>
@@ -51,7 +54,8 @@ namespace YUI.WPF.YUtil
         /// </summary>
         private const int SW_RESTORE = 9;
 
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", SetLastError = true)]
+        [HandleProcessCorruptedStateExceptions]
         private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
         /// <summary> 
@@ -62,7 +66,8 @@ namespace YUI.WPF.YUtil
         /// <param name="alpha">Alpha的值，透明度</param> 
         /// <param name="flags">附带参数</param> 
         /// <returns>true or false</returns> 
-        [DllImport("User32.dll")]
+        [DllImport("User32.dll", SetLastError = true)]
+        [HandleProcessCorruptedStateExceptions]
         public static extern bool SetLayeredWindowAttributes(IntPtr handle, int colorKey, byte alpha, int flags);
 
         /// <summary>

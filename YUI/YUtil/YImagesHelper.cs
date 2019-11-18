@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Media;
@@ -16,6 +17,7 @@ namespace YUI.WPF.YUtil
     public static class YImagesHelper
     {
         [DllImport("gdi32.dll")]
+        [HandleProcessCorruptedStateExceptions]
         private static extern bool DeleteObject(IntPtr hObject);
 
         /// <summary>

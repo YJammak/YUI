@@ -335,8 +335,15 @@ namespace YUI.WPF.YUtil
         /// </summary>
         public void Dispose()
         {
-            ComponentDispatcher.ThreadPreprocessMessage -= ThreadPreprocessMessageMethod;
-            UnregisterHotKey();
+            try
+            {
+                ComponentDispatcher.ThreadPreprocessMessage -= ThreadPreprocessMessageMethod;
+                UnregisterHotKey();
+            }
+            catch
+            {
+                //
+            }
         }
 
         public bool Equals(YHotKey other)
