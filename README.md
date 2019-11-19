@@ -1,5 +1,7 @@
 # YUI - (WPF Controls And Toolkit library)
 
+[![NuGet Status](https://img.shields.io/badge/YUI.WPF-1.3.9-blue)](https://www.nuget.org/packages/YUI.WPF/)
+
 This library contains `controls` `styles` and `toolkit`.<br />
 More is being added...<br /><br />
 
