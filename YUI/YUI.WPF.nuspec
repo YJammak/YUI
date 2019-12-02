@@ -11,7 +11,7 @@
     <iconUrl>https://icon</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>修复热键注册注销异常问题</releaseNotes>
+    <releaseNotes>Calendar添加高亮设置</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>WPF Tool</tags>
   </metadata>

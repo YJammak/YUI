@@ -13,6 +13,7 @@
               >
     <StackPanel DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" 
                 Margin="10">
+        <Calendar Margin="10" SelectionMode="SingleRange"/>
         <Grid Height="400" Width="200" Background="Red">
             <yctr:YTextBlock CharacterSpacing="10" TextWrapping="True" Padding="10" Text="{Binding Text}" Foreground="BlueViolet" Stroke="Aqua" StrokeThickness="2" FontSize="50" FontWeight="Bold"/>
         </Grid>
@@ -115,7 +116,6 @@
                 </LinearGradientBrush>
             </ProgressBar.Foreground>
         </ProgressBar>
-        <Calendar Margin="10"/>
         <DatePicker SelectedDate="2017-06-06" Margin="10"/>
         <DataGrid Height="200" Width="300" ItemsSource="{Binding Data}" Margin="10">
             <DataGrid.Columns>

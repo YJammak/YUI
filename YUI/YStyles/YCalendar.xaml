@@ -18,6 +18,8 @@
         <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="yProperties:YAttachProperty.YItemSelectedBackground" Value="{StaticResource YItemSelectedBackground}"/>
         <Setter Property="yProperties:YAttachProperty.YItemSelectedForeground" Value="{StaticResource YItemSelectedForeground}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemHighlightedBackground" Value="{StaticResource YItemSelectedBackground}"/>
+        <Setter Property="yProperties:YAttachProperty.YItemHighlightedForeground" Value="{StaticResource YItemSelectedForeground}"/>
         <Setter Property="yProperties:YAttachProperty.YItemMouseOverBackground" Value="{StaticResource YItemMouseOverBackground}"/>
         <Setter Property="yProperties:YAttachProperty.YItemMouseOverForeground" Value="{StaticResource YItemMouseOverForeground}"/>
         <Setter Property="yProperties:YAttachProperty.YItemCurrentBackground" Value="{StaticResource YItemHighlightBackground}"/>
@@ -41,6 +43,10 @@
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Background" Value="{Binding Path=(yProperties:YAttachProperty.YItemMouseOverBackground),RelativeSource={RelativeSource Self}}"/>
                             <Setter Property="Foreground" Value="{Binding Path=(yProperties:YAttachProperty.YItemMouseOverForeground),RelativeSource={RelativeSource Self}}"/>
+                        </Trigger>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter Property="Background" Value="{Binding Path=(yProperties:YAttachProperty.YItemHighlightedBackground),RelativeSource={RelativeSource Self}}"/>
+                            <Setter Property="Foreground" Value="{Binding Path=(yProperties:YAttachProperty.YItemHighlightedForeground),RelativeSource={RelativeSource Self}}"/>
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter Property="Background" Value="{Binding Path=(yProperties:YAttachProperty.YItemSelectedBackground),RelativeSource={RelativeSource Self}}"/>
