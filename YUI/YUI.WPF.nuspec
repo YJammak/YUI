@@ -11,7 +11,7 @@
     <iconUrl>https://icon</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Calendar添加高亮设置</releaseNotes>
+    <releaseNotes>YXmlHelper解析xml添加默认命名空间，添加YRSAFromPkcs8</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>WPF Tool</tags>
   </metadata>
