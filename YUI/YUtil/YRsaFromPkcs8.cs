@@ -91,14 +91,10 @@ namespace YUI.WPF.YUtil
         {
             var dataToDecrypt = Convert.FromBase64String(resData);
             var result = "";
+            var buf = new byte[MaxDecryptBlock];
             for (var j = 0; j < dataToDecrypt.Length / MaxDecryptBlock; j++)
             {
-                var buf = new byte[MaxDecryptBlock];
-                for (var i = 0; i < MaxDecryptBlock; i++)
-                {
-
-                    buf[i] = dataToDecrypt[i + MaxDecryptBlock * j];
-                }
+                Array.Copy(dataToDecrypt, MaxDecryptBlock * j, buf, 0, MaxDecryptBlock);
                 result += Decrypt(buf, privateKey, inputCharset);
             }
             return result;
@@ -112,16 +108,13 @@ namespace YUI.WPF.YUtil
         /// <returns>解密后的数据</returns>    
         public static byte[] DecryptData(byte[] data, string privateKey)
         {
+            var rsa = DecodePemPrivateKey(privateKey);
             var result = new Queue<byte[]>();
+            var buf = new byte[MaxDecryptBlock];
             for (var j = 0; j < data.Length / MaxDecryptBlock; j++)
             {
-                var buf = new byte[MaxDecryptBlock];
-                for (var i = 0; i < MaxDecryptBlock; i++)
-                {
-
-                    buf[i] = data[i + MaxDecryptBlock * j];
-                }
-                result.Enqueue(Decrypt(buf, privateKey));
+                Array.Copy(data, MaxDecryptBlock * j, buf, 0, MaxDecryptBlock);
+                result.Enqueue(rsa.Decrypt(buf, false));
             }
             return result.SelectMany(s => s).ToArray();
         }
