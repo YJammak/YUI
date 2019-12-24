@@ -59,10 +59,22 @@ namespace YUI.WPF.YUtil
         /// <returns></returns>
         public static T DeserializeToObject<T>(string xml) where T : class
         {
+            return DeserializeToObject<T>(xml, null);
+        }
+
+        /// <summary>
+        /// 将xml反序列化为对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="xml"></param>
+        /// <param name="defaultNamespace"></param>
+        /// <returns></returns>
+        public static T DeserializeToObject<T>(string xml, string defaultNamespace) where T : class
+        {
             object result;
             using (var reader = new StringReader(xml))
             {
-                var xmlSerializer = new XmlSerializer(typeof(T));
+                var xmlSerializer = new XmlSerializer(typeof(T), defaultNamespace);
                 result = xmlSerializer.Deserialize(reader);
             }
 
@@ -77,8 +89,20 @@ namespace YUI.WPF.YUtil
         /// <returns></returns>
         public static T LoadFromFileToObject<T>(string filePath) where T : class
         {
+            return LoadFromFileToObject<T>(filePath, null);
+        }
+
+        /// <summary>
+        /// 从文件读取并反序列化为对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="filePath"></param>
+        /// <param name="defaultNamespace"></param>
+        /// <returns></returns>
+        public static T LoadFromFileToObject<T>(string filePath, string defaultNamespace) where T : class
+        {
             var data = File.ReadAllText(filePath);
-            return DeserializeToObject<T>(data);
+            return DeserializeToObject<T>(data, defaultNamespace);
         }
     }
 }

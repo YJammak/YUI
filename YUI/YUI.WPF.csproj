@@ -106,6 +106,7 @@
     <Compile Include="YUtil\YMD5Helper.cs" />
     <Compile Include="YUtil\YNetworkMonitor.cs" />
     <Compile Include="YUtil\YPopUpToolTipHelper.cs" />
+    <Compile Include="YUtil\YRSAFromPkcs8.cs" />
     <Compile Include="YUtil\YShortcutHelper.cs" />
     <Compile Include="YUtil\YSingleInstanceManager.cs" />
     <Compile Include="YUtil\YSingleton.cs" />
