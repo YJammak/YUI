@@ -1,22 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace YUI.WPF.YUtil
 {
     /// <summary>
-    /// 
+    /// RSA加密解密类
     /// </summary>
-    public sealed class YRSAFromPkcs8
+    public static class YRSAFromPkcs8
     {
-        /**
-         * RSA最大解密密文大小
-         *     注意：这个和密钥长度有关系, 公式= 密钥长度 / 8
-         */
+        /// <summary>
+        /// RSA最大解密密文大小
+        /// 注意：这个和密钥长度有关系, 公式= 密钥长度 / 8
+        /// </summary>
         private const int MaxDecryptBlock = 128;
+
+        /// <summary>
+        /// RSA最大加密密文大小
+        /// </summary>
+        private const int MaxEncryptBlock = 117;
 
         /// <summary>    
         /// 签名    
@@ -60,7 +64,7 @@ namespace YUI.WPF.YUtil
         /// <param name="resData">需要加密的字符串</param>    
         /// <param name="publicKey">公钥</param>    
         /// <param name="inputCharset">编码格式</param>    
-        /// <returns>明文</returns>    
+        /// <returns>密文</returns>    
         public static string EncryptData(string resData, string publicKey, string inputCharset)
         {
             var dataToEncrypt = Encoding.GetEncoding(inputCharset).GetBytes(resData);
@@ -73,11 +77,31 @@ namespace YUI.WPF.YUtil
         /// </summary>    
         /// <param name="data">需要加密的字符串</param>    
         /// <param name="publicKey">公钥</param>
-        /// <returns>明文</returns>    
+        /// <returns>密文</returns>    
         public static byte[] EncryptData(byte[] data, string publicKey)
         {
-            var result = Encrypt(data, publicKey);
-            return result;
+            var rsa = DecodePemPublicKey(publicKey);
+            using (var stream = new MemoryStream(data.Length))
+            {
+                var buf = new byte[MaxEncryptBlock];
+                for (var j = 0; j < data.Length / MaxEncryptBlock; j++)
+                {
+                    Array.Copy(data, MaxEncryptBlock * j, buf, 0, MaxEncryptBlock);
+                    var result = rsa.Encrypt(buf, false);
+                    stream.Write(result, 0, result.Length);
+                }
+
+                var remainder = data.Length % MaxEncryptBlock;
+                if (remainder > 0)
+                {
+                    buf = new byte[remainder];
+                    Array.Copy(data, MaxEncryptBlock * (data.Length / MaxEncryptBlock), buf, 0, remainder);
+                    var result = rsa.Encrypt(buf, false);
+                    stream.Write(result, 0, result.Length);
+                }
+
+                return stream.ToArray();
+            }
         }
 
         /// <summary>    
@@ -91,10 +115,14 @@ namespace YUI.WPF.YUtil
         {
             var dataToDecrypt = Convert.FromBase64String(resData);
             var result = "";
-            var buf = new byte[MaxDecryptBlock];
             for (var j = 0; j < dataToDecrypt.Length / MaxDecryptBlock; j++)
             {
-                Array.Copy(dataToDecrypt, MaxDecryptBlock * j, buf, 0, MaxDecryptBlock);
+                var buf = new byte[MaxDecryptBlock];
+                for (var i = 0; i < MaxDecryptBlock; i++)
+                {
+
+                    buf[i] = dataToDecrypt[i + MaxDecryptBlock * j];
+                }
                 result += Decrypt(buf, privateKey, inputCharset);
             }
             return result;
@@ -109,14 +137,17 @@ namespace YUI.WPF.YUtil
         public static byte[] DecryptData(byte[] data, string privateKey)
         {
             var rsa = DecodePemPrivateKey(privateKey);
-            var result = new Queue<byte[]>();
-            var buf = new byte[MaxDecryptBlock];
-            for (var j = 0; j < data.Length / MaxDecryptBlock; j++)
+            using (var stream = new MemoryStream(data.Length))
             {
-                Array.Copy(data, MaxDecryptBlock * j, buf, 0, MaxDecryptBlock);
-                result.Enqueue(rsa.Decrypt(buf, false));
+                var buf = new byte[MaxDecryptBlock];
+                for (var j = 0; j < data.Length / MaxDecryptBlock; j++)
+                {
+                    Array.Copy(data, MaxDecryptBlock * j, buf, 0, MaxDecryptBlock);
+                    var result = rsa.Decrypt(buf, false);
+                    stream.Write(result, 0, result.Length);
+                }
+                return stream.ToArray();
             }
-            return result.SelectMany(s => s).ToArray();
         }
 
         #region 内部方法    
@@ -202,7 +233,7 @@ namespace YUI.WPF.YUtil
                     binaryReader.ReadByte();
                 else
                     if (bt == 0x82)
-                        binaryReader.ReadUInt16();
+                    binaryReader.ReadUInt16();
                 //------ at this stage, the remaining sequence should be the RSA private key    
 
                 var rsaPrivateKey = binaryReader.ReadBytes((int)(lenStream - mem.Position));
@@ -438,7 +469,7 @@ namespace YUI.WPF.YUtil
 
             if (string.IsNullOrEmpty(pemFileContent))
             {
-                throw new ArgumentNullException(nameof(pemFileContent), "This arg can't be empty.");
+                throw new ArgumentNullException(nameof(pemFileContent), @"This arg can't be empty.");
             }
             pemFileContent = pemFileContent.Replace("-----BEGIN PUBLIC KEY-----", "").Replace("-----END PUBLIC KEY-----", "").Replace("\n", "").Replace("\r", "");
             var keyData = Convert.FromBase64String(pemFileContent);
@@ -466,7 +497,7 @@ namespace YUI.WPF.YUtil
         {
             if (string.IsNullOrEmpty(pemFileContent))
             {
-                throw new ArgumentNullException(nameof(pemFileContent), "This arg can't be empty.");
+                throw new ArgumentNullException(nameof(pemFileContent), @"This arg can't be empty.");
             }
             pemFileContent = pemFileContent.Replace("-----BEGIN RSA PRIVATE KEY-----", "").Replace("-----END RSA PRIVATE KEY-----", "").Replace("\n", "").Replace("\r", "");
             var keyData = Convert.FromBase64String(pemFileContent);
@@ -522,15 +553,17 @@ namespace YUI.WPF.YUtil
             var pemCoefficient = (keySize1024 ? new byte[64] : new byte[128]);
             Array.Copy(keyData, index, pemCoefficient, 0, pemCoefficient.Length);
 
-            var para = new RSAParameters();
-            para.Modulus = pemModulus;
-            para.Exponent = pemPublicExponent;
-            para.D = pemPrivateExponent;
-            para.P = pemPrime1;
-            para.Q = pemPrime2;
-            para.DP = pemExponent1;
-            para.DQ = pemExponent2;
-            para.InverseQ = pemCoefficient;
+            var para = new RSAParameters
+            {
+                Modulus = pemModulus,
+                Exponent = pemPublicExponent,
+                D = pemPrivateExponent,
+                P = pemPrime1,
+                Q = pemPrime2,
+                DP = pemExponent1,
+                DQ = pemExponent2,
+                InverseQ = pemCoefficient
+            };
             return para;
         }
         #endregion
@@ -583,6 +616,5 @@ namespace YUI.WPF.YUtil
             var result = sb.ToString();
             return result;
         }
-
     }
 }
