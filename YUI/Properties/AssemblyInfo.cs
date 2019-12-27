@@ -1,6 +1,15 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Markup;
+
+[assembly: XmlnsPrefix("http://yjk.name/winfx/xaml/wpf", "yui")]
+[assembly: XmlnsDefinition("http://yjk.name/winfx/xaml/wpf", "YUI.WPF.YControls")]
+[assembly: XmlnsDefinition("http://yjk.name/winfx/xaml/wpf", "YUI.WPF.YConverters")]
+[assembly: XmlnsDefinition("http://yjk.name/winfx/xaml/wpf", "YUI.WPF.YProperties")]
+[assembly: XmlnsDefinition("http://yjk.name/winfx/xaml/wpf", "YUI.WPF.YThemes")]
+[assembly: XmlnsDefinition("http://yjk.name/winfx/xaml/wpf", "YUI.WPF.YStyles")]
+[assembly: XmlnsDefinition("http://yjk.name/winfx/xaml/wpf", "YUI.WPF.YUtil")]
 
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
@@ -10,7 +19,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("YUI.WPF")]
-[assembly: AssemblyCopyright("Copyright ©YJK 2019")]
+[assembly: AssemblyCopyright("Copyright ©YJK 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
